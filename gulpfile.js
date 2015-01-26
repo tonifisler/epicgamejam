@@ -24,7 +24,7 @@ gulp.task('vendors', function() {
       ])
       .pipe($.concat('vendors.css'))
       .pipe($.minifyCss())
-      .pipe(gulp.dest('build/css'));
+      .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/css'));
 
   /**
    * JS VENDORS
@@ -48,7 +48,7 @@ gulp.task('vendors', function() {
     ])
     .pipe($.concat('vendors.min.js'))
     .pipe($.uglify())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/js'));
 
 
   /**
@@ -57,9 +57,9 @@ gulp.task('vendors', function() {
    */
   gulp.src([
       'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-      'assets/fonts/*'
+      'drupal/sites/all/themes/epicgamejam/assets/fonts/*'
     ])
-    .pipe(gulp.dest('build/fonts'));
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/fonts'));
 
   /**
    * POLYFILLS SOURCES
@@ -71,7 +71,7 @@ gulp.task('vendors', function() {
     ])
     .pipe($.concat('polyfills.min.js'))
     .pipe($.uglify())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/js'));
 });
 
 /**
@@ -79,33 +79,31 @@ gulp.task('vendors', function() {
  */
 gulp.task('img', function() {
   gulp.src([
-      'assets/img/**/*'
+      'drupal/sites/all/themes/epicgamejam/assets/img/**/*'
     ])
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/img'));
 });
 
 /**
  * Build styles from SCSS files
  * With error reporting on compiling (so that there's no crash)
  */
- gulp.task('styles', function() {
-   if (argv.production) { console.log('[styles] Processing styles for production env.' ); }
-   else { console.log('[styles] Processing styles for dev env. No minifying here, for sourcemaps!') }
+gulp.task('styles', function() {
+  if (!argv.dev) { console.log('[styles] Processing styles for production env.' ); }
+  else { console.log('[styles] Processing styles for dev env. No minifying here, for sourcemaps!') }
 
-   return $.rubySass('assets/sass/main.scss', {sourcemap: !argv.production})
-       .on('error', $.notify.onError(function (error) {
-          console.log('Error', error.message);
-          if (!argv.production) {
-            return 'Message to the notifier: ' + error.message;
-          }
-       }))
-     .pipe($.autoprefixer({
-       browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'ff 27', 'opera 12.1']
-     }))
-     .pipe($.if(!argv.production, $.sourcemaps.write()))
-     .pipe($.if(argv.production, $.minifyCss()))
-     .pipe(gulp.dest('build/css'));
- });
+  return gulp.src('drupal/sites/all/themes/epicgamejam/assets/sass/main.scss')
+    .pipe($.sass({
+      errLogToConsole: true
+    }))
+    .pipe($.if(argv.dev, $.sourcemaps.init()))
+    .pipe($.autoprefixer({
+      browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'ff 27', 'opera 12.1']
+    }))
+    .pipe($.if(argv.dev, $.sourcemaps.write()))
+    .pipe($.if(!argv.dev, $.minifyCss()))
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/css'));
+});
 
 /**
  * Build JS
@@ -113,14 +111,14 @@ gulp.task('img', function() {
  * And jshint check to highlight errors as we go.
  */
 gulp.task('scripts', function() {
-  return gulp.src('assets/js/*.js')
+  return gulp.src('drupal/sites/all/themes/epicgamejam/assets/js/*.js')
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.concat('main.js'))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/js'))
     .pipe($.rename({ suffix: '.min' }))
     .pipe($.uglify())
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/js'));
 });
 
 /**
@@ -137,7 +135,7 @@ gulp.task('styleguide', function () {
  */
 
 gulp.task('twig', function () {
-    return gulp.src('assets/pages/*.twig')
+    return gulp.src('drupal/sites/all/themes/epicgamejam/assets/pages/*.twig')
         .pipe($.twig())
         .pipe(gulp.dest('styleguide/pages'));
 });
@@ -146,7 +144,7 @@ gulp.task('twig', function () {
 /**
  * Clean output directories
  */
-gulp.task('clean', del.bind(null, ['build', 'styleguide']));
+gulp.task('clean', del.bind(null, ['drupal/sites/all/themes/epicgamejam/build', 'styleguide']));
 
 /**
  * Serve
@@ -158,22 +156,22 @@ gulp.task('serve', ['styles', 'scripts', 'twig'], function () {
     },
     open: false
   });
-  gulp.watch(['assets/sass/**/*.scss'], function() {
+  gulp.watch(['drupal/sites/all/themes/epicgamejam/assets/sass/**/*.scss'], function() {
     runSequence('styles', 'styleguide', reload);
   });
-  gulp.watch(['assets/img/**/*'], function() {
+  gulp.watch(['drupal/sites/all/themes/epicgamejam/assets/img/**/*'], function() {
     runSequence('img', 'styleguide', reload);
   });
-  gulp.watch(['assets/js/**/*.js'], function() {
+  gulp.watch(['drupal/sites/all/themes/epicgamejam/assets/js/**/*.js'], function() {
     runSequence('scripts', reload);
   });
-  
-  gulp.watch(['assets/pages/**/*'], function() {
+
+  gulp.watch(['drupal/sites/all/themes/epicgamejam/assets/pages/**/*'], function() {
     // clean folder before compiling
     del.bind(null, ['styleguide/pages'])
     runSequence('twig', reload);
   });
-  
+
 });
 
 /**
@@ -189,7 +187,6 @@ gulp.task('deploy', function () {
  * Task to build assets on production server
  */
 gulp.task('build',['clean'], function() {
-    argv.production = true;
     runSequence('vendors', 'styles', 'img', 'scripts');
 });
 

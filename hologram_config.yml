@@ -1,5 +1,5 @@
 # Directory to parse
-source: assets
+source: drupal/sites/all/themes/epicgamejam/assets
 
 # Directory to build the styleguide
 destination: styleguide
@@ -12,10 +12,10 @@ custom_markdown: bower_components/Cortana/CortanaMarkdownRenderer.rb
 index: README
 
 dependencies:
-  - build/js
-  - build/css
-  - build/img
-  - build/fonts
+  - drupal/sites/all/themes/epicgamejam/build/js
+  - drupal/sites/all/themes/epicgamejam/build/css
+  - drupal/sites/all/themes/epicgamejam/build/img
+  - drupal/sites/all/themes/epicgamejam/build/fonts
 
 # List all css to include for the styleguide render examples (path from styleguide directory)
 css_include:

@@ -18,7 +18,6 @@ category: Layout - Typography
 */
 
 
-
 /*doc
 ---
 title: Lead
@@ -255,6 +254,10 @@ category: Layout - Typography
 </ul>
 ```
 */
+
+.list-inline {
+  margin-left: 0;
+}
 
 /*doc
 ---
