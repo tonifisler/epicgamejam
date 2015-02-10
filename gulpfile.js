@@ -20,10 +20,18 @@ gulp.task('vendors', function() {
    * CSS VENDORS
    */
   gulp.src([
-        ''
+        'bower_components/chosen-bootstrap/chosen.bootstrap.min.css'
       ])
       .pipe($.concat('vendors.css'))
       .pipe($.minifyCss())
+      .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/css'));
+
+  /**
+   * CSS IMAGES
+   */
+  gulp.src([
+        'bower_components/chosen-bootstrap/*.png'
+      ])
       .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/css'));
 
   /**

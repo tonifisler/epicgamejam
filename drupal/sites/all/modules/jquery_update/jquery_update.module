@@ -87,11 +87,15 @@ function jquery_update_library_alter(&$javascript, $module) {
     $cdn = variable_get('jquery_update_jquery_cdn', 'none');
 
     // Replace jQuery with the alternative version.
-    $admin_version = variable_get('jquery_update_jquery_admin_version', '');
-
-    if (!empty($admin_version) && path_is_admin(current_path())) {
-      if (version_compare($version, $admin_version, '!=')) {
-        $version = $admin_version;
+    $theme_version = theme_get_setting('jquery_update_jquery_version');
+    if ($theme_version && version_compare($version, $theme_version, '!=')) {
+      $version = $theme_version;
+    }
+    // If the ajax version is set then that one always win.
+    if (!empty($_POST['ajax_page_state']['jquery_version'])) {
+      $ajax_version = $_POST['ajax_page_state']['jquery_version'];
+      if ($ajax_version == 'default' || in_array($ajax_version, jquery_update_get_versions())) {
+        $version = $ajax_version;
       }
     }
 
@@ -103,6 +107,12 @@ function jquery_update_library_alter(&$javascript, $module) {
       'type' => 'setting',
     );
     $javascript['drupal.ajax']['dependencies'][] = array('jquery_update', 'jquery_update.ajax.fix');
+
+    // Don't replace anything if Drupal provided jQuery should be used
+    if ('default' == $version) {
+      return;
+    }
+
     jquery_update_jquery_replace($javascript, $cdn, $path, $min, $version);
 
     // Replace jQuery UI with CDN or local files. If from a CDN include all of
@@ -159,32 +169,89 @@ function jquery_update_settings_form() {
     '#title' => t('Version options'),
   );
 
+  $default_version = variable_get('jquery_update_jquery_version', '1.10');
+  $version_options = jquery_update_get_version_options(FALSE);
   $form['version_options']['jquery_update_jquery_version'] = array(
     '#type' => 'select',
-    '#title' => t('Default jQuery Version'),
-    '#options' => array(
-      '1.5' => '1.5',
-      '1.7' => '1.7',
-      '1.8' => '1.8',
-      '1.9' => '1.9',
-      '1.10' => '1.10',
-    ),
-    '#default_value' => variable_get('jquery_update_jquery_version', '1.10'),
-    '#description' => t('Select which jQuery version to use by default.'),
+    '#title' => t('Site default jQuery version'),
+    '#options' => $version_options,
+    '#default_value' => $default_version,
+    '#description' => t('Select which version of jQuery to use on the site.'),
   );
 
-  $form['version_options']['jquery_update_jquery_admin_version'] = array(
-    '#type' => 'select',
-    '#title' => t('Alternate jQuery version for administrative pages'),
-    '#options' => array(
-      '' => t('Use the default'),
-      '1.5' => '1.5',
-      '1.7' => '1.7',
-      '1.8' => '1.8',
-      '1.10' => '1.10',
-    ),
-    '#default_value' => variable_get('jquery_update_jquery_admin_version', ''),
-    '#description' => t('Optionally select a different version of jQuery to use on administrative pages.'),
+  $themes = list_themes();
+  $theme_default = variable_get('theme_default', FALSE);
+  $admin_theme = variable_get('admin_theme', FALSE);
+  $header = array(t('Theme'), t('jQuery version'), t('Operations'));
+  $rows = array();
+  $themes_collapsed = TRUE;
+  // Go through all themes.
+  foreach ($themes as $theme_key => $theme) {
+    // Skip disabled themes, but only if they are not configured as admin
+    // theme. This is an inconsistency in drupal core, that you can select a
+    // disabled theme as admin theme.
+    if (!$theme->status && $theme_key !== $admin_theme) {
+      continue;
+    }
+
+    // Retrieve the version jQuery for this theme.
+    $theme_version = theme_get_setting('jquery_update_jquery_version', $theme_key);
+    // Do not collapse the fieldset if a theme has set a jQuery version.
+    if ($theme_version) {
+      $themes_collapsed = FALSE;
+    }
+
+    // Replace or modify the version name to be displayed.
+    if (empty($theme_version)) {
+      $theme_version = t('Site Default');
+    }
+    elseif (in_array($theme_version, array_keys($version_options))) {
+      $theme_version = $version_options[$theme_version];
+    }
+    else {
+      $theme_version .= ' (' . t('unknown version') . ')';
+    }
+
+    // Provide additional information for default and admin themes.
+    $theme_name = $theme->info['name'];
+    if ($theme_key === $theme_default && ($theme_key === $admin_theme || empty($admin_theme))) {
+      $theme_name .= ' (' . t('default/admin theme') . ')';
+    }
+    elseif ($theme_key === $theme_default) {
+      $theme_name .= ' (' . t('default theme') . ')';
+    }
+    elseif ($theme_key === $admin_theme) {
+      $theme_name .= ' (' . t('admin theme') . ')';
+    }
+
+    // Construct the table row.
+    $rows[] = array(
+      $theme_name,
+      $theme_version,
+      l(t('Configure'), 'admin/appearance/settings/' . $theme_key, array(
+        'attributes' => array(
+          'class' => array(
+            'module-link',
+            'module-link-configure',
+          ),
+        ),
+        'query' => drupal_get_destination(),
+        'fragment' => 'edit-jquery-update',
+      )),
+    );
+  }
+
+  $form['version_options']['themes'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Theme specific versions'),
+    '#description' => t('You can override the default jQuery version above on each themes settings page. This is useful for administrative based themes.'),
+    '#collapsible' => TRUE,
+    '#collapsed' => $themes_collapsed,
+  );
+  $form['version_options']['themes']['overrides'] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
   );
 
   $form['jquery_update_compression_type'] = array(
@@ -193,6 +260,12 @@ function jquery_update_settings_form() {
     '#options' => array(
       'min' => t('Production (minified)'),
       'none' => t('Development (uncompressed)'),
+    ),
+    // Do not show this field if jQuery version is default
+    '#states' => array(
+      'invisible' => array(
+        ':input[name=jquery_update_jquery_version]' => array('value' => "default"),
+      ),
     ),
     '#default_value' => variable_get('jquery_update_compression_type', 'min'),
   );
@@ -205,11 +278,79 @@ function jquery_update_settings_form() {
       'microsoft' => t('Microsoft'),
       'jquery' => t('jQuery'),
     ),
+    // Do not show this field if jQuery version is default
+    '#states' => array(
+      'invisible' => array(
+        ':input[name=jquery_update_jquery_version]' => array('value' => "default"),
+      ),
+    ),
     '#default_value' => variable_get('jquery_update_jquery_cdn', 'none'),
     '#description' => t('Use jQuery and jQuery UI from a CDN. If the CDN is not available the local version of jQuery and jQuery UI will be used.'),
   );
 
   return system_settings_form($form);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function jquery_update_form_system_theme_settings_alter(&$form, $form_state) {
+  // Ignore global theme settings.
+  if (empty($form_state['build_info']['args'][0])) {
+    return;
+  }
+  $form['jquery_update'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('jQuery Update'),
+    '#description' => t('You can optionally select a different version of jQuery to use for pages that are rendered using this theme. This is useful for administrative based themes.'),
+  );
+  $form['jquery_update']['jquery_update_jquery_version'] = array(
+    '#type' => 'select',
+    '#title' => t('Theme specific jQuery version'),
+    '#options' => jquery_update_get_version_options(),
+    '#default_value' => theme_get_setting('jquery_update_jquery_version', $form_state['build_info']['args'][0]),
+  );
+}
+
+/**
+ * Retrieve the jQuery versions available by this module.
+ *
+ * @return array
+ *   The available jQuery versions.
+ */
+function jquery_update_get_versions() {
+  // Use the advanced drupal_static() pattern, since this has the potential
+  // to be called very often.
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast)) {
+    $drupal_static_fast['versions'] = &drupal_static(__FUNCTION__, drupal_map_assoc(array(
+      '1.5', '1.7', '1.8', '1.9', '1.10',
+    )));
+  }
+  return $drupal_static_fast['versions'];
+}
+
+/**
+ * Retrieve the jQuery versions available by this module as select options.
+ *
+ * @param bool $empty
+ *   Toggle on whether or not to return an empty option, which will default
+ *   to the site wide default setting.
+ *
+ * @return array
+ *   The available jQuery versions used to populate a select input.
+ */
+function jquery_update_get_version_options($empty = TRUE) {
+  $options = array_merge(array(
+    '' => t('Site default (!version)', array(
+      '!version' => variable_get('jquery_update_jquery_version', '1.10'),
+    )),
+    'default' => t('1.4 (Drupal core)'),
+  ), jquery_update_get_versions());
+  if (!$empty) {
+    unset($options['']);
+  }
+  return $options;
 }
 
 /**
@@ -231,13 +372,6 @@ function jquery_update_settings_form() {
  *   The version of jQuery to use.
  */
 function jquery_update_jquery_replace(&$javascript, $cdn, $path, $min, $version) {
-  // If the ajax version is set then that one always win.
-  if (!empty($_POST['ajax_page_state']['jquery_version'])) {
-    $ajax_version = $_POST['ajax_page_state']['jquery_version'];
-    if (in_array($ajax_version, array('1.5', '1.6', '1.7', '1.8', '1.9', '1.10'))) {
-      $version = $ajax_version;
-    }
-  }
 
   // Make sure to use the latest version in given branch.
   $trueversion = NULL;
@@ -267,19 +401,19 @@ function jquery_update_jquery_replace(&$javascript, $cdn, $path, $min, $version)
   // Check for CDN support.
   switch ($cdn) {
     case 'google':
-      $javascript['jquery']['js']['misc/jquery.js']['data'] = 'https://ajax.googleapis.com/ajax/libs/jquery/' . $trueversion . '/jquery' . $min . '.js';
+      $javascript['jquery']['js']['misc/jquery.js']['data'] = '//ajax.googleapis.com/ajax/libs/jquery/' . $trueversion . '/jquery' . $min . '.js';
       $javascript['jquery']['js']['misc/jquery.js']['type'] = 'external';
       jquery_update_jquery_backup($javascript, $path, $min, $version);
       break;
 
     case 'microsoft':
-      $javascript['jquery']['js']['misc/jquery.js']['data'] = 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-' . $trueversion . $min . '.js';
+      $javascript['jquery']['js']['misc/jquery.js']['data'] = '//ajax.aspnetcdn.com/ajax/jQuery/jquery-' . $trueversion . $min . '.js';
       $javascript['jquery']['js']['misc/jquery.js']['type'] = 'external';
       jquery_update_jquery_backup($javascript, $path, $min, $version);
       break;
 
     case 'jquery':
-      $javascript['jquery']['js']['misc/jquery.js']['data'] = 'http://code.jquery.com/jquery-' . $trueversion . $min . '.js';
+      $javascript['jquery']['js']['misc/jquery.js']['data'] = '//code.jquery.com/jquery-' . $trueversion . $min . '.js';
       $javascript['jquery']['js']['misc/jquery.js']['type'] = 'external';
       jquery_update_jquery_backup($javascript, $path, $min, $version);
       break;
@@ -377,22 +511,26 @@ function jquery_update_jqueryui_replace(&$javascript, $cdn, $path, $min) {
     'ui.accordion', 'ui.autocomplete', 'ui.button', 'ui.datepicker', 'ui.dialog', 'ui.draggable',
     'ui.droppable', 'ui.mouse', 'ui.position', 'ui.progressbar', 'ui.resizable', 'ui.selectable',
     'ui.slider', 'ui.sortable', 'ui.tabs', 'ui.widget', 'ui.spinner', 'ui.menu', 'ui.tooltip',
-    'effects.blind', 'effects.bounce', 'effects.clip', 'effects.drop', 'effects.explode', 'effects.fade',
-    'effects.fold', 'effects.highlight', 'effects.pulsate', 'effects.scale', 'effects.shake', 'effects.slide',
-    'effects.transfer',
   ));
   $names['ui'] = 'ui.core';
-  $names['effects'] = 'ui.effect';
+  $names['effects'] = array('effects.core', 'ui.effect'); // map[library_hook] = array(core_fn, updated_fn)
+  $names = jquery_update_make_library_hook_to_file_name_segment_map_for_effects($names);
 
   switch ($cdn) {
     case 'google':
-      $cdn = 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui' . $min . '.js';
+      $cdn = '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui' . $min . '.js';
       jquery_update_jqueryui_cdn($cdn, $javascript, $path, $min, $names);
       jquery_update_jqueryui_backup($javascript, $path, $min);
       break;
 
     case 'microsoft':
-      $cdn = 'http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/jquery-ui' . $min . '.js';
+      $cdn = '//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/jquery-ui' . $min . '.js';
+      jquery_update_jqueryui_cdn($cdn, $javascript, $path, $min, $names);
+      jquery_update_jqueryui_backup($javascript, $path, $min);
+      break;
+
+    case 'jquery':
+      $cdn = '//code.jquery.com/ui/1.10.2/jquery-ui' . $min . '.js';
       jquery_update_jqueryui_cdn($cdn, $javascript, $path, $min, $names);
       jquery_update_jqueryui_backup($javascript, $path, $min);
       break;
@@ -401,6 +539,30 @@ function jquery_update_jqueryui_replace(&$javascript, $cdn, $path, $min) {
       jquery_update_jqueryui_local($javascript, $path, $min, $names);
       break;
   }
+}
+
+/**
+ * Create a mapping from system.module library hooks to file name segments.
+ *
+ * @param array $map Optional. If given, append to it.
+ * @return array The keys are library hooks  and the values are each arrays of
+ * 2 file name segments as values. The first file name segment can be used to
+ * reach Drupal core's jQuery UI effect files, and the second file name segment
+ * can be used to construct a path to the equivalent replacement
+ * jQuery UI effect file provided by jquery_update.module.
+ */
+function jquery_update_make_library_hook_to_file_name_segment_map_for_effects($map = array()) {
+  $effect_names = array(
+    'blind', 'bounce', 'clip', 'drop', 'explode', 'fade', 'fold',
+    'highlight', 'pulsate', 'scale', 'shake', 'slide', 'transfer',
+  );
+  foreach ($effect_names as $effect_name) {
+    $library_hook = 'effects.' . $effect_name;
+    $file_name_segment_core = $library_hook; // Yes, for the effect files, this is indeed identical.
+    $file_name_segment_updated = 'ui.effect-' . $effect_name;
+    $map[$library_hook] = array($file_name_segment_core, $file_name_segment_updated);
+  }
+  return $map;
 }
 
 /**
@@ -447,7 +609,8 @@ function jquery_update_jqueryui_cdn($cdn, &$javascript, $path, $min, $names) {
   // Construct the jQuery UI path and replace the JavaScript.
   $jspath = $path . '/replace/ui/ui/' . ($min == '.min' ? 'minified/' : '');
   foreach ($names as $name => $file) {
-    $corefile = 'misc/ui/jquery.' . $file . '.min.js';
+    list($file_core, $file_updated) = is_array($file) ? $file : array($file, $file);
+    $corefile = 'misc/ui/jquery.' . $file_core . '.min.js';
     // Remove the core files.
     unset($javascript[$name]['js'][$corefile]);
     $javascript[$name]['version'] = '1.10.2';
@@ -487,8 +650,9 @@ function jquery_update_jqueryui_local(&$javascript, $path, $min, $names) {
   // Construct the jQuery UI path and replace the JavaScript.
   $jspath = $path . '/replace/ui/ui/' . ($min == '.min' ? 'minified/' : '');
   foreach ($names as $name => $file) {
-    $corefile = 'misc/ui/jquery.' . $file . '.min.js';
-    $javascript[$name]['js'][$corefile]['data'] = $jspath . 'jquery.' . $file . $min . '.js';
+    list($file_core, $file_updated) = is_array($file) ? $file : array($file, $file);
+    $corefile = 'misc/ui/jquery.' . $file_core . '.min.js';
+    $javascript[$name]['js'][$corefile]['data'] = $jspath . 'jquery.' . $file_updated . $min . '.js';
     $javascript[$name]['version'] = '1.10.2';
   }
 }

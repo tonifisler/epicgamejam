@@ -35,23 +35,7 @@
  */
 function ckeditor_help_delegate($path, $arg) {
   global $base_url;
-  $is_url = false;
-  $ckeditor_url = ckeditor_path('local');
-  if ($ckeditor_url == '<URL>') {
-    $ckeditor_url = ckeditor_path('url');
-    $is_url = true;
-  }
 
-  $do_not_touch_configjs = '';
-  if (!$is_url) {
-    $do_not_touch_configjs = '<p>' .
-          t('It is recommended to not edit the !ckeditor_config_file (!ckeditor_config_path) configuration file that is distributed with CKEditor, because you may overwrite it accidentally when you update the editor.', array(
-            '!ckeditor_config_path' => '<code>' . $ckeditor_url . '/config.js</code>',
-            '!ckeditor_config_file' => '<code>config.js</code>',
-              )
-          ) .
-          '</p>';
-  }
   switch ($path) {
     case 'admin/config/content/help#description':
       $output = t('Enables the use of CKEditor (a rich text WYSIWYG editor) instead of plain text fields.');
@@ -59,6 +43,19 @@ function ckeditor_help_delegate($path, $arg) {
 
     case 'admin/config/content/ckeditor/edit/%':
     case 'admin/config/content/ckeditor/add':
+      $ckeditor_url = ckeditor_path('local');
+      if ($ckeditor_url == '<URL>') {
+        $do_not_touch_configjs = '';
+      }
+      else {
+        $do_not_touch_configjs = '<p>' .
+          t('It is recommended to not edit the !ckeditor_config_file (!ckeditor_config_path) configuration file that is distributed with CKEditor, because you may overwrite it accidentally when you update the editor.', array(
+              '!ckeditor_config_path' => '<code>' . $ckeditor_url . '/config.js</code>',
+              '!ckeditor_config_file' => '<code>config.js</code>',
+            )
+          ) .
+          '</p>';
+      }
       $output = '<p>' . t('CKEditor is highly configurable. The most commonly used features are listed below. You can also adjust CKEditor to your needs by changing the !ckeditor_module_config configuration file.', array(
             '!ckeditor_module_config' => '<code>' . ckeditor_module_path('local') . '/ckeditor.config.js</code>',
               )

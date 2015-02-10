@@ -1,6 +1,7 @@
 (function ($, Drupal) {
 
   Drupal.BootstrapPassword = function (element) {
+    console.log('asdfasdfasdf');
     var self = this;
     var $element = $(element);
     this.settings = Drupal.settings.password;

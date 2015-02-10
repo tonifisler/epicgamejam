@@ -15,7 +15,16 @@ category: Layout - Form
 ```
 */
 
+.form-control {
+  &.chosen-container {
+    padding: 0;
+    border: none;
+  }
+}
 
+.form-actions {
+  margin-top: $padding-large-vertical;
+}
 
 /*doc
 ---
