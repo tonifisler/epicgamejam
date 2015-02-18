@@ -20,6 +20,8 @@ ssh_options[:forward_agent] = true
 # APP
 set :application,     "epicgamejam"
 
+set :default_env, { path: "/home/tonifisler/bin:$PATH" }
+
 # The domain and the path to your app directory
 set :domain,    "staging.epicgamejam.net"
 set :deploy_to, "/home/#{user}/webapps/#{application}"
