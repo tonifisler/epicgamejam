@@ -30,7 +30,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capdrupal
+  capdrupal (~> 0.9.6)
   capistrano (~> 2.15.5)
   hologram (~> 1.2)
   railsless-deploy
