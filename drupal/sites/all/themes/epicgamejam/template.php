@@ -89,6 +89,11 @@ function epicgamejam_theme($existing, $type, $theme, $path) {
           'template' => 'add-game',
           'path' => drupal_get_path('theme', 'epicgamejam') . '/templates/form',
       );
+  $items['epic_theme_node_form'] = array(
+          'render element' => 'form',
+          'template' => 'add-theme',
+          'path' => drupal_get_path('theme', 'epicgamejam') . '/templates/form',
+      );
 
   return $items;
 }

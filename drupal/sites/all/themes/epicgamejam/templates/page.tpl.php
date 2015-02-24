@@ -87,7 +87,7 @@ drupal_add_library('chosen', 'drupal.chosen');
         </button>
         <?php if ($logo): ?>
           <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+            <!-- <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> -->
           </a>
         <?php endif; ?>
         <?php if (!empty($site_name)): ?>
@@ -136,11 +136,10 @@ drupal_add_library('chosen', 'drupal.chosen');
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
       <a id="main-content"></a>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-        <div class="spacer spacer-sm"></div>
-      <?php endif; ?>
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+      <?php if (!empty($primarytabs)): ?>
+        <?php print render($primarytabs); ?>
+      <?php endif; ?>
       <?php if (!$is_front): ?>
         <?php print render($title_prefix); ?>
         <?php if (!empty($title)): ?>
