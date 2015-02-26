@@ -16,6 +16,12 @@ function epicgamejam_user_default_roles() {
     'weight' => 2,
   );
 
+  // Exported role: epic organizer.
+  $roles['epic organizer'] = array(
+    'name' => 'epic organizer',
+    'weight' => 4,
+  );
+
   // Exported role: jammer.
   $roles['jammer'] = array(
     'name' => 'jammer',
