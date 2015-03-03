@@ -1,5 +1,8 @@
 require 'capistrano/ext/multistage'
 
+# load custom recipes
+load 'config/recipes'
+
 set :application, "epicgamejam"
 set :scm,            "git"
 set :repository,  "git@github.com:tonifisler/epicgamejam.git"
