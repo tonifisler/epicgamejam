@@ -1,3 +1,5 @@
+styleguide_name: Epic Game Jam
+
 # Directory to parse
 source: drupal/sites/all/themes/epicgamejam/assets
 
@@ -5,7 +7,7 @@ source: drupal/sites/all/themes/epicgamejam/assets
 destination: styleguide
 
 # Hologram theme
-documentation_assets: bower_components/Cortana
+documentation_assets: bower_components/cortana-two
 custom_markdown: bower_components/Cortana/CortanaMarkdownRenderer.rb
 
 # To have a custom index page build with your README.md
