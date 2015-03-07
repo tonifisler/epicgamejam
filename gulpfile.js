@@ -113,6 +113,20 @@ gulp.task('styles', function() {
 });
 
 /**
+ * Build styles from SCSS files
+ * Only for STYLEGUIDE styles
+ */
+gulp.task('styleguide-styles', function() {
+  return gulp.src('drupal/sites/all/themes/epicgamejam/assets/sass/styleguide.scss')
+    .pipe($.sass({errLogToConsole: true}))
+    .pipe($.autoprefixer({
+      browsers: ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'ff 27', 'opera 12.1']
+    }))
+    .pipe($.minifyCss())
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/css'));
+});
+
+/**
  * Build JS
  * With error reporting on compiling (so that there's no crash)
  * And jshint check to highlight errors as we go.
@@ -166,6 +180,9 @@ gulp.task('serve', ['styles', 'scripts', 'twig'], function () {
   gulp.watch(['drupal/sites/all/themes/epicgamejam/assets/sass/**/*.scss'], function() {
     runSequence('styles', 'styleguide', reload);
   });
+  gulp.watch(['drupal/sites/all/themes/antistatique/assets/sass/styleguide.scss'], function() {
+    runSequence('styleguide-styles', 'styleguide', reload);
+  });
   gulp.watch(['drupal/sites/all/themes/epicgamejam/assets/img/**/*'], function() {
     runSequence('img', 'styleguide', reload);
   });
@@ -201,6 +218,6 @@ gulp.task('build',['clean'], function() {
  * Default task
  */
 gulp.task('default', ['clean'], function(cb) {
-  runSequence('vendors', 'styles', 'img', 'scripts','twig', 'styleguide', cb);
+  runSequence('vendors', 'styles', 'img', 'scripts','twig', 'styleguide-styles', 'styleguide', cb);
 });
 
