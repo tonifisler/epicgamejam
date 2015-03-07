@@ -14,6 +14,7 @@ custom_markdown: bower_components/Cortana/CortanaMarkdownRenderer.rb
 index: README
 
 dependencies:
+  - bower_components/jquery/dist
   - drupal/sites/all/themes/epicgamejam/build/js
   - drupal/sites/all/themes/epicgamejam/build/css
   - drupal/sites/all/themes/epicgamejam/build/img
@@ -26,6 +27,7 @@ css_include:
 
 # List all js to include for the styleguide render examples (path from styleguide directory)
 js_include:
+  - 'dist/jquery.min.js'
   - 'js/vendors.min.js'
   - 'js/main.js'
 
