@@ -22,12 +22,12 @@
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <?php print render($form['options']); ?>
-    <?php print render($form['actions']); ?>
+    <?php print render($form['additional_settings']) ?>
   </div>
 </div>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <?php print render($form['additional_settings']) ?>
+    <?php print render($form['options']); ?>
+    <?php print render($form['actions']); ?>
   </div>
 </div>

@@ -70,7 +70,6 @@ function epicgamejam_form_alter(&$form, &$form_state, $form_id) {
       $form['actions']['submit']['#submit'][] = '_theme_redirect';
       break;
     case 'game_node_form':
-      dpm($form);
       $form['body']['format']['#access'] = FALSE;
       break;
   }
