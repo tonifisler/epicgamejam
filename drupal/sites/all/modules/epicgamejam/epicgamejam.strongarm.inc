@@ -518,8 +518,7 @@ View,glyphicon glyphicon-eye-open';
     'use_custom_media_queries' => 0,
     'media_query_mobile' => 'only screen and (max-width: 480px)',
     'media_query_tablet' => 'only screen and (min-width : 481px) and (max-width : 1024px)',
-    'custom_css' => 0,
-    'jquery_update_jquery_version' => '1.5',
+    'custom_css' => 1,
   );
   $export['theme_adminimal_settings'] = $strongarm;
 

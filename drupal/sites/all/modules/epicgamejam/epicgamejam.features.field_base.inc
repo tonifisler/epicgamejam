@@ -304,7 +304,7 @@ function epicgamejam_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max_length' => 255,
+      'max_length' => 60,
     ),
     'translatable' => 0,
     'type' => 'text',
