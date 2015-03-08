@@ -18,7 +18,7 @@ function epicgamejam_ckeditor_profile_defaults() {
 ]',
         'expand' => 't',
         'default' => 't',
-        'show_toggle' => 't',
+        'show_toggle' => 'f',
         'uicolor' => 'custom',
         'uicolor_user' => '#FAFAFA',
         'width' => '100%',
@@ -29,7 +29,7 @@ function epicgamejam_ckeditor_profile_defaults() {
         'extraAllowedContent' => '',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
-        'font_format' => 'p;div;pre;address;h1;h2;h3;h4;h5;h6',
+        'font_format' => 'p;h2;h3;h4;h5;h6',
         'custom_formatting' => 'f',
         'formatting' => array(
           'custom_formatting_options' => array(
@@ -41,7 +41,7 @@ function epicgamejam_ckeditor_profile_defaults() {
             'pre_indent' => 0,
           ),
         ),
-        'css_mode' => 'none',
+        'css_mode' => 'theme',
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
@@ -69,6 +69,18 @@ config.linkShowAdvancedTab = false;',
             ),
             'default' => 't',
           ),
+          'mediaembed' => array(
+            'name' => 'mediaembed',
+            'desc' => 'Plugin for inserting Drupal embeded media',
+            'path' => '%plugin_dir%mediaembed/',
+            'buttons' => array(
+              'MediaEmbed' => array(
+                'label' => 'MediaEmbed',
+                'icon' => 'images/icon.png',
+              ),
+            ),
+            'default' => 'f',
+          ),
           'tableresize' => array(
             'name' => 'tableresize',
             'desc' => 'Table Resize plugin. See <a href="http://ckeditor.com/addon/tableresize">addon page</a> for more details.',
@@ -79,7 +91,7 @@ config.linkShowAdvancedTab = false;',
         ),
       ),
       'input_formats' => array(
-        'filtered_html' => 'Filtered HTML',
+        'plain_text' => 'Normal',
       ),
     ),
     'CKEditor Global Profile' => array(
