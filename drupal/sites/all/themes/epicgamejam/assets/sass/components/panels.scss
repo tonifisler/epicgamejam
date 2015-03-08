@@ -44,11 +44,11 @@ category: Components - Panels
 ```
 */
 
-// .panel-default {
-//   > .panel-heading {
-//     float: left;
-//   }
-// } WHY?
+.panel-default {
+  > legend.panel-heading {
+    float: left; // fix because the legend shifts to middle by default
+  }
+}
 
 
 /*doc
