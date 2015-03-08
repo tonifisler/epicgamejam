@@ -137,8 +137,8 @@ drupal_add_library('chosen', 'drupal.chosen');
       <?php endif; ?>
       <a id="main-content"></a>
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <?php if (!empty($primarytabs)): ?>
-        <?php print render($primarytabs); ?>
+      <?php if (!empty($tabs)): ?>
+        <?php print render($tabs); ?>
       <?php endif; ?>
       <?php if (!$is_front): ?>
         <?php print render($title_prefix); ?>
