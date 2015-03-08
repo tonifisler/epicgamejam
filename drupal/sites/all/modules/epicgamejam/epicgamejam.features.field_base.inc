@@ -178,11 +178,10 @@ function epicgamejam_field_default_field_bases() {
     'locked' => 0,
     'module' => 'number',
     'settings' => array(
-      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'number_float',
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_genre'
