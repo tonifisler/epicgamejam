@@ -267,6 +267,9 @@ View,glyphicon glyphicon-eye-open';
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'reddit' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -280,7 +283,11 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__game';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'reddit' => array(
+        'custom_settings' => TRUE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'path' => array(
@@ -317,6 +324,9 @@ View,glyphicon glyphicon-eye-open';
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'reddit' => array(
         'custom_settings' => FALSE,
       ),
     ),

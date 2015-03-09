@@ -84,6 +84,7 @@ hide($content['field_screenshots']);
 $results = rate_get_results('node', $node->nid, 1);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail"<?php print $attributes; ?>>
+  <?php print rate_embed($node, 'epic_points', $mode = RATE_FULL); ?>
 
   <?php print render($content['field_screenshots'][0]); ?>
 
