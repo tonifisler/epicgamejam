@@ -50,8 +50,8 @@ function user_registrationpassword_confirm_account($form, &$form_state, $uid, $t
       }
       // Else try to activate the account.
       // Password = user's password - timestamp = current request - login = username.
-      // user_pass_rehash($password, $timestamp, $login)
-      elseif ($account->uid && $timestamp >= $account->created && !$account->login && $hashed_pass == user_pass_rehash($account->pass, $timestamp, $account->name)) {
+      // user_pass_rehash($password, $timestamp, $login, $uid)
+      elseif ($account->uid && $timestamp >= $account->created && !$account->login && $hashed_pass == user_pass_rehash($account->pass, $timestamp, $account->name, $account->uid)) {
         // Format the date, so the logs are a bit more readable.
         $date = format_date($timestamp);
         watchdog('user', 'User %name used one-time login link at time %timestamp.', array('%name' => $account->name, '%timestamp' => $date));
