@@ -291,7 +291,7 @@ View,glyphicon glyphicon-eye-open';
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'language' => array(
           'weight' => '13',
@@ -524,11 +524,13 @@ View,glyphicon glyphicon-eye-open';
     'default_favicon' => 1,
     'favicon_path' => '',
     'favicon_upload' => '',
+    'style_checkboxes' => 1,
     'display_icons_config' => 1,
     'use_custom_media_queries' => 0,
     'media_query_mobile' => 'only screen and (max-width: 480px)',
     'media_query_tablet' => 'only screen and (min-width : 481px) and (max-width : 1024px)',
     'custom_css' => 1,
+    'adminimal_theme_skin' => 'material',
   );
   $export['theme_adminimal_settings'] = $strongarm;
 

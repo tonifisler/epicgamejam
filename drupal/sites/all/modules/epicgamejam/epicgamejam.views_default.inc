@@ -105,11 +105,6 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Epic Points (field_epic_points) */
-  $handler->display->display_options['sorts']['field_epic_points_value']['id'] = 'field_epic_points_value';
-  $handler->display->display_options['sorts']['field_epic_points_value']['table'] = 'field_data_field_epic_points';
-  $handler->display->display_options['sorts']['field_epic_points_value']['field'] = 'field_epic_points_value';
-  $handler->display->display_options['sorts']['field_epic_points_value']['order'] = 'DESC';
   /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
