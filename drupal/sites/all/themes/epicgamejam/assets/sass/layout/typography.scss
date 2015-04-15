@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+html {
+  // make it work with fabricator rems
+  font-size: $font-size-base;
+}
+
 /*doc
 ---
 title: Titles

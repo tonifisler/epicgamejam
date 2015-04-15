@@ -80,18 +80,15 @@
  * @ingroup themeable
  */
 hide($content['field_screenshots']);
-// ratings results
-$results = rate_get_results('node', $node->nid, 1);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail"<?php print $attributes; ?>>
 
-  <?php print render($content['field_screenshots'][0]); ?>
+  <?php print render($content['field_image']); ?>
 
   <div class="caption">
     <?php print render($title_prefix); ?>
       <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
     <?php print render($title_suffix); ?>
-    <p>EPIC POINTS: <?php print $results['rating']; ?></p>
     <?php print render($content); ?>
   </div>
 

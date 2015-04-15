@@ -79,13 +79,10 @@
  *
  * @ingroup themeable
  */
-$results = rate_get_results('node', $node->nid, 1);
 hide($content['comments']);
 hide($content['links']);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <?php print $user_picture; ?>
 
   <?php print render($title_prefix); ?>
     <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
@@ -98,12 +95,15 @@ hide($content['links']);
   <?php endif; ?>
 
   <div class="content"<?php print $content_attributes; ?>>
-    <p>EPIC POINTS: <?php print $results['rating']; ?></p>
-    <?php print render($content); ?>
+    <div class="row">
+      <div class="col-sm-4">
+        <?php print render($content['field_image']) ?>
+      </div>
+      <div class="col-sm-8">
+        <?php print render($content['rate_epic_points']); ?>
+        <?php print render($content); ?>
+      </div>
+    </div>
   </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
 
 </div>
