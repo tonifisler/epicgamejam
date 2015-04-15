@@ -123,6 +123,8 @@ drupal_add_library('chosen', 'drupal.chosen');
     <?php print render($page['header']); ?>
   </header> <!-- /#page-header -->
 
+  <?php print $messages; ?>
+
   <div class="row">
 
     <?php if (!empty($page['sidebar_first'])): ?>
@@ -139,6 +141,7 @@ drupal_add_library('chosen', 'drupal.chosen');
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
+        <div class="spacer spacer-xs"></div>
       <?php endif; ?>
       <?php if (!$is_front): ?>
         <?php print render($title_prefix); ?>
@@ -147,7 +150,6 @@ drupal_add_library('chosen', 'drupal.chosen');
         <?php endif; ?>
         <?php print render($title_suffix); ?>
       <?php endif ?>
-      <?php print $messages; ?>
       <?php if (!empty($page['help'])): ?>
         <?php print render($page['help']); ?>
       <?php endif; ?>

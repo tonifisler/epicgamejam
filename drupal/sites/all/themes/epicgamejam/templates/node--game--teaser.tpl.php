@@ -80,6 +80,8 @@
  * @ingroup themeable
  */
 hide($content['field_screenshots']);
+hide($content['field_badges']);
+hide($content['links']);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail"<?php print $attributes; ?>>
 
@@ -90,6 +92,8 @@ hide($content['field_screenshots']);
       <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
     <?php print render($title_suffix); ?>
     <?php print render($content); ?>
+    <div class="spacer spacer-xs"></div>
+    <?php print render($content['field_badges']); ?>
   </div>
 
 </div>

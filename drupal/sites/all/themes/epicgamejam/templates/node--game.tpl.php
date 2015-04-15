@@ -84,10 +84,6 @@ hide($content['links']);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print render($title_prefix); ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-  <?php print render($title_suffix); ?>
-
   <?php if ($display_submitted): ?>
     <div class="submitted">
       <?php print $submitted; ?>

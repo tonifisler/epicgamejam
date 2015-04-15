@@ -20,6 +20,7 @@ gulp.task('vendors', function() {
    * CSS VENDORS
    */
   gulp.src([
+        'bower_components/fontawesome/css/font-awesome.min.css',
         'bower_components/chosen-bootstrap/chosen.bootstrap.min.css'
       ])
       .pipe($.concat('vendors.css'))
@@ -63,6 +64,7 @@ gulp.task('vendors', function() {
    * Important to add the bootstrap fonts to avoid issues with the fonts include path
    */
   gulp.src([
+      'bower_components/fontawesome/fonts/*',
       'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
       'drupal/sites/all/themes/epicgamejam/assets/fonts/*'
     ])

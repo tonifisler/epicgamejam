@@ -79,19 +79,21 @@
  *
  * @ingroup themeable
  */
-hide($content['field_screenshots']);
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail"<?php print $attributes; ?>>
-  <?php print render($content['rate_epic_points']); ?>
-
-
-  <?php print render($content['field_screenshots'][0]); ?>
-
-  <div class="caption">
-    <?php print render($title_prefix); ?>
-      <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-    <?php print render($title_suffix); ?>
-    <?php print render($content); ?>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> reddit"<?php print $attributes; ?>>
+  <div class="row">
+    <div class="col-xs-2 col-sm-1">
+      <?php print render($content['rate_epic_points']); ?>
+    </div>
+    <div class="col-xs-3">
+      <?php print render($content['field_image']); ?>
+    </div>
+    <div class="col-xs-7 col-sm-8">
+      <?php print render($title_prefix); ?>
+        <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+      <?php print render($title_suffix); ?>
+      <?php print render($content); ?>
+    </div>
   </div>
-
+  <hr>
 </div>
