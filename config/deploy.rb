@@ -1,4 +1,5 @@
 require 'capistrano/ext/multistage'
+require 'colored'
 
 # load custom recipes
 load 'config/recipes'
@@ -42,5 +43,92 @@ set :download_drush,  true
 
 set  :keep_releases,   3
 
+# Output pretty logs
+STDOUT.sync
+before "deploy:update_code" do
+    puts "Starting Code Update".green
+end
+
+after "deploy:update_code" do
+    puts "Code Updated".green
+end
+
+after "deploy:finalize_update" do
+    puts "Update Finalized".green
+end
+
+before "drush:get" do
+    print "Installing Drush.........................."
+end
+
+after "drush:get" do
+    puts "✓".green
+end
+
+before "drupal:symlink_shared" do
+    print "Creating symlinks to shared folder........"
+end
+
+after "drupal:symlink_shared" do
+    puts "✓".green
+end
+
+before "drush:site_offline" do
+    print "Putting Drupal Maintenance Mode ON........"
+end
+
+after "drush:site_offline" do
+    puts "✓".green
+end
+
+before "drush:updatedb" do
+    print "Updating Database........................."
+end
+
+after "drush:updatedb" do
+    puts "✓".green
+end
+
+before "drush:cache_clear" do
+    print "Clearing Drupal Cache....................."
+end
+
+after "drush:cache_clear" do
+    puts "✓".green
+end
+
+before "drush:feature_revert" do
+    print "Reverting Drupal Features................."
+end
+
+after "drush:feature_revert" do
+    puts "✓".green
+end
+
+before "drush:site_online" do
+    print "Putting Drupal Maintenance Mode OFF......."
+end
+
+after "drush:site_online" do
+    puts "✓".green
+end
+
+before "deploy:create_symlink" do
+    print "Setting Release as Current................"
+end
+
+after "deploy:create_symlink" do
+    puts "✓".green
+end
+
+before "deploy:cleanup" do
+    print "Cleaning Up..............................."
+end
+
+after "deploy:cleanup" do
+    puts "✓".green
+end
+
+
 after "deploy:update", "deploy:cleanup"
-logger.level = Logger::MAX_LEVEL
+logger.level = Logger::IMPORTANT
