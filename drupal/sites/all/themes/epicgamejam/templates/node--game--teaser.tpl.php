@@ -82,6 +82,7 @@
 hide($content['field_screenshots']);
 hide($content['field_badges']);
 hide($content['links']);
+hide($content['rate_epic_points']);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail"<?php print $attributes; ?>>
 
@@ -91,6 +92,8 @@ hide($content['links']);
     <?php print render($title_prefix); ?>
       <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
     <?php print render($title_suffix); ?>
+    <?php print render($content['field_genre']); ?>
+    <?php print render($content['field_team_name']); ?>
     <?php print render($content); ?>
     <div class="spacer spacer-xs"></div>
     <?php print render($content['field_badges']); ?>

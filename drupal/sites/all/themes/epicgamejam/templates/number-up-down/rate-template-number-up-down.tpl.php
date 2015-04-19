@@ -17,6 +17,6 @@
 
 <?php print $up_button; ?>
 
-<div class="rate-number-up-down-rating <?php print $score_class ?>"><?php print $score; ?></div>
+<div class="rate-number-up-down-rating text-center text-dimbo <?php print $score_class ?>"><?php print $score; ?></div>
 
 <?php print $down_button; ?>

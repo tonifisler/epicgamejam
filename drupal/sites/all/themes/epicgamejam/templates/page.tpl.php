@@ -82,7 +82,7 @@ drupal_add_library('chosen', 'drupal.chosen');
     <?php endif; ?>
 
     <h1 class="text-center">
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+      <a class="shake" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
         <img class="logo" src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/epicgamejam_logo.svg" alt="<?php print $site_name; ?>">
       </a>
     </h1>
@@ -150,9 +150,6 @@ drupal_add_library('chosen', 'drupal.chosen');
     <?php endif; ?>
 
     <section<?php print $content_column_class; ?>>
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
       <a id="main-content"></a>
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <?php if (!empty($tabs)): ?>
@@ -171,7 +168,25 @@ drupal_add_library('chosen', 'drupal.chosen');
       <?php if (!empty($action_links)): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
+
+      <?php if (!empty($page['highlighted'])): ?>
+        <div class="row">
+          <div class="col-md-8">
+      <?php endif; ?>
+
       <?php print render($page['content']); ?>
+      <div class="spacer"></div>
+
+      <?php if (!empty($page['highlighted'])): ?>
+          </div>
+          <div class="col-md-4">
+            <div class="well">
+              <?php print render($page['highlighted']); ?>
+            </div>
+          </div>
+        </div>
+      <?php endif; ?>
+
       <?php print render($page['content_bottom']); ?>
     </section>
 
@@ -184,7 +199,7 @@ drupal_add_library('chosen', 'drupal.chosen');
   </div>
 </div>
 <div class="spacer spacer-md"></div>
-<footer class="footer">
+<footer class="main-footer">
   <?php print render($page['footer']); ?>
 
   <div class="bg-white">

@@ -5,6 +5,30 @@
   display: inline;
 }
 
+.text {
+  &-dimbo {
+    font-family: $headings-font-family;
+  }
+  &-epic {
+    color: $white;
+    text-shadow: 2px 2px 0 $nero,-1px -1px 0 $nero,1px -1px 0 $nero,-1px 1px 0 $nero,1px 1px 0 $nero;
+    .no-border {
+      text-shadow: none;
+      color: $nero;
+      font-size: 2em;
+      position: relative;
+      top: 14px;
+    }
+    img {
+      max-width: 120px; // gif on homepage
+    }
+  }
+  &-viking {color: $viking !important;}
+  &-sunglow {color: $sunglow !important;}
+  &-lightning-yellow {color: $lightning-yellow !important;}
+  &-nero {color: $nero !important;}
+}
+
 /**
  * Block Helpers
  */

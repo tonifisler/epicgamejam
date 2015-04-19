@@ -33,6 +33,9 @@ category: Components - Thumbnails
 ```
 */
 
+.thumbnail {
+  background: transparentize($white, 0.2);
+}
 
 /*doc
 ---

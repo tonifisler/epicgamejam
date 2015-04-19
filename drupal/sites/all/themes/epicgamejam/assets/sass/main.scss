@@ -53,4 +53,9 @@
 @import 'components/rate';
 @import 'layout/general';
 @import 'layout/header';
+@import 'components/reddit';
+@import 'components/cssshake';
+@import 'components/chosen';
 // <here> $ yo styleguide:component will add new components right here. Do not remove this line.
+
+@import '../../../bootstrap/css/overrides.css';

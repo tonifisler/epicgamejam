@@ -132,7 +132,7 @@ function epicgamejam_rate_button($variables) {
 
   $classes = 'rate-button';
   if ($class) {
-    $classes .= ' ' . $class;
+    $classes .= ' text-center ' . $class;
   }
   if (empty($href)) {
     // Widget is disabled or closed.

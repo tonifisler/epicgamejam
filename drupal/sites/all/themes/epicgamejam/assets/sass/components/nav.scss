@@ -26,7 +26,15 @@ category: Components - Nav
 ```
 */
 
-
+.tabs-left {
+    > .nav-tabs {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .tab-content {
+    background: $white;
+  }
+}
 
 /*doc
 ---

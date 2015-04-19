@@ -50,6 +50,12 @@ function epicgamejam_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => '1',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
         'views-games-block' => array(
           'module' => 'views',
           'delta' => 'games-block',

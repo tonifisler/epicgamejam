@@ -269,7 +269,8 @@ category: Layout - Typography
 }
 
 .field-badges,
-.field-members {
+.field-members,
+.field-genre {
   @extend .list-inline;
   font-size: $font-size-small;
   margin-bottom: 0;

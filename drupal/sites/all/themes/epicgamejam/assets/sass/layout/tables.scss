@@ -76,6 +76,12 @@ category: Layout - Tables
 ```
 */
 
+.table-striped {
+  tbody {
+    background: $white;
+  }
+}
+
 /*doc
 ---
 title: Bordered table

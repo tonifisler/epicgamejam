@@ -354,7 +354,10 @@ View,glyphicon glyphicon-eye-open';
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '30',
+          'weight' => '3',
+        ),
+        'language' => array(
+          'weight' => '0',
         ),
       ),
       'display' => array(),
@@ -551,7 +554,7 @@ View,glyphicon glyphicon-eye-open';
     'media_query_mobile' => 'only screen and (max-width: 480px)',
     'media_query_tablet' => 'only screen and (min-width : 481px) and (max-width : 1024px)',
     'custom_css' => 1,
-    'adminimal_theme_skin' => 'material',
+    'adminimal_theme_skin' => 'default',
   );
   $export['theme_adminimal_settings'] = $strongarm;
 

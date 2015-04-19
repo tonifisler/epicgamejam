@@ -1,6 +1,9 @@
 name = epicgamejam
 core = 7.x
 package = Features
+dependencies[] = block
+dependencies[] = ctools
+dependencies[] = options
 dependencies[] = smart_trim
 features[ckeditor_profile][] = Advanced
 features[ckeditor_profile][] = CKEditor Global Profile
@@ -43,6 +46,7 @@ features[node][] = game
 features[node][] = page
 features[taxonomy][] = badges
 features[taxonomy][] = genre
+features[taxonomy][] = teams
 features[user_role][] = administrator
 features[user_role][] = epic organizer
 features[user_role][] = jammer

@@ -30,10 +30,6 @@ stylesheets[all][] = build/css/main.css
 scripts[] = build/js/vendors.min.js
 scripts[] = build/js/main.min.js
 
-exclude[js][] = 'sites/all/themes/bootstrap/js/bootstrap.js'
-
-
-
 exclude[css][] = 'sites/all/modules/contrib/views/css/views.css'
 exclude[css][] = 'sites/all/modules/field/theme/field.css'
 exclude[css][] = 'sites/all/modules/contrib/views/css/views.css'

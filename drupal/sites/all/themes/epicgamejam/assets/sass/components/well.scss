@@ -14,6 +14,9 @@ category: Components - Well
 ```
 */
 
+.well {
+  background: transparentize($white, 0.2);
+}
 
 /*doc
 ---
