@@ -74,9 +74,35 @@
  */
 drupal_add_library('chosen', 'drupal.chosen');
 ?>
-<header>
-  <nav class="<?php print $navbar_classes; ?>" role="navigation">
-    <div class="container">
+<header role="banner" class="header container">
+
+  <div id="page-header">
+    <?php if (!empty($site_slogan)): ?>
+      <p class="lead"><?php print $site_slogan; ?></p>
+    <?php endif; ?>
+
+    <h1 class="text-center">
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+        <img class="logo" src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/epicgamejam_logo.svg" alt="<?php print $site_name; ?>">
+      </a>
+    </h1>
+
+    <?php print render($page['header']); ?>
+
+    <?php if ($is_front): ?>
+      <h2 class="text-center">July 3th <span class="text-muted">20:00</span> to 5th <span class="text-muted">17:00 CEST (GMT+2)</span></h2>
+      <div class="hidden-xs">
+        <div class="spacer spacer-sm"></div>
+        <div id="countdown"></div>
+        <h2 class="text-center"><span class="sr-only">A few days only </span>BEFORE IT ALL BEGINS.</h2>
+        <div class="spacer spacer-sm"></div>
+      </div>
+    <?php endif ?>
+  </div> <!-- /#page-header -->
+
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
@@ -89,9 +115,6 @@ drupal_add_library('chosen', 'drupal.chosen');
           <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
             <!-- <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> -->
           </a>
-        <?php endif; ?>
-        <?php if (!empty($site_name)): ?>
-        <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
         <?php endif; ?>
       </div>
 
@@ -111,17 +134,10 @@ drupal_add_library('chosen', 'drupal.chosen');
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
 </header>
 
 <div class="main-container container">
-
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
-
-    <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
 
   <?php print $messages; ?>
 
@@ -141,7 +157,6 @@ drupal_add_library('chosen', 'drupal.chosen');
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
-        <div class="spacer spacer-xs"></div>
       <?php endif; ?>
       <?php if (!$is_front): ?>
         <?php print render($title_prefix); ?>
@@ -157,7 +172,6 @@ drupal_add_library('chosen', 'drupal.chosen');
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
-      <div class="spacer spacer-sm"></div>
       <?php print render($page['content_bottom']); ?>
     </section>
 
@@ -169,6 +183,27 @@ drupal_add_library('chosen', 'drupal.chosen');
 
   </div>
 </div>
-<footer class="footer container">
+<div class="spacer spacer-md"></div>
+<footer class="footer">
   <?php print render($page['footer']); ?>
+
+  <div class="bg-white">
+    <div class="container text-center">
+      <div class="spacer spacer-sm"></div>
+      <h6>Big up to all the partners and sponsors who helped us make this game jam… epic !</h6>
+      <ul class="list-inline">
+        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/NIFFF.png" alt="NIFFF"></li>
+        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/itf.png" alt="ITF"></li>
+        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/logo_ville_neuch.png" alt="Neuchâtel"></li>
+        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/PH_logo_neutr_black.png" alt="Pro Helvetia"></li>
+        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/SGDA.png" alt="SGDA"></li>
+        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/sgj.png" alt="Swiss Game Jam"></li>
+      </ul>
+      <div cla  ss="spacer spacer-xs"></div>
+      <small class="text-muted">
+        The epic game jam is an event created by :  <a href="mailto:caroline.hirt@nifff.ch">Caroline Hirt</a> | <a href="mailto:mail@toni.io">Toni Fisler</a> | <a href="mailto:wuthrer@gmail.com">Jérémy Hervé Wuthrer Cuany</a><br>Contact Epic Game Jam: <a href="mailto:hello@epicgamejam.com">hello@epicgamejam.com</a>
+      </small>
+      <div class="spacer spacer-xs"></div>
+    </div>
+  </div>
 </footer>

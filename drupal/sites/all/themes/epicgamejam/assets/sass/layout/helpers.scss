@@ -22,3 +22,9 @@
     &.spacer-xs {height: 10px;}
   }
 }
+
+.bg {
+  &-white {
+    background: $white;
+  }
+}

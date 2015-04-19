@@ -21,7 +21,8 @@ gulp.task('vendors', function() {
    */
   gulp.src([
         'bower_components/fontawesome/css/font-awesome.min.css',
-        'bower_components/chosen-bootstrap/chosen.bootstrap.min.css'
+        'bower_components/chosen-bootstrap/chosen.bootstrap.min.css',
+        'bower_components/FlipClock/compiled/flipclock.css'
       ])
       .pipe($.concat('vendors.css'))
       .pipe($.minifyCss())
@@ -52,7 +53,8 @@ gulp.task('vendors', function() {
       'bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
       'bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
       'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
-      'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js'
+      'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+      'bower_components/FlipClock/compiled/flipclock.min.js'
     ])
     .pipe($.concat('vendors.min.js'))
     .pipe($.uglify())
@@ -86,12 +88,22 @@ gulp.task('vendors', function() {
 /**
  * Copy images
  */
-gulp.task('img', function() {
+gulp.task('build-img', function() {
   gulp.src([
       'drupal/sites/all/themes/epicgamejam/assets/img/**/*'
     ])
     .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/img'));
 });
+
+gulp.task('build-svg', function() {
+  gulp.src([
+      'drupal/sites/all/themes/epicgamejam/assets/svg/**/*'
+    ])
+    .pipe($.svgo())
+    .pipe(gulp.dest('drupal/sites/all/themes/epicgamejam/build/img'));
+});
+
+gulp.task('img', ['build-svg', 'build-img']);
 
 /**
  * Build styles from SCSS files
@@ -150,7 +162,6 @@ gulp.task('scripts', function() {
 gulp.task('styleguide', function () {
   return gulp.src('hologram_config.yml')
     .pipe($.hologram({
-        logging: true,
         bundler:true
       }));
 });

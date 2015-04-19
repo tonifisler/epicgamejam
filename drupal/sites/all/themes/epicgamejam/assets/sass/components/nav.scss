@@ -64,6 +64,14 @@ category: Components - Nav
 ```
 */
 
+.nav-pills {
+  a {
+    color: $white;
+    &:hover {
+      color: $viking;
+    }
+  }
+}
 
 
 /*doc

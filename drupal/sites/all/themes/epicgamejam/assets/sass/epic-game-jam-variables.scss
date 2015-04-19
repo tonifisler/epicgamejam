@@ -1,5 +1,32 @@
 @charset "UTF-8";
 
+//fonts
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,700,300);
+
+@font-face {
+  font-family: 'Dimbo Italic';
+  src: url('../fonts/Dimbo Italic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Dimbo Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Dimbo Italic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Dimbo Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Dimbo Italic.svg#8e1cfac6bb310954b6d2ed44a745075c') format('svg'); /* Legacy iOS */
+
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Dimbo';
+  src: url('../fonts/Dimbo Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Dimbo Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Dimbo Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Dimbo Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Dimbo Regular.svg#37a19fd4dbb4f9e4c5277bc27422e8f4') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
+
 /*doc
 ---
 title: Colors
@@ -64,90 +91,8 @@ category: Layout - Colors
 </div>
 */
 
-
-/*doc
----
-title: Bootflat colors
-name: b-bootfalt-colors
-category: Layout - Colors
----
-
-All the colors are in `-light` or `-dark` variant.
-
-<div class="container-fluid">
-  <div class="row">
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#5D9CEC;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#4A89DC;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$bluejeans</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#4FC1E9;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#3BAFDA;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$aqua</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#48CFAD;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#37BC9B;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$mint</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#A0D468;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#8CC152;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$grass</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#FFCE54;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#F6BB42;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$sunflower</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#FC6E51;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#E9573F;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$bittersweet</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#ED5565;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#DA4453;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$grapefruit</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#AC92EC;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#967ADC;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$lavender</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#EC87C0;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#D770AD;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$pinkrose</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#F5F7FA;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#E6E9ED;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$lightgray</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#CCD1D9;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#AAB2BD;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$mediumgray</pre>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div style="background:#656D78;width:50%;float:left;"><br><br><br><br><br></div>
-      <div style="background:#434A54;width:50%;float:left;"><br><br><br><br><br></div>
-      <pre class="text-center">$darkgray</pre>
-    </div>
-  </div>
-</div>
-*/
+$white: #fff;
+$nero: #231f20; // black
+$viking: #45C2C5; // blue
+$sunglow: #ffcc33; // yellow
+$lightning-yellow: #f79838; // orange

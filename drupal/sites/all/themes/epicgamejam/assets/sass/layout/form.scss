@@ -27,6 +27,12 @@ category: Layout - Form
   margin-top: $padding-large-vertical;
 }
 
+.form-item.form-group {
+  label {
+    display: inline;
+  }
+}
+
 /*doc
 ---
 title: Textarea

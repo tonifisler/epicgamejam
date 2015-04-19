@@ -146,3 +146,26 @@ function epicgamejam_rate_button($variables) {
       '</a>';
   }
 }
+
+/**
+ * Overrides theme_menu_local_tasks().
+ */
+function epicgamejam_menu_local_tasks(&$variables) {
+  $output = '';
+
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="tabs--primary nav nav-pills">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['primary']);
+  }
+
+  return $output;
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function epicgamejam_preprocess_block(&$variables) {
+  $variables['title_attributes_array']['class'][] = 'text-center';
+}
