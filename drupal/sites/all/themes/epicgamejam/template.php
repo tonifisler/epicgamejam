@@ -87,11 +87,6 @@ function _theme_redirect($form, &$form_state) {
  * Implements hook_theme().
  */
 function epicgamejam_theme($existing, $type, $theme, $path) {
-  $items['game_node_form'] = array(
-          'render element' => 'form',
-          'template' => 'add-game',
-          'path' => drupal_get_path('theme', 'epicgamejam') . '/templates/form',
-      );
   $items['epic_theme_node_form'] = array(
           'render element' => 'form',
           'template' => 'add-theme',

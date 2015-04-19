@@ -175,7 +175,9 @@ drupal_add_library('chosen', 'drupal.chosen');
       <?php endif; ?>
 
       <?php print render($page['content']); ?>
-      <div class="spacer"></div>
+      <?php if ($is_front): ?>
+        <div class="spacer"></div>
+      <?php endif ?>
 
       <?php if (!empty($page['highlighted'])): ?>
           </div>

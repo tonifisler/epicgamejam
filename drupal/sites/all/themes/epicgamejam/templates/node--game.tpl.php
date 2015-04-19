@@ -79,7 +79,7 @@
  *
  * @ingroup themeable
  */
-hide($content['comments']);
+hide($content['disqus']);
 hide($content['links']);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -93,11 +93,28 @@ hide($content['links']);
   <div class="content"<?php print $content_attributes; ?>>
     <div class="row">
       <div class="col-sm-4">
-        <?php print render($content['field_image']) ?>
+        <div class="well">
+          <?php print render($content['field_image']) ?>
+          <div class="spacer spacer-sm"></div>
+          <?php print render($content['rate_epic_points']); ?>
+          <?php print render($content['field_links']); ?>
+          <p>—</p>
+          <?php print render($content['field_members']); ?><br>
+          <?php print render($content['field_genre']); ?><br>
+          <?php print render($content['field_badges']); ?><br>
+          <p>—</p>
+          <?php print render($content['field_team_name']); ?><br>
+          <?php print render($content['field_country']); ?><br>
+          <?php print render($content['field_city']); ?><br>
+          <?php print render($content['field_contact_email']); ?>
+        </div>
+
       </div>
       <div class="col-sm-8">
-        <?php print render($content['rate_epic_points']); ?>
         <?php print render($content); ?>
+        <div class="spacer spacer-sm"></div>
+        <?php print render($content['disqus']); ?>
+        <div class="spacer"></div>
       </div>
     </div>
   </div>

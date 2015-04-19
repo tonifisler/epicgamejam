@@ -1,4 +1,4 @@
 .reddit {
-  background: $white;
+  background: transparentize($white, 0.2);
   margin-bottom: 15px;
 }

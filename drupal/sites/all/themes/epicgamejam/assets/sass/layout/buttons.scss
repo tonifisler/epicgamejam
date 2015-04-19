@@ -23,6 +23,15 @@ category: Layout - Buttons
 | <button type="button" class="btn btn-link">Link</button>       | <code>btn btn-link</code>    |
 */
 
+.bef-select-as-links {
+  .form-item {
+    display: inline;
+  }
+ a {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+}
 
 /*doc
 ---

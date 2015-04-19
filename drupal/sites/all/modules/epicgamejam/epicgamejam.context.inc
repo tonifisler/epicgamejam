@@ -13,6 +13,34 @@ function epicgamejam_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'all_games';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'games' => 'games',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-games-block_2' => array(
+          'module' => 'views',
+          'delta' => 'games-block_2',
+          'region' => 'content_bottom',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['all_games'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'game';
   $context->description = '';
   $context->tag = '';
@@ -22,13 +50,20 @@ function epicgamejam_context_default_contexts() {
         'game' => 'game',
       ),
       'options' => array(
-        'node_form' => '1',
+        'node_form' => '0',
       ),
     ),
   );
   $context->reactions = array(
-    'menu' => array(
-      0 => 'main-menu:games',
+    'block' => array(
+      'blocks' => array(
+        'views-games-block_3' => array(
+          'module' => 'views',
+          'delta' => 'games-block_3',
+          'region' => 'content_bottom',
+          'weight' => '-10',
+        ),
+      ),
     ),
   );
   $context->condition_mode = 0;

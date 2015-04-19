@@ -24,6 +24,30 @@ function epicgamejam_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function epicgamejam_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: teaser.
+  $styles['teaser'] = array(
+    'label' => 'Teaser image (350x100)',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 350,
+          'height' => 100,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function epicgamejam_node_info() {
