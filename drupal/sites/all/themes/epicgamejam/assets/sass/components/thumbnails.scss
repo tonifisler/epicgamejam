@@ -35,6 +35,19 @@ category: Components - Thumbnails
 
 .thumbnail {
   background: transparentize($white, 0.2);
+
+  a > img {
+    opacity: .7;
+  }
+  .list-badges {
+    position: absolute;
+    top: 60px;
+    right: 5px;
+  }
+  .badge-sm {
+    width: 50px;
+    height: auto;
+  }
 }
 
 /*doc

@@ -164,3 +164,53 @@ function epicgamejam_menu_local_tasks(&$variables) {
 function epicgamejam_preprocess_block(&$variables) {
   $variables['title_attributes_array']['class'][] = 'text-center';
 }
+
+function epicgamejam_preprocess_image(&$variables) {
+  if ($variables['style_name'] == 'badge-thumbnail') {
+    if ($variables['attributes']['class'][0] != 'badge-sm') {
+      $variables['attributes']['class'][] = 'img-object';
+      $variables['attributes']['style'][] = 'width: 150px; height: auto;';
+    }
+  }
+  if ($variables['attributes']['class'][0] == 'media-object') {
+    $variables['attributes']['class'][1] = '';
+  }
+}
+
+function epicgamejam_field__taxonomy_term_reference(&$variables) {
+  if ($variables['element']['#field_name'] === 'field_badges') {
+    $output = '<ul class="list-badges list-inline">';
+    $array = $variables['element']['#object']->field_badges['und'];
+    foreach ($array as $delta => $item) {
+      $image = $item['taxonomy_term']->field_badge_image;
+      if ($image) {
+        $image_uri = $image['und'][0]['uri'];
+        $image_for_sizing = image_style_path('badge_thumbnail', $image_uri);
+        $image_vars = array(
+          'path' => $image_for_sizing,
+          'alt' => $item['taxonomy_term']->description,
+          'title' => $item['taxonomy_term']->name,
+          'style_name' => 'badge-thumbnail',
+          'attributes' => array(
+            'class' => 'badge-sm',
+            'data-toggle' => 'tooltip',
+            'data-placement' => 'top',
+            'data-trigger' => 'hover',
+            'data-html' => true
+          )
+        );
+        $output .= '<li class="badge-element">' . theme('image', $image_vars) . '</li>';
+      }
+      $output .= '</ul>';
+    }
+    return $output;
+  }
+}
+
+function epicgamejam_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] == 'field_image' && $variables['element']['#view_mode'] == 'reddit') {
+    $variables['items'][0]['#item']['attributes']['class'] = array('media-object');
+    $variables['items'][0]['#item']['attributes']['width'] = '150px';
+    $variables['items'][0]['#item']['attributes']['height'] = 'auto';
+  }
+}

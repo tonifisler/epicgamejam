@@ -45,3 +45,10 @@ category: Layout - Images
 <img src="http://lorempixel.com/150/150/cats" alt="Some cats image" class="img-thumbnail">
 ```
 */
+
+.img-circle {
+  img {
+    @extend .img-circle;
+  }
+}
+

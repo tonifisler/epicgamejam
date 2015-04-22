@@ -86,14 +86,18 @@
     <div class="col-xs-2 col-sm-1">
       <?php print render($content['rate_epic_points']); ?>
     </div>
-    <div class="col-xs-3 col-md-2 col-lg-1">
-      <?php print render($content['field_image']); ?>
-    </div>
-    <div class="col-xs-7 col-sm-8 col-md-9 col-lg-10">
-      <?php print render($title_prefix); ?>
-        <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-      <?php print render($title_suffix); ?>
-      <?php print render($content); ?>
+    <div class="col-xs-10 col-sm-11">
+      <div class="media">
+        <div class="media-left">
+          <?php print render($content['field_image']); ?>
+        </div>
+        <div class="media-body">
+          <?php print render($title_prefix); ?>
+            <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+          <?php print render($title_suffix); ?>
+          <?php print render($content); ?>
+        </div>
+      </div>
     </div>
   </div>
   <div class="spacer spacer-xs"></div>

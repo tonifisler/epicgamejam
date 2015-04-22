@@ -81,6 +81,7 @@
  */
 hide($content['field_screenshots']);
 hide($content['field_badges']);
+hide($content['field_genre']);
 hide($content['links']);
 hide($content['rate_epic_points']);
 ?>
@@ -90,12 +91,11 @@ hide($content['rate_epic_points']);
 
   <div class="caption">
     <?php print render($title_prefix); ?>
-      <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+      <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a><small><?php if (!empty($content['field_team_name'])): print t(', by ') . render($content['field_team_name']); endif; ?></small></h3>
     <?php print render($title_suffix); ?>
-    <?php print render($content['field_genre']); ?>
-    <?php print render($content['field_team_name']); ?>
     <?php print render($content); ?>
     <div class="spacer spacer-xs"></div>
+    <?php print render($content['field_genre']); ?>
     <?php print render($content['field_badges']); ?>
   </div>
 
