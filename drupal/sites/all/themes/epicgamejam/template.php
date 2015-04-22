@@ -166,7 +166,7 @@ function epicgamejam_preprocess_block(&$variables) {
 }
 
 function epicgamejam_preprocess_image(&$variables) {
-  if ($variables['style_name'] == 'badge-thumbnail') {
+  if (isset($variables['style_name']) && $variables['style_name'] == 'badge-thumbnail') {
     if ($variables['attributes']['class'][0] != 'badge-sm') {
       $variables['attributes']['class'][] = 'img-object';
       $variables['attributes']['style'][] = 'width: 150px; height: auto;';
@@ -214,5 +214,36 @@ function epicgamejam_preprocess_field(&$variables) {
     $variables['items'][0]['#item']['attributes']['class'] = array('media-object');
     $variables['items'][0]['#item']['attributes']['width'] = '150px';
     $variables['items'][0]['#item']['attributes']['height'] = 'auto';
+  }
+}
+
+/**
+ * Formats a link.
+ */
+function epicgamejam_link_formatter_link_default($vars) {
+  $link_options = $vars['element'];
+  unset($link_options['title']);
+  unset($link_options['url']);
+
+
+  if (isset($link_options['attributes']['class'])) {
+    $link_options['attributes']['class'] = array($link_options['attributes']['class']);
+  }
+
+  // this is ugly as hell but I could not set this in the preprocess_field.....
+  if ($vars['field']['field_name'] == 'field_links') {
+    $link_options['attributes']['class'] = array('btn', 'btn-primary');
+  }
+
+  // Display a normal link if both title and URL are available.
+  if (!empty($vars['element']['title']) && !empty($vars['element']['url'])) {
+    return l($vars['element']['title'], $vars['element']['url'], $link_options);
+  }
+  // If only a title, display the title.
+  elseif (!empty($vars['element']['title'])) {
+    return $link_options['html'] ? $vars['element']['title'] : check_plain($vars['element']['title']);
+  }
+  elseif (!empty($vars['element']['url'])) {
+    return l($vars['element']['title'], $vars['element']['url'], $link_options);
   }
 }
