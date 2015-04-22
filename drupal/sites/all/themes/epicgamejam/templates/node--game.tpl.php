@@ -100,10 +100,10 @@ hide($content['links']);
           <?php print render($content['field_links']); ?>
           <p>—</p>
           <?php print render($content['field_members']); ?><br>
-          <?php print render($content['field_genre']); ?><br>
+          <span class="field-label">Genre(s): </span><?php print render($content['field_genre']); ?><br>
           <?php print render($content['field_badges']); ?><br>
           <p>—</p>
-          <?php print render($content['field_team_name']); ?><br>
+          <span class="field-label">Team: </span><?php print render($content['field_team_name']); ?><br>
           <?php print render($content['field_country']); ?><br>
           <?php print render($content['field_city']); ?><br>
           <?php print render($content['field_contact_email']); ?>
