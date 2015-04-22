@@ -1,5 +1,32 @@
 header.header {
+  & > div {
+    position: relative;
+    z-index: 10;
+  }
   .logo {
     max-width: 300px;
+  }
+}
+
+.header.header-front {
+  position: relative;
+  @media only screen and (min-width: $screen-sm-min) {
+    &:before,
+    &:after {
+      background: url(../img/compo.png) no-repeat;
+      background-size: contain;
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      top: 0;
+      z-index: 0;
+    }
+    &:before {
+      transform: scaleX(-1);
+      left: -180px;
+    }
+    &:after {
+      right: -180px;
+    }
   }
 }

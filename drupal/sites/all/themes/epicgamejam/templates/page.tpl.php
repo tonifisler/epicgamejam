@@ -74,7 +74,7 @@
  */
 drupal_add_library('chosen', 'drupal.chosen');
 ?>
-<header role="banner" class="header container">
+<header role="banner" class="header container <?php if ($is_front): ?>header-front<?php endif; ?>">
 
   <div id="page-header">
     <?php if (!empty($site_slogan)): ?>
