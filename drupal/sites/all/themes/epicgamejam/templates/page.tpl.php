@@ -207,7 +207,7 @@ drupal_add_library('chosen', 'drupal.chosen');
   <div class="bg-white">
     <div class="container text-center">
       <div class="spacer spacer-sm"></div>
-      <h6>Big up to all the partners and sponsors who helped us make this game jam… epic !</h6>
+      <h6>Big up to all the partners and sponsors who help us make this game jam… epic !</h6>
       <ul class="list-inline">
         <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/NIFFF.png" alt="NIFFF"></li>
         <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/itf.png" alt="ITF"></li>

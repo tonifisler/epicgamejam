@@ -199,7 +199,9 @@ function epicgamejam_field__taxonomy_term_reference(&$variables) {
             'data-html' => true
           )
         );
-        $output .= '<li class="badge-element">' . theme('image', $image_vars) . '</li>';
+        $image_html = theme('image', $image_vars);
+        $href = $variables['element'][$delta]['#href'];
+        $output .= '<li class="badge-element">' . l($image_html, $href, array( 'html' => true )) . '</li>';
       }
       $output .= '</ul>';
     }

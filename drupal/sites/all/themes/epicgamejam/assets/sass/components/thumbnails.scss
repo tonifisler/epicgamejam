@@ -36,7 +36,7 @@ category: Components - Thumbnails
 .thumbnail {
   background: transparentize($white, 0.2);
 
-  a > img {
+  .field-image a > img {
     opacity: .7;
   }
   .list-badges {
