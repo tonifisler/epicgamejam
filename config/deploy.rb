@@ -129,6 +129,8 @@ after "deploy:cleanup" do
     puts "✓".green
 end
 
+# before "deploy:site_online", "assets:build"
 
 after "deploy:update", "deploy:cleanup"
-logger.level = Logger::IMPORTANT
+# before "deploy:cleanup", "hotfix:fix_permissions"
+logger.level = Logger::DEBUG
