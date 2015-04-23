@@ -413,6 +413,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'administer taxonomy display'.
+  $permissions['administer taxonomy display'] = array(
+    'name' => 'administer taxonomy display',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'taxonomy_display',
+  );
+
   // Exported permission: 'administer themes'.
   $permissions['administer themes'] = array(
     'name' => 'administer themes',

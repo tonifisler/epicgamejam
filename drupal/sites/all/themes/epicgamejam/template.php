@@ -166,14 +166,11 @@ function epicgamejam_preprocess_block(&$variables) {
 }
 
 function epicgamejam_preprocess_image(&$variables) {
-  if (isset($variables['style_name']) && $variables['style_name'] == 'badge-thumbnail') {
+  if (isset($variables['style_name']) && $variables['style_name'] == 'badge_thumbnail') {
     if ($variables['attributes']['class'][0] != 'badge-sm') {
-      $variables['attributes']['class'][] = 'img-object';
-      $variables['attributes']['style'][] = 'width: 150px; height: auto;';
+      $variables['attributes']['class'] = array('media-object');
+      $variables['attributes']['style'][] = 'width: 50px; height: auto;';
     }
-  }
-  if ($variables['attributes']['class'][0] == 'media-object') {
-    $variables['attributes']['class'][1] = '';
   }
 }
 

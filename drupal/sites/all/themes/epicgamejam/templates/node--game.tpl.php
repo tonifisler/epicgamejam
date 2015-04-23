@@ -97,11 +97,11 @@ hide($content['links']);
           <?php print render($content['field_image']) ?>
           <div class="spacer spacer-sm"></div>
           <?php print render($content['rate_epic_points']); ?>
+          <?php print render($content['field_badges']); ?><br>
           <?php print render($content['field_links']); ?>
           <p>—</p>
           <?php print render($content['field_members']); ?><br>
           <span class="field-label">Genre(s): </span><?php print render($content['field_genre']); ?><br>
-          <?php print render($content['field_badges']); ?><br>
           <p>—</p>
           <span class="field-label">Team: </span><?php print render($content['field_team_name']); ?><br>
           <?php print render($content['field_country']); ?><br>
