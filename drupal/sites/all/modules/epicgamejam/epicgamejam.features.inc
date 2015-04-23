@@ -32,6 +32,21 @@ function epicgamejam_views_api($module = NULL, $api = NULL) {
 function epicgamejam_image_default_styles() {
   $styles = array();
 
+  // Exported image style: badge_thumbnail.
+  $styles['badge_thumbnail'] = array(
+    'label' => 'Badge Thumbnail (150x150)',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 150,
+          'height' => 150,
+        ),
+        'weight' => -9,
+      ),
+    ),
+  );
+
   // Exported image style: teaser.
   $styles['teaser'] = array(
     'label' => 'Teaser image (350x100)',

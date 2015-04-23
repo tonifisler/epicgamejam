@@ -288,6 +288,15 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'reddit';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="spacer spacer-md"></div>
+<p class="lead">No games are matching these filters. =(</p>';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html_custom';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -467,6 +476,8 @@ function epicgamejam_views_default_views() {
     t('Games'),
     t('All'),
     t('All Games'),
+    t('<div class="spacer spacer-md"></div>
+<p class="lead">No games are matching these filters. =(</p>'),
     t('Year'),
     t('Genre'),
     t('Epic Badges'),
