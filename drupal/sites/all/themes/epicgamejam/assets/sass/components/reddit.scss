@@ -1,4 +1,10 @@
 .reddit {
   background: transparentize($white, 0.2);
   margin-bottom: 15px;
+
+  .list-badges {
+    img {
+      width: 50px;
+    }
+  }
 }

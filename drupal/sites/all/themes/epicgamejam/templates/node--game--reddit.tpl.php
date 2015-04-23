@@ -95,6 +95,9 @@
           <?php print render($title_prefix); ?>
             <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
           <?php print render($title_suffix); ?>
+          <?php print render($content['field_badges']); ?>
+          <?php print render($content['field_members']); ?><br>
+          <?php print render($content['field_genre']); ?>
           <?php print render($content); ?>
         </div>
       </div>
