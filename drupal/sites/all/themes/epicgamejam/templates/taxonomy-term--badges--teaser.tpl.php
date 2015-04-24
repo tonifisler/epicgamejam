@@ -41,7 +41,7 @@
  * @ingroup themeable
  */
 ?>
-<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?>">
+<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> col-sm-6 col-md-4">
 
   <div class="media">
     <div class="media-left">
