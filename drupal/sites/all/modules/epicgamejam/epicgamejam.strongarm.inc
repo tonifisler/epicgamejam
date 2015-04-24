@@ -280,7 +280,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1429826931;
+  $strongarm->value = 1429853326;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1003,16 +1003,16 @@ View,glyphicon glyphicon-eye-open';
     'toggle_node_user_picture' => 1,
     'toggle_comment_user_picture' => 1,
     'toggle_comment_user_verification' => 1,
-    'toggle_favicon' => 1,
+    'toggle_favicon' => 0,
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
     'default_logo' => 1,
     'logo_path' => '',
     'logo_upload' => '',
-    'default_favicon' => 1,
+    'default_favicon' => 0,
     'favicon_path' => '',
     'favicon_upload' => '',
-    'bootstrap__active_tab' => 'edit-components',
+    'bootstrap__active_tab' => 'edit-advanced',
     'bootstrap_fluid_container' => 0,
     'bootstrap_button_size' => '',
     'bootstrap_button_colorize' => 1,
