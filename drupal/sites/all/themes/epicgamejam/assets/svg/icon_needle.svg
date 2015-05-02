@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="140px" height="140px" viewBox="0 0 140 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3 (11970) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="70" cy="70" rx="70" ry="70"></ellipse>
+    </defs>
+    <g id="About" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-926.000000, -2074.000000)">
+            <g id="Mission" sketch:type="MSLayerGroup" transform="translate(88.000000, 2012.000000)">
+                <g id="idea" transform="translate(791.000000, 62.000000)">
+                    <g id="icon" transform="translate(47.000000, 0.000000)">
+                        <mask id="mask-2" sketch:name="Oval 7" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Oval-7" fill="#EAEBEC" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                        <g id="Imported-Layers" mask="url(#mask-2)" sketch:type="MSShapeGroup">
+                            <g transform="translate(43.000000, 49.000000)">
+                                <path d="M47.83,2.159 C45.434,-0.237 41.898,1.555 40.17,3.284 C38.442,5.014 34.022,12.417 31.852,14.717 C24.002,23.023 11.25,36.834 10.291,37.795 C9.68,38.406 0.541,48.502 1.018,48.982 C1.492,49.46 11.58,40.326 12.201,39.704 C13.177,38.731 27.014,25.945 35.297,18.113 C37.58,15.955 44.916,11.605 46.699,9.817 C48.489,8.031 50.222,4.55 47.83,2.159 L47.83,2.159 Z" id="Path" stroke="#444444" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                                <path d="M41.031,8.956 C40.24,8.161 40.512,6.598 41.647,5.465 C42.782,4.33 44.346,4.055 45.141,4.85 C45.93,5.643 45.654,7.206 44.521,8.339 C43.385,9.473 41.826,9.751 41.031,8.956" id="Fill-2" stroke="none" fill="#444444" fill-rule="evenodd"></path>
+                                <path d="M24.7716597,0.207469889 C24.7716597,0.207469889 36.5169749,0.974609725 43.2584874,6.5586206" id="Path-41" stroke="#444444" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                                <path d="M46.1704641,10.9012396 C46.1704641,10.9012396 49.1072233,17.3774311 41.9787947,26.5380475 C34.8503662,35.6986639 27.007743,43.0670373 49.1331328,49.9690399" id="Path-42" stroke="#444444" stroke-width="2" stroke-linecap="round" fill="none"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

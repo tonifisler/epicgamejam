@@ -1,0 +1,47 @@
+header.header {
+  & > div {
+    position: relative;
+    z-index: 10;
+  }
+  .logo {
+    max-width: 300px;
+  }
+}
+
+.header.header-front {
+  position: relative;
+  @media only screen and (min-width: $screen-sm-min) {
+    &:before,
+    &:after {
+      content: '';
+      background: url(../img/compo.png) no-repeat;
+      background-size: contain;
+      width: 250px;
+      height: 200px;
+      position: absolute;
+      bottom: 75px;
+      z-index: 0;
+    }
+    &:before {
+      transform: scaleX(-1);
+      left: 0;
+    }
+    &:after {
+      right: 0;
+    }
+  }
+  @media only screen and (min-width: $screen-md-min) {
+    &:before,
+    &:after {
+      width: 310px;
+      height: 250px;
+    }
+  }
+  @media only screen and (min-width: $screen-lg-min) {
+    &:before,
+    &:after {
+      width: 500px;
+      height: 400px;
+    }
+  }
+}

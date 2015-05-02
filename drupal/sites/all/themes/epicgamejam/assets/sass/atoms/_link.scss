@@ -1,0 +1,5 @@
+// Fix handle not being displayed entirely on draggable elements
+a.tabledrag-handle .handle {
+  height: 22px;
+  width: 22px;
+}

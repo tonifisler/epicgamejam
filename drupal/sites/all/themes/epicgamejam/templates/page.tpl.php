@@ -74,7 +74,7 @@
  */
 drupal_add_library('chosen', 'drupal.chosen');
 ?>
-<header role="banner" class="header container <?php if ($is_front): ?>header-front<?php endif; ?>">
+<header role="banner" class="header <?php if ($is_front): ?>header-front<?php endif; ?>">
 
   <div id="page-header">
     <?php if (!empty($site_slogan)): ?>
@@ -83,7 +83,7 @@ drupal_add_library('chosen', 'drupal.chosen');
 
     <h1 class="text-center">
       <a class="shake" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img class="logo" src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/epicgamejam_logo.svg" alt="<?php print $site_name; ?>">
+        <img class="logo" src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/svg/epicgamejam_logo.svg" alt="<?php print $site_name; ?>">
       </a>
     </h1>
 
@@ -100,40 +100,41 @@ drupal_add_library('chosen', 'drupal.chosen');
     <?php endif ?>
   </div> <!-- /#page-header -->
 
+  <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <?php if ($logo): ?>
+            <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+              <!-- <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> -->
+            </a>
+          <?php endif; ?>
+        </div>
 
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <?php if ($logo): ?>
-          <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <!-- <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> -->
-          </a>
-        <?php endif; ?>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="main-menu">
-        <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu">
+          <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+            <?php if (!empty($primary_nav)): ?>
+              <?php print render($primary_nav); ?>
+            <?php endif; ?>
+            <?php if (!empty($secondary_nav)): ?>
+              <?php print render($secondary_nav); ?>
+            <?php endif; ?>
+            <?php if (!empty($page['navigation'])): ?>
+              <?php print render($page['navigation']); ?>
+            <?php endif; ?>
           <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        <?php endif; ?>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
 
 </header>
 

@@ -98,6 +98,7 @@ hide($content['links']);
           <div class="spacer spacer-sm"></div>
           <?php print render($content['rate_epic_points']); ?>
           <?php print render($content['field_badges']); ?><br>
+          <?php print render($content['field_epic_points']); ?>
           <?php print render($content['field_links']); ?>
           <p>—</p>
           <?php print render($content['field_members']); ?><br>

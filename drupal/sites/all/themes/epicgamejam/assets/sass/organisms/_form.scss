@@ -1,0 +1,17 @@
+.form-control {
+  width: auto;
+  &.chosen-container {
+    padding: 0;
+    border: none;
+  }
+}
+
+.form-actions {
+  margin-top: $padding-large-vertical;
+}
+
+.form-item.form-group {
+  label {
+    display: inline;
+  }
+}

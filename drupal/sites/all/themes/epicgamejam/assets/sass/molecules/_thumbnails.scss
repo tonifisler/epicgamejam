@@ -1,0 +1,16 @@
+.thumbnail {
+  background: transparentize($white, 0.2);
+
+  .field-image a > img {
+    opacity: .7;
+  }
+  .list-badges {
+    position: absolute;
+    top: 73px;
+    right: 5px;
+  }
+}
+.badge-sm {
+  width: 50px;
+  height: auto;
+}

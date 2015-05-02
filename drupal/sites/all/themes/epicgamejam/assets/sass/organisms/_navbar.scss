@@ -1,0 +1,10 @@
+.navbar-default {
+  position: relative;
+  z-index: 20;
+}
+
+.navbar-default.container {
+  @media only screen and (min-width: $screen-sm-min) {
+    padding: 0;
+  }
+}

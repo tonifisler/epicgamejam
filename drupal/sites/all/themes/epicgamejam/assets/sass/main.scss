@@ -1,61 +1,59 @@
 @charset "UTF-8";
 
 // Init ------------------------------------
-@import 'epic-game-jam-mixins';
-@import 'epic-game-jam-variables';
+@import 'main-variables';
 @import 'bootstrap';
 
-// LAYOUT ----------------------------------
-@import 'layout/buttons';
-@import 'layout/code';
-@import 'layout/form';
-@import 'layout/icons';
-@import 'layout/images';
-@import 'layout/tables';
-@import 'layout/typography';
 
-// COMPONENTS -------------------------------
-@import 'components/alerts';
-@import 'components/badges';
-@import 'components/breadcrumb';
-@import 'components/button-groups';
-@import 'components/input-groups';
-@import 'components/jumbotron';
-@import 'components/labels';
-@import 'components/list-group';
-@import 'components/media';
-@import 'components/nav';
-@import 'components/navbar';
-@import 'components/pager';
-@import 'components/paginations';
-@import 'components/panels';
-@import 'components/progress-bar';
-@import 'components/thumbnails';
-@import 'components/well';
+// Atoms -----------------------------------
+@import 'atoms/alerts';
+@import 'atoms/badges';
+@import 'atoms/blockquote';
+@import 'atoms/button';
+@import 'atoms/description';
+@import 'atoms/heading';
+@import 'atoms/icon';
+@import 'atoms/image';
+@import 'atoms/inline-elements';
+@import 'atoms/input';
+@import 'atoms/labels';
+@import 'atoms/link';
+@import 'atoms/list';
+@import 'atoms/paragraph';
+@import 'atoms/table';
+@import 'atoms/type';
 
-// JAVASCRIPT WIDGET -------------------------
-@import 'javascript/alert';
-@import 'javascript/buttons';
-@import 'javascript/carousel';
-@import 'javascript/collapse';
-@import 'javascript/dropdown';
-@import 'javascript/modal';
-@import 'javascript/popover';
-@import 'javascript/scrollspy';
-@import 'javascript/tab';
-@import 'javascript/tooltips';
+// Molecules --------------------------------
+@import 'molecules/address';
+@import 'molecules/breadcrumb';
+@import 'molecules/button-groups';
+@import 'molecules/collapse';
+@import 'molecules/dropdown';
+@import 'molecules/input-groups';
+@import 'molecules/list-group';
+@import 'molecules/media';
+@import 'molecules/modal';
+@import 'molecules/nav';
+@import 'molecules/pager';
+@import 'molecules/paginations';
+@import 'molecules/panels';
+@import 'molecules/popover';
+@import 'molecules/progress';
+@import 'molecules/tab';
+@import 'molecules/thumbnails';
+@import 'molecules/tooltips';
+@import 'molecules/well';
+@import 'molecules/reddit';
 
-// CUSTOM COMPONENTS -------------------------
-@import 'layout/helpers';
-@import 'layout/drupal';
-@import 'layout/tabs';
-@import 'components/ckeditor';
-@import 'components/rate';
-@import 'layout/general';
-@import 'layout/header';
-@import 'components/reddit';
-@import 'components/cssshake';
-@import 'components/chosen';
-// <here> $ yo styleguide:component will add new components right here. Do not remove this line.
+// Organisms --------------------------------
+@import 'organisms/carousel';
+@import 'organisms/footer';
+@import 'organisms/form';
+@import 'organisms/header';
+@import 'organisms/jumbotron';
+@import 'organisms/navbar';
 
-@import '../../../bootstrap/css/overrides.css';
+// Templates ---------------------------------
+@import 'templates/general';
+
+@import 'helpers';

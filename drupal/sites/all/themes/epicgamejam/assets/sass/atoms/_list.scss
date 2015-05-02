@@ -1,0 +1,16 @@
+.list-inline {
+  margin-left: 0;
+  .first,
+  li:first-child {
+    padding-left: 0;
+  }
+}
+
+.field-badges,
+.field-members,
+.field-genre {
+  @extend .list-inline;
+  font-size: $font-size-small;
+  margin-bottom: 0;
+  a { color: $text-muted; }
+}
