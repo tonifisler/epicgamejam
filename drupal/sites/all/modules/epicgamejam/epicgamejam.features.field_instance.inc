@@ -207,7 +207,7 @@ function epicgamejam_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -254,7 +254,7 @@ function epicgamejam_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -302,7 +302,61 @@ function epicgamejam_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-game-field_epic_points'
+  $field_instances['node-game-field_epic_points'] = array(
+    'bundle' => 'game',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => 1,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 11,
+      ),
+      'reddit' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_epic_points',
+    'label' => 'Epic Points',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 3,
     ),
   );
 
@@ -640,7 +694,7 @@ function epicgamejam_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'reddit' => array(
         'label' => 'above',
@@ -688,7 +742,7 @@ function epicgamejam_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'reddit' => array(
         'label' => 'above',
@@ -1057,6 +1111,7 @@ sound|Sound Designer
   t('City');
   t('Contact Email');
   t('Country');
+  t('Epic Points');
   t('Full Name');
   t('Genre');
   t('Image');

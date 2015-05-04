@@ -18,7 +18,7 @@ function epicgamejam_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_group';
   $field_group->data = array(
     'label' => 'Content',
     'weight' => '4',
@@ -30,13 +30,12 @@ function epicgamejam_field_group_info() {
       4 => 'field_links',
       5 => 'field_image',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Content',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-content field-group-tab',
-        'required_fields' => 1,
+        'required_fields' => 0,
+        'classes' => '',
       ),
     ),
   );
@@ -50,24 +49,55 @@ function epicgamejam_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_group';
   $field_group->data = array(
     'label' => 'Epic',
     'weight' => '3',
     'children' => array(
       0 => 'field_badges',
+      1 => 'field_epic_points',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Epic',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-epic field-group-tab',
-        'required_fields' => 1,
+        'required_fields' => 0,
+        'classes' => '',
       ),
     ),
   );
   $export['group_epic|node|game|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_group|node|game|form';
+  $field_group->group_name = 'group_group';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'game';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Groupe',
+    'weight' => '2',
+    'children' => array(
+      0 => 'group_content',
+      1 => 'group_team',
+      2 => 'group_epic',
+    ),
+    'format_type' => 'bootstrap_fieldgroup_nav',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => '',
+        'bootstrap_nav_type' => 'tabs',
+        'bootstrap_stacked' => 0,
+        'bootstrap_orientation' => 0,
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_group|node|game|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -77,7 +107,7 @@ function epicgamejam_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'game';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_group';
   $field_group->data = array(
     'label' => 'Team',
     'weight' => '5',
@@ -88,13 +118,12 @@ function epicgamejam_field_group_info() {
       3 => 'field_contact_email',
       4 => 'field_team_name',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Team',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-team field-group-tab',
-        'required_fields' => 1,
+        'required_fields' => 0,
+        'classes' => '',
       ),
     ),
   );

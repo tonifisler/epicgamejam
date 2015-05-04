@@ -280,7 +280,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1429896759;
+  $strongarm->value = 1430763381;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -725,7 +725,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_admin_version';
-  $strongarm->value = '1.5';
+  $strongarm->value = '1.10';
   $export['jquery_update_jquery_admin_version'] = $strongarm;
 
   $strongarm = new stdClass();
