@@ -10,6 +10,8 @@
     > a {
       border-right: 1px solid #ccc;
       border-radius: 4px 0 0 4px;
+      margin-right: 0;
+      background: #ebebeb;
       &:hover {
         border-color: transparent #ccc transparent transparent;
       }
@@ -18,9 +20,19 @@
 
   & > li.active > a {
     z-index: 999;
-    &, &:hover {
+    &, &:hover, &:focus {
       border: 1px solid #ccc;
       border-right-color: transparent;
+    }
+  }
+}
+
+.nav-tabs {
+  > li.active {
+    > a,
+    > a:focus,
+    > a:hover {
+      background: $brand-primary;
     }
   }
 }

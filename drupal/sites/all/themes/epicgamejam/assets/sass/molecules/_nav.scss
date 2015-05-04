@@ -4,7 +4,12 @@
     padding-right: 0;
   }
   .tab-content {
-    background: $white;
+    fieldset {
+      background: $white;
+      border-top: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
   }
 }
 
