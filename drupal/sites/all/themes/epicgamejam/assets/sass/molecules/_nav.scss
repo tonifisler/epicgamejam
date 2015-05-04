@@ -14,10 +14,12 @@
 }
 
 .nav-pills {
-  a {
-    color: $white;
+  margin-bottom: 20px;
+  > li > a {
+    color: $brand-primary;
+    background-color: transparentize($white, .3);
     &:hover {
-      color: $viking;
+      background-color: transparentize($white, .1);
     }
   }
 }

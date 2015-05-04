@@ -87,13 +87,13 @@ function epicgamejam_field_group_info() {
     ),
     'format_type' => 'bootstrap_fieldgroup_nav',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Groupe',
       'instance_settings' => array(
-        'classes' => '',
-        'bootstrap_nav_type' => 'tabs',
-        'bootstrap_stacked' => 0,
-        'bootstrap_orientation' => 0,
+        'bootstrap_nav_type' => 'pills',
+        'bootstrap_stacked' => '0',
+        'bootstrap_orientation' => '0',
         'required_fields' => 1,
+        'classes' => '',
       ),
     ),
   );
