@@ -73,14 +73,6 @@ function epicgamejam_image_default_styles() {
  */
 function epicgamejam_node_info() {
   $items = array(
-    'epic_theme' => array(
-      'name' => t('Theme'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Theme Suggestion'),
-      'help' => '',
-    ),
     'game' => array(
       'name' => t('Game'),
       'base' => 'node_content',

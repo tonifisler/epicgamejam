@@ -83,19 +83,6 @@ function _theme_redirect($form, &$form_state) {
   $form_state['redirect'] = 'epic-themer';
 }
 
-/*
- * Implements hook_theme().
- */
-function epicgamejam_theme($existing, $type, $theme, $path) {
-  $items['epic_theme_node_form'] = array(
-          'render element' => 'form',
-          'template' => 'add-theme',
-          'path' => drupal_get_path('theme', 'epicgamejam') . '/templates/form',
-      );
-
-  return $items;
-}
-
 /**
  * Alter the rate widget before display.
  *

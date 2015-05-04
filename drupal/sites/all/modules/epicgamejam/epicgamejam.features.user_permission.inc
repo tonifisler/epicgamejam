@@ -555,18 +555,6 @@ function epicgamejam_user_default_permissions() {
     'module' => 'context_ui',
   );
 
-  // Exported permission: 'create epic_theme content'.
-  $permissions['create epic_theme content'] = array(
-    'name' => 'create epic_theme content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'jammer' => 'jammer',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create field_badges'.
   $permissions['create field_badges'] = array(
     'name' => 'create field_badges',
@@ -613,15 +601,6 @@ function epicgamejam_user_default_permissions() {
     'module' => 'ckeditor',
   );
 
-  // Exported permission: 'delete any epic_theme content'.
-  $permissions['delete any epic_theme content'] = array(
-    'name' => 'delete any epic_theme content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any game content'.
   $permissions['delete any game content'] = array(
     'name' => 'delete any game content',
@@ -634,15 +613,6 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own epic_theme content'.
-  $permissions['delete own epic_theme content'] = array(
-    'name' => 'delete own epic_theme content',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -719,15 +689,6 @@ function epicgamejam_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
-  // Exported permission: 'edit any epic_theme content'.
-  $permissions['edit any epic_theme content'] = array(
-    'name' => 'edit any epic_theme content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any game content'.
   $permissions['edit any game content'] = array(
     'name' => 'edit any game content',
@@ -774,15 +735,6 @@ function epicgamejam_user_default_permissions() {
     'name' => 'edit original values',
     'roles' => array(),
     'module' => 'entity_translation',
-  );
-
-  // Exported permission: 'edit own epic_theme content'.
-  $permissions['edit own epic_theme content'] = array(
-    'name' => 'edit own epic_theme content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'edit own field_badges'.
@@ -859,15 +811,6 @@ function epicgamejam_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
-  // Exported permission: 'enter epic_theme revision log entry'.
-  $permissions['enter epic_theme revision log entry'] = array(
-    'name' => 'enter epic_theme revision log entry',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'override_node_options',
-  );
-
   // Exported permission: 'enter game revision log entry'.
   $permissions['enter game revision log entry'] = array(
     'name' => 'enter game revision log entry',
@@ -929,60 +872,6 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'pathauto',
-  );
-
-  // Exported permission: 'override epic_theme authored by option'.
-  $permissions['override epic_theme authored by option'] = array(
-    'name' => 'override epic_theme authored by option',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'override_node_options',
-  );
-
-  // Exported permission: 'override epic_theme authored on option'.
-  $permissions['override epic_theme authored on option'] = array(
-    'name' => 'override epic_theme authored on option',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'override_node_options',
-  );
-
-  // Exported permission: 'override epic_theme promote to front page option'.
-  $permissions['override epic_theme promote to front page option'] = array(
-    'name' => 'override epic_theme promote to front page option',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'override_node_options',
-  );
-
-  // Exported permission: 'override epic_theme published option'.
-  $permissions['override epic_theme published option'] = array(
-    'name' => 'override epic_theme published option',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'override_node_options',
-  );
-
-  // Exported permission: 'override epic_theme revision option'.
-  $permissions['override epic_theme revision option'] = array(
-    'name' => 'override epic_theme revision option',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'override_node_options',
-  );
-
-  // Exported permission: 'override epic_theme sticky option'.
-  $permissions['override epic_theme sticky option'] = array(
-    'name' => 'override epic_theme sticky option',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'override_node_options',
   );
 
   // Exported permission: 'override game authored by option'.
@@ -1312,15 +1201,6 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'view any unpublished content'.
   $permissions['view any unpublished content'] = array(
     'name' => 'view any unpublished content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'view_unpublished',
-  );
-
-  // Exported permission: 'view any unpublished epic_theme content'.
-  $permissions['view any unpublished epic_theme content'] = array(
-    'name' => 'view any unpublished epic_theme content',
     'roles' => array(
       'administrator' => 'administrator',
     ),

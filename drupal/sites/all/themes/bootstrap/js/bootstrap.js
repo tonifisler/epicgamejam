@@ -20,7 +20,7 @@ var Drupal = Drupal || {};
         var borderRadius = parseInt($content.css('borderBottomRightRadius'), 10);
         var bootstrapTabResize = function() {
           if ($wrapper.hasClass('tabs-left') || $wrapper.hasClass('tabs-right')) {
-            $content.css('min-height', $tabs.outerHeight());
+            $content.find('fieldset').css('min-height', $tabs.outerHeight()+1);
           }
         };
         // Add min-height on content for left and right tabs.
