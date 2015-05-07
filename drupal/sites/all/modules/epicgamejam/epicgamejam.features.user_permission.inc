@@ -15,7 +15,6 @@ function epicgamejam_user_default_permissions() {
     'name' => 'access administration menu',
     'roles' => array(
       'administrator' => 'administrator',
-      'epic organizer' => 'epic organizer',
     ),
     'module' => 'admin_menu',
   );
