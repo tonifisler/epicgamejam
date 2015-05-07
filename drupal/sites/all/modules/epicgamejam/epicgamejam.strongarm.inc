@@ -1070,7 +1070,7 @@ View,glyphicon glyphicon-eye-open';
       'focus' => 0,
       'manual' => 0,
     ),
-    'bootstrap_popover_trigger_autoclose' => 1,
+    'bootstrap_popover_trigger_autoclose' => 0,
     'bootstrap_popover_title' => '',
     'bootstrap_popover_content' => '',
     'bootstrap_popover_delay' => '0',
