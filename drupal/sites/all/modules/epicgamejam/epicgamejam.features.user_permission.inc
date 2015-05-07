@@ -38,6 +38,16 @@ function epicgamejam_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'access all webform results'.
+  $permissions['access all webform results'] = array(
+    'name' => 'access all webform results',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+    ),
+    'module' => 'webform',
+  );
+
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -75,6 +85,34 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'devel',
+  );
+
+  // Exported permission: 'access draggableviews'.
+  $permissions['access draggableviews'] = array(
+    'name' => 'access draggableviews',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+    ),
+    'module' => 'draggableviews',
+  );
+
+  // Exported permission: 'access own webform results'.
+  $permissions['access own webform results'] = array(
+    'name' => 'access own webform results',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
+  // Exported permission: 'access own webform submissions'.
+  $permissions['access own webform submissions'] = array(
+    'name' => 'access own webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
   );
 
   // Exported permission: 'access private fields'.
@@ -266,6 +304,15 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'filter',
+  );
+
+  // Exported permission: 'administer gravatar'.
+  $permissions['administer gravatar'] = array(
+    'name' => 'administer gravatar',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'gravatar',
   );
 
   // Exported permission: 'administer image styles'.
@@ -563,6 +610,16 @@ function epicgamejam_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'create field_epic_points'.
+  $permissions['create field_epic_points'] = array(
+    'name' => 'create field_epic_points',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create game content'.
   $permissions['create game content'] = array(
     'name' => 'create game content',
@@ -591,6 +648,13 @@ function epicgamejam_user_default_permissions() {
     'module' => 'path',
   );
 
+  // Exported permission: 'create webform content'.
+  $permissions['create webform content'] = array(
+    'name' => 'create webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'customize ckeditor'.
   $permissions['customize ckeditor'] = array(
     'name' => 'customize ckeditor',
@@ -598,6 +662,15 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'ckeditor',
+  );
+
+  // Exported permission: 'delete all webform submissions'.
+  $permissions['delete all webform submissions'] = array(
+    'name' => 'delete all webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
   );
 
   // Exported permission: 'delete any game content'.
@@ -618,6 +691,13 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any webform content'.
+  $permissions['delete any webform content'] = array(
+    'name' => 'delete any webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own game content'.
   $permissions['delete own game content'] = array(
     'name' => 'delete own game content',
@@ -634,6 +714,22 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'delete own webform content'.
+  $permissions['delete own webform content'] = array(
+    'name' => 'delete own webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own webform submissions'.
+  $permissions['delete own webform submissions'] = array(
+    'name' => 'delete own webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
   );
 
   // Exported permission: 'delete revisions'.
@@ -670,6 +766,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'disable own gravatar'.
+  $permissions['disable own gravatar'] = array(
+    'name' => 'disable own gravatar',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'gravatar',
+  );
+
   // Exported permission: 'display disqus comments on profile'.
   $permissions['display disqus comments on profile'] = array(
     'name' => 'display disqus comments on profile',
@@ -686,6 +791,16 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'admin_menu',
+  );
+
+  // Exported permission: 'edit all webform submissions'.
+  $permissions['edit all webform submissions'] = array(
+    'name' => 'edit all webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+    ),
+    'module' => 'webform',
   );
 
   // Exported permission: 'edit any game content'.
@@ -706,11 +821,28 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any webform content'.
+  $permissions['edit any webform content'] = array(
+    'name' => 'edit any webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit field_badges'.
   $permissions['edit field_badges'] = array(
     'name' => 'edit field_badges',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_epic_points'.
+  $permissions['edit field_epic_points'] = array(
+    'name' => 'edit field_epic_points',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'field_permissions',
   );
@@ -745,6 +877,16 @@ function epicgamejam_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit own field_epic_points'.
+  $permissions['edit own field_epic_points'] = array(
+    'name' => 'edit own field_epic_points',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own game content'.
   $permissions['edit own game content'] = array(
     'name' => 'edit own game content',
@@ -762,6 +904,22 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit own webform content'.
+  $permissions['edit own webform content'] = array(
+    'name' => 'edit own webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own webform submissions'.
+  $permissions['edit own webform submissions'] = array(
+    'name' => 'edit own webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
   );
 
   // Exported permission: 'edit taxonomy_term original values'.
@@ -810,6 +968,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'edit webform components'.
+  $permissions['edit webform components'] = array(
+    'name' => 'edit webform components',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
   // Exported permission: 'enter game revision log entry'.
   $permissions['enter game revision log entry'] = array(
     'name' => 'enter game revision log entry',
@@ -825,6 +992,13 @@ function epicgamejam_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: 'enter webform revision log entry'.
+  $permissions['enter webform revision log entry'] = array(
+    'name' => 'enter webform revision log entry',
+    'roles' => array(),
     'module' => 'override_node_options',
   );
 
@@ -978,6 +1152,48 @@ function epicgamejam_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: 'override webform authored by option'.
+  $permissions['override webform authored by option'] = array(
+    'name' => 'override webform authored by option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: 'override webform authored on option'.
+  $permissions['override webform authored on option'] = array(
+    'name' => 'override webform authored on option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: 'override webform promote to front page option'.
+  $permissions['override webform promote to front page option'] = array(
+    'name' => 'override webform promote to front page option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: 'override webform published option'.
+  $permissions['override webform published option'] = array(
+    'name' => 'override webform published option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: 'override webform revision option'.
+  $permissions['override webform revision option'] = array(
+    'name' => 'override webform revision option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: 'override webform sticky option'.
+  $permissions['override webform sticky option'] = array(
+    'name' => 'override webform sticky option',
+    'roles' => array(),
     'module' => 'override_node_options',
   );
 
@@ -1152,6 +1368,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'ctools',
   );
 
+  // Exported permission: 'use gravatar'.
+  $permissions['use gravatar'] = array(
+    'name' => 'use gravatar',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'gravatar',
+  );
+
   // Exported permission: 'use page manager'.
   $permissions['use page manager'] = array(
     'name' => 'use page manager',
@@ -1224,6 +1449,13 @@ function epicgamejam_user_default_permissions() {
     'module' => 'view_unpublished',
   );
 
+  // Exported permission: 'view any unpublished webform content'.
+  $permissions['view any unpublished webform content'] = array(
+    'name' => 'view any unpublished webform content',
+    'roles' => array(),
+    'module' => 'view_unpublished',
+  );
+
   // Exported permission: 'view disqus comments'.
   $permissions['view disqus comments'] = array(
     'name' => 'view disqus comments',
@@ -1247,6 +1479,17 @@ function epicgamejam_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view field_epic_points'.
+  $permissions['view field_epic_points'] = array(
+    'name' => 'view field_epic_points',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+      'jammer' => 'jammer',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'view own field_badges'.
   $permissions['view own field_badges'] = array(
     'name' => 'view own field_badges',
@@ -1254,6 +1497,17 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'jammer' => 'jammer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_epic_points'.
+  $permissions['view own field_epic_points'] = array(
+    'name' => 'view own field_epic_points',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
       'jammer' => 'jammer',
     ),
     'module' => 'field_permissions',

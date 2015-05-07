@@ -16,6 +16,15 @@ function epicgamejam_preprocess_node(&$variables) {
 }
 
 /**
+ * template_preprocess_page
+ */
+function epicgamejam_preprocess_page(&$variables) {
+  if ($variables['theme_hook_suggestions'][0] === 'page__user') {
+    $variables['is_user_profile'] = true;
+  }
+}
+
+/**
  * Bootstrap theme wrapper function for the secondary menu links.
  */
 function epicgamejam_menu_tree__secondary(&$variables) {

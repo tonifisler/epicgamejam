@@ -158,7 +158,7 @@ drupal_add_library('chosen', 'drupal.chosen');
       <?php endif; ?>
       <?php if (!$is_front): ?>
         <?php print render($title_prefix); ?>
-        <?php if (!empty($title)): ?>
+        <?php if (!empty($title) && !isset($is_user_profile)): ?>
           <h1 class="page-header"><?php print $title; ?></h1>
         <?php endif; ?>
         <?php print render($title_suffix); ?>

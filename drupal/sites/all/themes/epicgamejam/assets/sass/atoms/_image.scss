@@ -3,3 +3,10 @@
     @extend .img-circle;
   }
 }
+
+.user-picture img {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  max-width: none;
+}
