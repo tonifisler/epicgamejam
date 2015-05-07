@@ -245,7 +245,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'context_block_rebuild_needed';
-  $strongarm->value = FALSE;
+  $strongarm->value = TRUE;
   $export['context_block_rebuild_needed'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -280,7 +280,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1430776626;
+  $strongarm->value = 1431024663;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
