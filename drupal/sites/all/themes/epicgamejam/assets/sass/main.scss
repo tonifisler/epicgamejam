@@ -56,5 +56,7 @@
 // Templates ---------------------------------
 @import 'templates/general';
 
+@import '../../bower_components/bootstrap-chosen/bootstrap-chosen';
+@import 'molecules/chosen';
 @import 'helpers';
 @import 'shame';

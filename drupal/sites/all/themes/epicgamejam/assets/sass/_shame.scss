@@ -1,4 +1,12 @@
 #auth_box.register {
   width: auto;
   max-width: 600px;
+
+  .chosen-container {
+    max-width: 260px;
+  }
+  .chosen-search  input{
+    width: 100%;
+    padding: 1px;
+  }
 }

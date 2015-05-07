@@ -11,7 +11,8 @@
       "bower_components/FlipClock/compiled/flipclock.css"
     ],
     "img_to_css":  [
-      "bower_components/chosen/*.png"
+      "bower_components/chosen/*.png",
+      "bower_components/bootstrap-chosen/*.png"
     ],
     "js": [
       "bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js",
