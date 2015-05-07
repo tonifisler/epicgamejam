@@ -95,6 +95,7 @@
     <?php endif; ?>
   </header>
   <?php endif; ?>
+  <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-trigger="hover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">HOVER SHITZ</button>
   <?php
     // Hide comments, tags, and links now so that we can render them later.
     hide($content['comments']);

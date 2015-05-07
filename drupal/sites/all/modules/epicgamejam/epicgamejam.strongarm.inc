@@ -287,7 +287,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1431024663;
+  $strongarm->value = 1431035508;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1024,7 +1024,7 @@ View,glyphicon glyphicon-eye-open';
     'default_favicon' => 0,
     'favicon_path' => '',
     'favicon_upload' => '',
-    'bootstrap__active_tab' => 'edit-advanced',
+    'bootstrap__active_tab' => 'edit-javascript',
     'bootstrap_fluid_container' => 0,
     'bootstrap_button_size' => '',
     'bootstrap_button_colorize' => 1,
@@ -1061,12 +1061,12 @@ View,glyphicon glyphicon-eye-open';
     'bootstrap_forms_has_error_value_toggle' => 1,
     'bootstrap_popover_enabled' => 1,
     'bootstrap_popover_animation' => 1,
-    'bootstrap_popover_html' => 0,
-    'bootstrap_popover_placement' => 'right',
+    'bootstrap_popover_html' => 1,
+    'bootstrap_popover_placement' => 'auto',
     'bootstrap_popover_selector' => '',
     'bootstrap_popover_trigger' => array(
-      'click' => 'click',
-      'hover' => 0,
+      'hover' => 'hover',
+      'click' => 0,
       'focus' => 0,
       'manual' => 0,
     ),
@@ -1075,7 +1075,7 @@ View,glyphicon glyphicon-eye-open';
     'bootstrap_popover_content' => '',
     'bootstrap_popover_delay' => '0',
     'bootstrap_popover_container' => 'body',
-    'bootstrap_tooltip_enabled' => 1,
+    'bootstrap_tooltip_enabled' => 0,
     'bootstrap_tooltip_animation' => 1,
     'bootstrap_tooltip_html' => 0,
     'bootstrap_tooltip_placement' => 'auto left',

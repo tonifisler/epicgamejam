@@ -176,25 +176,27 @@ function epicgamejam_field__taxonomy_term_reference(&$variables) {
     $array = $variables['element']['#object']->field_badges['und'];
     foreach ($array as $delta => $item) {
       $image = $item['taxonomy_term']->field_badge_image;
+      $content = $item['taxonomy_term']->description;
       if ($image) {
         $image_uri = $image['und'][0]['uri'];
         $image_for_sizing = image_style_path('badge_thumbnail', $image_uri);
         $image_vars = array(
           'path' => $image_for_sizing,
           'alt' => $item['taxonomy_term']->description,
-          'title' => $item['taxonomy_term']->name,
           'style_name' => 'badge-thumbnail',
           'attributes' => array(
             'class' => 'badge-sm',
-            'data-toggle' => 'tooltip',
-            'data-placement' => 'top',
-            'data-trigger' => 'hover',
-            'data-html' => true
           )
         );
         $image_html = theme('image', $image_vars);
         $href = $variables['element'][$delta]['#href'];
-        $output .= '<li class="badge-element">' . l($image_html, $href, array( 'html' => true )) . '</li>';
+        $output .= '<li class="badge-element">' . l($image_html, $href, array(
+          'html' => true,
+          'attributes' => array(
+            'title' => $item['taxonomy_term']->name,
+            'data-toggle' => 'popover',
+            'data-content' => $content,
+          ))) . '</li>';
       }
     }
     $output .= '</ul>';
