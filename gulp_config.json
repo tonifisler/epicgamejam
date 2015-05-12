@@ -27,7 +27,8 @@
       "bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js",
       "bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js",
       "bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
-      "bower_components/FlipClock/compiled/flipclock.js"
+      "bower_components/FlipClock/compiled/flipclock.js",
+      "node_modules/jquery.countdown/jquery.countdown.js"
     ],
     "fonts": [
       "bower_components/fontawesome/fonts/*",

@@ -90,11 +90,11 @@ drupal_add_library('chosen', 'drupal.chosen');
     <?php print render($page['header']); ?>
 
     <?php if ($is_front): ?>
-      <h2 class="text-center">July 3th <span class="text-muted">20:00</span> to 5th <span class="text-muted">17:00 CEST (GMT+2)</span></h2>
+      <h2 class="text-center"><span class="text-epic">July 3th</span> 20:00 <span class="text-epic">to 5th</span> 17:00 CEST (GMT+2)</h2>
       <div class="hidden-xs">
         <div class="spacer spacer-sm"></div>
-        <div id="countdown"></div>
-        <h2 class="text-center"><span class="sr-only">A few days only </span>BEFORE IT ALL BEGINS.</h2>
+        <div id="countdown" class="text-center countdown-container">2015-07-03T20:00:00+0200</div>
+        <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL BEGINS.</p>
         <div class="spacer spacer-sm"></div>
       </div>
     <?php endif ?>

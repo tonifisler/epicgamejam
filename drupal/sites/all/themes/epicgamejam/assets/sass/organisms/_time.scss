@@ -1,0 +1,68 @@
+.countdown-container {
+  background: $white;
+  position: relative;
+
+  &:before {
+    content: url(../svg/deco.svg);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+
+  }
+}
+
+.countdown {
+  font-family: $headings-font-family;
+  position: relative;
+  z-index: 10;
+
+  &:after {
+    content: url(../img/T-REX.gif);
+    position: absolute;
+    right: -180px;
+    top: -230px;
+    z-index: -1
+  }
+  &:before {
+    content: url(../img/BERSERKER.gif);
+    position: absolute;
+    left: -200px;
+    top: -230px;
+  }
+
+  .item {
+    background: url('../svg/count_bg.svg') no-repeat;
+    color: $white;
+    display: inline-block;
+    width: 120px;
+    height: 89px;
+    position: relative;
+    text-align: center;
+
+    span {
+      line-height: 90px;
+      font-size: 80px;
+
+      &:last-child {
+        line-height: 1;
+        font-size: 20px;
+        color: $text-color;
+      }
+    }
+  }
+  .label {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .separator {
+    font-size: 60px;
+    position: relative;
+    display: inline-block;
+    top: -10px;
+    right: 4px;;
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="980px" height="196px" viewBox="0 0 980 196" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>deco</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="deco" sketch:type="MSLayerGroup">
+            <path d="M979.828125,89.578125 L969.40625,175.230469 L489.902344,195.375 L489.902344,154.423601 L979.828125,89.578125 Z" id="Path-4" fill="#FFCD32" sketch:type="MSShapeGroup"></path>
+            <path d="M974.484375,57.1015625 L959.980469,125.128906 L489.671875,182.386719 L489.671875,144.298218 L974.484375,57.1015625 Z" id="Path-3" fill="#45C2C5" sketch:type="MSShapeGroup"></path>
+            <path d="M971.234662,0.575175203 L956.920572,75.8545719 L488.305308,170.436796 L488.305308,131.081146 L971.234662,0.575175203 Z" id="Path-2" fill="#F79838" sketch:type="MSShapeGroup"></path>
+            <path d="M490.097656,89.578125 L479.675781,175.230469 L0.171875,195.375 L0.171875,154.423601 L490.097656,89.578125 Z" id="Path-4" fill="#FFCD32" sketch:type="MSShapeGroup" transform="translate(245.134766, 142.476562) scale(-1, 1) translate(-245.134766, -142.476562) "></path>
+            <path d="M490.328125,57.1015625 L475.824219,125.128906 L5.515625,182.386719 L5.515625,144.298218 L490.328125,57.1015625 Z" id="Path-3" fill="#45C2C5" sketch:type="MSShapeGroup" transform="translate(247.921875, 119.744141) scale(-1, 1) translate(-247.921875, -119.744141) "></path>
+            <path d="M491.694692,0.575175203 L477.380602,75.8545719 L8.76533843,170.436796 L8.76533843,131.081146 L491.694692,0.575175203 Z" id="Path-2" fill="#F79838" sketch:type="MSShapeGroup" transform="translate(250.230015, 85.505986) scale(-1, 1) translate(-250.230015, -85.505986) "></path>
+        </g>
+    </g>
+</svg>
