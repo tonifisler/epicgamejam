@@ -7,7 +7,6 @@ dependencies[] = adminimal_admin_menu
 dependencies[] = advanced_help
 dependencies[] = better_exposed_filters
 dependencies[] = better_formats
-dependencies[] = betterlogin
 dependencies[] = block
 dependencies[] = bootstrap_fieldgroup
 dependencies[] = chosen
