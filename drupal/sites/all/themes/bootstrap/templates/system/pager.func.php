@@ -141,23 +141,10 @@ function bootstrap_pager($variables) {
     // 'data' => $li_last,
     // );
     // }
-
-    $build = array(
-      '#theme_wrappers' => array('container__pager'),
-      '#attributes' => array(
-        'class' => array(
-          'text-center',
-        ),
-      ),
-      'pager' => array(
-        '#theme' => 'item_list',
-        '#items' => $items,
-        '#attributes' => array(
-          'class' => array('pagination'),
-        ),
-      ),
-    );
-    return drupal_render($build);
+    return '<div class="text-center">' . theme('item_list', array(
+      'items' => $items,
+      'attributes' => array('class' => array('pagination')),
+    )) . '</div>';
   }
   return $output;
 }

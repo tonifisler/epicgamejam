@@ -17,7 +17,7 @@ function bootstrap_preprocess_button(&$vars) {
   $element['#attributes']['class'][] = 'btn';
 
   // Add button size, if necessary.
-  if ($size = bootstrap_setting('button_size')) {
+  if ($size = theme_get_setting('bootstrap_button_size')) {
     $element['#attributes']['class'][] = $size;
   }
 
