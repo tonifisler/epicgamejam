@@ -181,9 +181,7 @@ drupal_add_library('chosen', 'drupal.chosen');
       <?php if (!empty($page['highlighted'])): ?>
           </div>
           <div class="col-md-4">
-            <div class="well">
-              <?php print render($page['highlighted']); ?>
-            </div>
+            <?php print render($page['highlighted']); ?>
           </div>
         </div>
       <?php endif; ?>
