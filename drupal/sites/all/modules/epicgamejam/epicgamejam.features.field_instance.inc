@@ -940,7 +940,7 @@ function epicgamejam_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -976,7 +976,7 @@ function epicgamejam_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -1012,7 +1012,7 @@ function epicgamejam_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 1,
     ),
   );
 
@@ -1058,7 +1058,7 @@ sound|Sound Designer
         'sort_options' => 0,
       ),
       'type' => 'select_or_other_buttons',
-      'weight' => 7,
+      'weight' => 2,
     ),
   );
 

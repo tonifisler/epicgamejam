@@ -75,7 +75,6 @@ dependencies[] = title
 dependencies[] = token
 dependencies[] = update
 dependencies[] = user
-dependencies[] = user_registrationpassword
 dependencies[] = user_settings_access
 dependencies[] = view_unpublished
 dependencies[] = views

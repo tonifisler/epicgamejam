@@ -163,7 +163,7 @@ function epicgamejam_preprocess_block(&$variables) {
 
 function epicgamejam_preprocess_image(&$variables) {
   if (isset($variables['style_name']) && $variables['style_name'] == 'badge_thumbnail') {
-    if ($variables['attributes']['class'][0] != 'badge-sm') {
+    if (isset($variables['attributes']['class']) && $variables['attributes']['class'][0] != 'badge-sm') {
       $variables['attributes']['class'] = array('media-object');
       $variables['attributes']['style'][] = 'width: 50px; height: auto;';
     }

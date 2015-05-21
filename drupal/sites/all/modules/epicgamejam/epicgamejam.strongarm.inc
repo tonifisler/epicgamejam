@@ -287,7 +287,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1431254551;
+  $strongarm->value = 1431721159;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -427,6 +427,10 @@ View,glyphicon glyphicon-eye-open';
     'user' => array(
       0 => 'users',
       1 => 'uid',
+    ),
+    'rules_config' => array(
+      0 => 'rules_config',
+      1 => 'id',
     ),
   );
   $export['entityreference:base-tables'] = $strongarm;
