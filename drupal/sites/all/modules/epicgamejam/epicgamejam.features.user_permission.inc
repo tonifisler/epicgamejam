@@ -83,6 +83,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'access devel information',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
     ),
     'module' => 'devel',
   );

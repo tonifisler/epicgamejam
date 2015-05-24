@@ -23,31 +23,77 @@ function epicgamejam_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Order Epic Badges';
-  $handler->display->display_options['css_class'] = 'row';
+  $handler->display->display_options['css_class'] = 'table-badges table-epic';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access draggableviews';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_badge_image' => 'field_badge_image',
+    'name' => 'name',
+    'description' => 'description',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_badge_image' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-right',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'description' => array(
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Get a badge by fulfilling some silly achievements! ';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  /* Field: Taxonomy term: Image */
+  $handler->display->display_options['fields']['field_badge_image']['id'] = 'field_badge_image';
+  $handler->display->display_options['fields']['field_badge_image']['table'] = 'field_data_field_badge_image';
+  $handler->display->display_options['fields']['field_badge_image']['field'] = 'field_badge_image';
+  $handler->display->display_options['fields']['field_badge_image']['label'] = '';
+  $handler->display->display_options['fields']['field_badge_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_badge_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_badge_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_badge_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_badge_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_badge_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['label'] = 'TITLEs';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_class'] = 'text-dimbo';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = 'MEANINGs';
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
@@ -64,6 +110,8 @@ function epicgamejam_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'LiST of the EPIC BADGEs';
   $handler->display->display_options['path'] = 'badges';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Badges';
@@ -74,6 +122,9 @@ function epicgamejam_views_default_views() {
 
   /* Display: OrderPage */
   $handler = $view->new_display('page', 'OrderPage', 'page_1');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access draggableviews';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -151,7 +202,10 @@ function epicgamejam_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Get a badge by fulfilling some silly achievements! '),
+    t('TITLEs'),
+    t('MEANINGs'),
     t('Page'),
+    t('LiST of the EPIC BADGEs'),
     t('OrderPage'),
     t('Epic Image'),
     t('Epic Badge Name'),
