@@ -85,16 +85,21 @@ hide($content['field_genre']);
 hide($content['links']);
 hide($content['rate_epic_points']);
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail thumbnail-dark game-thumbnail"<?php print $attributes; ?>>
+  <?php print render($title_prefix); ?>
+  <?php print render($title_suffix); ?>
+
+  <div class="oblique-wrapper">
+    <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a><small><?php if (!empty($content['field_team_name'])): print t(' by ') . render($content['field_team_name']); endif; ?></small></h3>
+  </div>
 
   <?php print render($content['field_image']); ?>
 
-  <div class="caption">
-    <?php print render($title_prefix); ?>
-      <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a><small><?php if (!empty($content['field_team_name'])): print t(', by ') . render($content['field_team_name']); endif; ?></small></h3>
-    <?php print render($title_suffix); ?>
+  <div class="thumbnail-points">
+    <a href="<?php print $node_url; ?>">
+      <span class="text-dimbo text-epic text-huge">345</span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
+    </a>
     <?php print render($content); ?>
-    <div class="spacer spacer-xs"></div>
     <?php print render($content['field_genre']); ?>
     <?php print render($content['field_badges']); ?>
   </div>

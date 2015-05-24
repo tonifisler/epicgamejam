@@ -1,0 +1,44 @@
+.view-games {
+  .views-row-1 {
+    .oblique-wrapper {
+      &:before {
+        background: $viking;
+      }
+    }
+  }
+  .views-row-2 {
+    .oblique-wrapper {
+      &:before {
+        background: $lightning-yellow;
+      }
+    }
+  }
+  .views-row-3 {
+    .oblique-wrapper {
+      &:before {
+        background: $sunglow;
+      }
+    }
+  }
+}
+
+.game-thumbnail {
+  .field-genre {
+    margin-top: -14px;
+  }
+  .thumbnail-points {
+    margin: -1.3em 3px 0;
+    font-size: 2em;
+    > a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .oblique-wrapper {
+    a {
+      color: $white;
+      @extend .text-epic;
+    }
+  }
+}
