@@ -242,3 +242,11 @@ function epicgamejam_link_formatter_link_default($vars) {
     return l($vars['element']['title'], $vars['element']['url'], $link_options);
   }
 }
+
+/**
+ * Implements hook_preprocess_views_view_table().
+ */
+function epicgamejam_preprocess_views_view_table(&$variables) {
+  $variables['attributes_array']['data-tablesaw-mode'] = 'stack';
+
+}

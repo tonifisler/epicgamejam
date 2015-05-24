@@ -8,7 +8,8 @@
     "chosen-bootstrap": "~1.0.4",
     "fontawesome": "~4.3.0",
     "FlipClock": "~0.7.7",
-    "fabricator": "git@github.com:fbrctr/fabricator.git"
+    "fabricator": "git@github.com:fbrctr/fabricator.git",
+    "filament-tablesaw": "~1.0.4"
   },
   "devDependencies": {
     "bootstrap-chosen": "~1.0.1"

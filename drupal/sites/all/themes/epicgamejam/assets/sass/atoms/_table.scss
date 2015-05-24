@@ -3,3 +3,41 @@
     background: $white;
   }
 }
+
+.table-responsive {
+  border: 0;
+}
+
+.table-epic {
+  .table {
+    border-collapse:separate;
+    border-spacing: 0 10px;
+
+    td {
+      background: transparentize($white, .5);
+      border: 0;
+      vertical-align: middle;
+
+      &:first-child {
+        text-align: right;
+        max-width: 80px;
+        a {
+          display: inline-block;
+        }
+      }
+    }
+    th {
+      border: 0;
+    }
+    tr {
+      padding-bottom: 20px;
+    }
+  }
+  .text-dimbo {
+
+    a {
+      color: $text-color;
+      font-size: 30px;
+    }
+  }
+}

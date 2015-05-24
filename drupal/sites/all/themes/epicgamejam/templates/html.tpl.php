@@ -75,7 +75,6 @@
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <?php print $scripts; ?>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">
@@ -83,6 +82,7 @@
   </div>
   <?php print $page_top; ?>
   <?php print $page; ?>
+  <?php print $scripts; ?>
   <?php print $page_bottom; ?>
 </body>
 </html>
