@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "epicgamejam";
+  src: url('../fonts/epicgamejam.eot');
+  src: url('../fonts/epicgamejam.eot?#iefix') format('eot'),
+    url('../fonts/epicgamejam.woff') format('woff'),
+    url('../fonts/epicgamejam.ttf') format('truetype'),
+    url('../fonts/epicgamejam.svg#epicgamejam') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.epicgamejam:before {
+  display: inline-block;
+  font-family: "epicgamejam";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.epicgamejam-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.epicgamejam-2x { font-size: 2em; }
+.epicgamejam-3x { font-size: 3em; }
+.epicgamejam-4x { font-size: 4em; }
+.epicgamejam-5x { font-size: 5em; }
+.epicgamejam-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.epicgamejam-book:before { content: "\E001" }
+.epicgamejam-castle:before { content: "\E002" }
+.epicgamejam-cup:before { content: "\E003" }
+.epicgamejam-diamond:before { content: "\E004" }
+.epicgamejam-lamp:before { content: "\E005" }
+.epicgamejam-potion:before { content: "\E006" }
+.epicgamejam-safari:before { content: "\E007" }

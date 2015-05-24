@@ -26,6 +26,9 @@ module.exports = function(gulp, $, config, browserSync, runSequence) {
     gulp.watch([config.assets + 'js/**/*.js'], function() {
       runSequence('scripts', 'styleguide', reload);
     });
+    gulp.watch([config.assets + 'icons/**/*'], function() {
+      runSequence('icons', 'styleguide', reload);
+    });
     gulp.watch([
       config.assets + 'components/**/*.html',
       config.assets + 'templates/**/*.html',
