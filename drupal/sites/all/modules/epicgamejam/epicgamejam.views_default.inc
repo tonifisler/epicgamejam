@@ -226,7 +226,7 @@ function epicgamejam_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Featured Games';
+  $handler->display->display_options['title'] = 'FEATURED EPIC GAMES to PLAY';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -364,7 +364,7 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['css_class'] = 'row';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-4';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-4 col-sm-6';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
@@ -655,7 +655,7 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['block_description'] = 'All Games without filter';
   $translatables['games'] = array(
     t('Master'),
-    t('Featured Games'),
+    t('FEATURED EPIC GAMES to PLAY'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -664,6 +664,7 @@ function epicgamejam_views_default_views() {
     t('Desc'),
     t('Advanced options'),
     t('Select any filter and click on Apply to see results'),
+    t('Featured Games'),
     t('Jammer Games'),
     t('Games'),
     t('All'),
