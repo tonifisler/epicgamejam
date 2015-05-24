@@ -81,9 +81,9 @@ drupal_add_library('chosen', 'drupal.chosen');
       <p class="lead"><?php print $site_slogan; ?></p>
     <?php endif; ?>
 
-    <h1 class="text-center">
+    <h1 class="text-center container">
       <a class="shake" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img class="logo" src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/svg/epicgamejam_logo.svg" alt="<?php print $site_name; ?>">
+        <img class="logo img-responsive" src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/svg/epicgamejam_logo.svg" alt="<?php print $site_name; ?>">
       </a>
     </h1>
 

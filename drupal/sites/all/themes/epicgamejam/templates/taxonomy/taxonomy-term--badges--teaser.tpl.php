@@ -41,16 +41,17 @@
  * @ingroup themeable
  */
 ?>
-<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?>">
+<div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> col-sm-6 col-md-4">
 
-  <?php if (!$page): ?>
-    <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
-  <?php endif; ?>
-
-  <div class="content">
-  asdfasdf
-    <?php print render($content); ?>
-    asdf
+  <div class="media">
+    <div class="media-left">
+      <?php print render($content['field_badge_image']); ?>
+    </div>
+    <div class="media-body">
+      <h2 class="media-heading"><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
+      <?php print render($content); ?>
+    </div>
   </div>
+
 
 </div>
