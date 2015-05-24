@@ -2,10 +2,34 @@
   position: relative;
   z-index: 20;
   border: none;
-}
 
-.navbar-default.container {
-  @media only screen and (min-width: $screen-sm-min) {
-    padding: 0;
+  &.container {
+    @media only screen and (min-width: $screen-sm-min) {
+      padding: 0;
+    }
+  }
+
+  .epicon {
+    &:before {
+      margin-right: 3px;
+    }
+    @media only screen and (min-width: $screen-sm-min) {
+      &:before {
+        transition: all .25s;
+        font-size: 30px;
+        position: absolute;
+        left: 0;
+        top: -20px;
+        width: 100%;
+        text-align: center;
+      }
+      &:hover {
+        &:before {
+          font-size: 40px;
+          top: -32px;
+        }
+      }
+    }
   }
 }
+

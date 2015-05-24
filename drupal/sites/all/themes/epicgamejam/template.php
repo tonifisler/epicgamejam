@@ -28,7 +28,7 @@ function epicgamejam_preprocess_page(&$variables) {
  * Bootstrap theme wrapper function for the secondary menu links.
  */
 function epicgamejam_menu_tree__secondary(&$variables) {
-  return '<ul class="menu nav navbar-nav navbar-right">' . $variables['tree'] . '</ul>';
+  return '<div class="container"><ul class="list-inline pull-right">' . $variables['tree'] . '</ul></div>';
 }
 
 function epicgamejam_menu_link(&$variables) {

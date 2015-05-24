@@ -100,6 +100,10 @@ drupal_add_library('chosen', 'drupal.chosen');
     <?php endif ?>
   </div> <!-- /#page-header -->
 
+  <?php if (!empty($secondary_nav)): ?>
+    <?php print render($secondary_nav); ?>
+  <?php endif; ?>
+
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -119,12 +123,9 @@ drupal_add_library('chosen', 'drupal.chosen');
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="main-menu">
-        <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+        <?php if (!empty($primary_nav) || !empty($page['navigation'])): ?>
           <?php if (!empty($primary_nav)): ?>
             <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
           <?php endif; ?>
           <?php if (!empty($page['navigation'])): ?>
             <?php print render($page['navigation']); ?>
