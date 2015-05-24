@@ -54,6 +54,7 @@ dependencies[] = list
 dependencies[] = locale
 dependencies[] = menu
 dependencies[] = menu_admin_per_menu
+dependencies[] = menu_attributes
 dependencies[] = module_filter
 dependencies[] = node
 dependencies[] = number

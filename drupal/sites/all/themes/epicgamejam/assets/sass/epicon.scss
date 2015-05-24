@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "epicon";
+  src: url('../fonts/epicon.eot');
+  src: url('../fonts/epicon.eot?#iefix') format('eot'),
+    url('../fonts/epicon.woff') format('woff'),
+    url('../fonts/epicon.ttf') format('truetype'),
+    url('../fonts/epicon.svg#epicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.epicon:before {
+  display: inline-block;
+  font-family: "epicon";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.epicon-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.epicon-2x { font-size: 2em; }
+.epicon-3x { font-size: 3em; }
+.epicon-4x { font-size: 4em; }
+.epicon-5x { font-size: 5em; }
+.epicon-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.epicon-book:before { content: "\E001" }
+.epicon-castle:before { content: "\E002" }
+.epicon-cup:before { content: "\E003" }
+.epicon-diamond:before { content: "\E004" }
+.epicon-lamp:before { content: "\E005" }
+.epicon-potion:before { content: "\E006" }
+.epicon-safari:before { content: "\E007" }
