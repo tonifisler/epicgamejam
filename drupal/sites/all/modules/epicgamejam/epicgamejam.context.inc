@@ -19,6 +19,7 @@ function epicgamejam_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
+        'all-games' => 'all-games',
         'games' => 'games',
       ),
     ),
