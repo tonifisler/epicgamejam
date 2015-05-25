@@ -92,10 +92,20 @@
     padding: 5px;
   }
 
+  &.fw {
+    &:before {
+      transform: skewY(-1deg);
+    }
+  }
+
   h3 {
     position: relative;
     color: $text-color;
     margin-top: 0;
+  }
+
+  a {
+    @extend .text-epic;
   }
 }
 

@@ -81,27 +81,21 @@
  */
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> reddit"<?php print $attributes; ?>>
-  <div class="spacer spacer-xs"></div>
-  <div class="clearfix">
-    <div class="col-xs-2 col-sm-1">
-      <?php print render($content['rate_epic_points']); ?>
-    </div>
-    <div class="col-xs-10 col-sm-11">
-      <div class="media">
-        <div class="media-left">
-          <?php print render($content['field_image']); ?>
-        </div>
-        <div class="media-body">
-          <?php print render($title_prefix); ?>
-            <h3 class="media-heading"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
-          <?php print render($title_suffix); ?>
-          <?php print render($content['field_badges']); ?>
-          <?php print render($content['field_members']); ?><br>
-          <?php print render($content['field_genre']); ?>
-          <?php print render($content); ?>
-        </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <?php print render($title_prefix); ?>
+      <?php print render($title_suffix); ?>
+      <div class="oblique-wrapper fw">
+        <h3 class="media-heading"><a href="<?php print $node_url; ?>" class="text-white text-epic"><?php print $title; ?></a><small><?php if (!empty($content['field_team_name'])): print t(' by ') . render($content['field_team_name']); endif; ?></small></h3>
+        <?php print render($content['field_genre']); ?>
       </div>
+      <?php print render($content['field_image']); ?>
+      <div class="epic-points">
+        <a href="<?php print $node_url; ?>">
+          <span class="text-dimbo text-epic text-huge">345</span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
+        </a>
+      <?php print render($content['field_badges']); ?>
+      <?php print render($content); ?>
     </div>
   </div>
-  <div class="spacer spacer-xs"></div>
 </div>
