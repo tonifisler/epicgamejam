@@ -31,8 +31,10 @@
   &-sunglow {color: $sunglow !important;}
   &-lightning-yellow {color: $lightning-yellow !important;}
   &-nero {color: $nero !important;}
+  &-white {color: $white !important;}
 
   &-huge {font-size: 2em;}
+  &-francbord {line-height: .7;}
 }
 
 /**
@@ -51,6 +53,10 @@
     &.spacer-sm {height: 20px;}
     &.spacer-xs {height: 10px;}
   }
+}
+
+.no-margin {
+  &-bottom {margin-bottom: 0 !important;}
 }
 
 .bg {
