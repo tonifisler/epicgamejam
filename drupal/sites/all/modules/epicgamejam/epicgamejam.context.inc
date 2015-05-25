@@ -31,7 +31,7 @@ function epicgamejam_context_default_contexts() {
           'module' => 'views',
           'delta' => 'games-block_2',
           'region' => 'content_bottom',
-          'weight' => '-10',
+          'weight' => '-16',
         ),
       ),
     ),
@@ -134,6 +134,34 @@ function epicgamejam_context_default_contexts() {
   );
   $context->condition_mode = 0;
   $export['jammer'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'sitewide';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
+          'region' => 'content_bottom',
+          'weight' => '-15',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['sitewide'] = $context;
 
   return $export;
 }
