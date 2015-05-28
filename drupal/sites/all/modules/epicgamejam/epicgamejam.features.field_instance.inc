@@ -277,9 +277,10 @@ function epicgamejam_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'number',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'number_unformatted',
         'weight' => 4,
       ),
     ),
