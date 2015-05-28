@@ -241,7 +241,6 @@ function epicgamejam_preprocess_views_view_table(&$variables) {
  *   );
  */
 function epicgamejam_rate_vote_alter(&$vote, $context) {
-  dpm($vote);
   if ($context['widget']->name == 'epic_points') {
     $vote['value'] = 150;
   }
