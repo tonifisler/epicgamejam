@@ -377,7 +377,7 @@ function epicgamejam_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'badge_thumbnail',
+          'image_style' => 'reddit',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -490,7 +490,7 @@ function epicgamejam_field_default_field_instances() {
       'title_value' => '',
       'url' => 0,
       'user_register_form' => FALSE,
-      'validate_url' => 1,
+      'validate_url' => 0,
     ),
     'widget' => array(
       'active' => 0,
@@ -519,11 +519,8 @@ function epicgamejam_field_default_field_instances() {
       ),
       'reddit' => array(
         'label' => 'inline',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -642,9 +639,10 @@ function epicgamejam_field_default_field_instances() {
         'weight' => 10,
       ),
       'reddit' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 0,
       ),
       'teaser' => array(

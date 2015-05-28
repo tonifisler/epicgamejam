@@ -13,7 +13,7 @@ function epicgamejam_preprocess_node(&$variables) {
   // add theme sugestion for node--type--display-mode.tpl
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
 
-  dpm(rate_get_results('node', $variables['nid'], 1));
+  // dpm(rate_get_results('node', $variables['nid'], 1));
 }
 
 /**
@@ -107,36 +107,6 @@ function epicgamejam_rate_widget_alter(&$widget, $context) {
   $widget->css = '';
   $widget->options[0][1] = '<i class="fa fa-chevron-up"></i>';
   $widget->options[1][1] = '<i class="fa fa-chevron-down"></i>';
-}
-
-/**
- * Theme rate button.
- *
- * @param array $variables
- * @return string
- */
-function epicgamejam_rate_button($variables) {
-  $text = $variables['text'];
-  $href = $variables['href'];
-  $class = $variables['class'];
-  static $id = 0;
-  $id++;
-
-  $classes = 'rate-button';
-  if ($class) {
-    $classes .= ' text-center ' . $class;
-  }
-  if (empty($href)) {
-    // Widget is disabled or closed.
-    return '<span class="' . $classes . '" id="rate-button-' . $id . '">' .
-      check_plain($text) .
-      '</span>';
-  }
-  else {
-    return '<a class="' . $classes . '" id="rate-button-' . $id . '" rel="nofollow" href="' . htmlentities($href) . '" title="' . check_plain($text) . '">' .
-      $text .
-      '</a>';
-  }
 }
 
 /**
@@ -250,4 +220,105 @@ function epicgamejam_link_formatter_link_default($vars) {
 function epicgamejam_preprocess_views_view_table(&$variables) {
   $variables['attributes_array']['data-tablesaw-mode'] = 'stack';
 
+}
+
+/**
+ * Alter the vote before it is saved.
+ *
+ * @param array $vote
+ *   array(
+ *     'entity_type' => $content_type,
+ *     'entity_id' => $content_id,
+ *     'value_type' => $widget->value_type,
+ *     'value' => $value,
+ *     'tag' => $widget->tag,
+ *   );
+ * @param array $context
+ *   array(
+ *     'redirect' => &$redirect, // Path. Alter to redirect the user.
+ *     'save' => &$save, // Boolean indicating whether the vote must be saved.
+ *     'widget' => $widget, // Widget object, unalterable.
+ *   );
+ */
+function epicgamejam_rate_vote_alter(&$vote, $context) {
+  dpm($vote);
+  if ($context['widget']->name == 'epic_points') {
+    $vote['value'] = 150;
+  }
+}
+
+/**
+ * Preprocess function for the thumbs_up_down template.
+ */
+function epicgamejam_preprocess_rate_template_number_up_down(&$variables) {
+  extract($variables);
+
+  $up_classes = 'rate-number-up-down-btn-up asdf';
+  $down_classes = 'rate-number-up-down-btn-down';
+  if (isset($results['user_vote'])) {
+    switch ($results['user_vote']) {
+      case $links[0]['value']:
+        $up_classes .= ' rate-voted';
+        break;
+      case $links[1]['value']:
+        $down_classes .= ' rate-voted';
+        break;
+    }
+  }
+
+  $variables['up_button_epic'] = theme('rate_button', array('text' => $links[0]['text'], 'href' => $links[0]['href'], 'class' => $up_classes));
+  $variables['down_button_epic'] = theme('rate_button', array('text' => $links[1]['text'], 'href' => $links[1]['href'], 'class' => $down_classes));
+  if ($results['rating'] > 0) {
+    $score = '+' . $results['rating'];
+    $score_class = 'positive';
+  }
+  elseif ($results['rating'] < 0) {
+    $score = $results['rating'];
+    $score_class = 'negative';
+  }
+  else {
+    $score = 0;
+    $score_class = 'neutral';
+  }
+  $variables['score'] = $score;
+  $variables['score_class'] = $score_class;
+
+  $info = array();
+  if ($mode == RATE_CLOSED) {
+    $info[] = t('Voting is closed.');
+  }
+  if ($mode != RATE_COMPACT && $mode != RATE_COMPACT_DISABLED) {
+    if (isset($results['user_vote'])) {
+      $info[] = t('You voted \'@option\'.', array('@option' => $results['user_vote'] == 1 ? $links[0]['text'] : $links[1]['text']));
+    }
+  }
+  $variables['info'] = implode(' ', $info);
+}
+
+/**
+ * Theme rate button.
+ *
+ * @param array $variables
+ * @return string
+ */
+function epicgamejam_rate_button($variables) {
+  $text = $variables['text'];
+  $href = $variables['href'];
+  $class = $variables['class'];
+  static $id = 0;
+  $id++;
+
+  $classes = 'rate-button';
+  if ($class) {
+    $classes .= ' text-center ' . $class;
+  }
+  if (empty($href)) {
+    // Widget is disabled or closed.
+    return '<span class="' . $classes . '" id="rate-button-' . $id . '">' .
+      $text .
+      '</span>';
+  }
+  else {
+    return '<a class="' . $classes . '" id="rate-button-' . $id . '" rel="nofollow" href="' . htmlentities($href) . '">' . $text . '</a>';
+  }
 }

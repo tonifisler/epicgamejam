@@ -287,7 +287,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1432540332;
+  $strongarm->value = 1432835148;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -919,7 +919,7 @@ View,glyphicon glyphicon-eye-open';
     1 => (object) array(
       'name' => 'epic_points',
       'tag' => 'vote',
-      'title' => '',
+      'title' => 'epic_points',
       'node_types' => array(
         0 => 'game',
       ),
@@ -936,7 +936,7 @@ View,glyphicon glyphicon-eye-open';
       ),
       'template' => 'number_up_down',
       'node_display' => '1',
-      'teaser_display' => TRUE,
+      'teaser_display' => FALSE,
       'comment_display' => '0',
       'node_display_mode' => '1',
       'teaser_display_mode' => '1',
@@ -954,7 +954,7 @@ View,glyphicon glyphicon-eye-open';
       'displayed_just_voted' => '1',
       'description' => '',
       'description_in_compact' => TRUE,
-      'delete_vote_on_second_click' => '1',
+      'delete_vote_on_second_click' => '0',
       'use_source_translation' => TRUE,
       'value_type' => 'points',
       'theme' => 'rate_template_number_up_down',

@@ -432,7 +432,7 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<div class="spacer spacer-md"></div>
-<p class="lead">No games are matching these filters. =(</p>';
+<p class="lead">No games (yet?) with these filters =(</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html_custom';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -670,7 +670,7 @@ function epicgamejam_views_default_views() {
     t('All'),
     t('All Games'),
     t('<div class="spacer spacer-md"></div>
-<p class="lead">No games are matching these filters. =(</p>'),
+<p class="lead">No games (yet?) with these filters =(</p>'),
     t('Year'),
     t('Genre'),
     t('Epic Badges'),
@@ -679,6 +679,8 @@ function epicgamejam_views_default_views() {
     t('No other games from this team... yet!'),
     t('Other games by %1'),
     t('All Games without filter'),
+    t('<div class="spacer spacer-md"></div>
+<p class="lead">No games are matching these filters. =(</p>'),
   );
   $export['games'] = $view;
 
