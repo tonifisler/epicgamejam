@@ -12,8 +12,9 @@
 
   .caption {
     color: $white;
-  }
-  a:not(.btn) {
-    color: $viking;
+
+    a:not(.btn) {
+      color: $viking;
+    }
   }
 }

@@ -124,7 +124,7 @@ function epicgamejam_views_default_views() {
   $handler = $view->new_display('page', 'OrderPage', 'page_1');
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access draggableviews';
+  $handler->display->display_options['access']['perm'] = 'add terms in badges';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -163,7 +163,7 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['fields']['field_badge_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_badge_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_badge_image']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'thumbnail',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_badge_image']['field_api_classes'] = TRUE;

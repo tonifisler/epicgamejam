@@ -74,6 +74,7 @@ dependencies[] = strongarm
 dependencies[] = system
 dependencies[] = taxonomy
 dependencies[] = taxonomy_display
+dependencies[] = taxonomy_permissions
 dependencies[] = text
 dependencies[] = title
 dependencies[] = token

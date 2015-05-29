@@ -15,6 +15,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'access administration menu',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'admin_menu',
   );
@@ -456,7 +457,7 @@ function epicgamejam_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'taxonomy',
+    'module' => 'taxonomy_permissions',
   );
 
   // Exported permission: 'administer taxonomy display'.
@@ -746,8 +747,9 @@ function epicgamejam_user_default_permissions() {
     'name' => 'delete terms in badges',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
-    'module' => 'taxonomy',
+    'module' => 'taxonomy_permissions',
   );
 
   // Exported permission: 'delete terms in genre'.
@@ -756,14 +758,16 @@ function epicgamejam_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'taxonomy',
+    'module' => 'taxonomy_permissions',
   );
 
   // Exported permission: 'delete terms in teams'.
   $permissions['delete terms in teams'] = array(
     'name' => 'delete terms in teams',
-    'roles' => array(),
-    'module' => 'taxonomy',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'taxonomy_permissions',
   );
 
   // Exported permission: 'disable own gravatar'.
@@ -941,8 +945,9 @@ function epicgamejam_user_default_permissions() {
     'name' => 'edit terms in badges',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
-    'module' => 'taxonomy',
+    'module' => 'taxonomy_permissions',
   );
 
   // Exported permission: 'edit terms in genre'.
@@ -951,14 +956,16 @@ function epicgamejam_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'taxonomy',
+    'module' => 'taxonomy_permissions',
   );
 
   // Exported permission: 'edit terms in teams'.
   $permissions['edit terms in teams'] = array(
     'name' => 'edit terms in teams',
-    'roles' => array(),
-    'module' => 'taxonomy',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'taxonomy_permissions',
   );
 
   // Exported permission: 'edit translation shared fields'.
@@ -1545,6 +1552,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'system',
   );
