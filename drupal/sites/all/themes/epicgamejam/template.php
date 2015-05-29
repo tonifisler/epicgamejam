@@ -198,7 +198,7 @@ function epicgamejam_link_formatter_link_default($vars) {
 
   // this is ugly as hell but I could not set this in the preprocess_field.....
   if ($vars['field']['field_name'] == 'field_links') {
-    $link_options['attributes']['class'] = array('btn', 'btn-primary');
+    $link_options['attributes']['class'] = array('btn', 'btn-white');
   }
 
   // Display a normal link if both title and URL are available.

@@ -8,3 +8,8 @@
     @extend .btn-primary;
   }
 }
+
+.btn-white {
+  background: $white;
+  color: $text-color;
+}

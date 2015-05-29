@@ -9,4 +9,11 @@
 .thumbnail-dark {
   background: $nero;
   color: $white;
+
+  .caption {
+    color: $white;
+  }
+  a:not(.btn) {
+    color: $viking;
+  }
 }

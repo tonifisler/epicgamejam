@@ -81,33 +81,41 @@
  */
 hide($content['disqus']);
 hide($content['links']);
+hide($content['rate_epic_points']);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
 
   <div class="content"<?php print $content_attributes; ?>>
     <div class="row">
       <div class="col-sm-4">
-        <div class="well">
+        <div class="thumbnail thumbnail-dark game-thumbnail">
           <?php print render($content['field_image']) ?>
-          <div class="spacer spacer-sm"></div>
-          <?php print render($content['rate_epic_points']); ?>
-          <?php print render($content['field_badges']); ?><br>
-          <?php print render($content['field_epic_points']); ?>
-          <?php print render($content['field_links']); ?>
-          <p>—</p>
-          <?php print render($content['field_members']); ?><br>
-          <span class="field-label">Genre(s): </span><?php print render($content['field_genre']); ?><br>
-          <p>—</p>
-          <span class="field-label">Team: </span><?php print render($content['field_team_name']); ?><br>
-          <?php print render($content['field_country']); ?><br>
-          <?php print render($content['field_city']); ?><br>
-          <?php print render($content['field_contact_email']); ?>
+          <div class="thumbnail-points bg-">
+            <a href="<?php print $node_url; ?>">
+              <span class="text-dimbo text-epic text-huge"><?php print render($content['field_epic_points']); ?></span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
+            </a>
+          </div>
+          <div class="caption">
+            <?php if (!empty($content['field_badges'])): ?>
+              <h5><?php print t('BADGEs PROUDLY EARNEd') ?></h5>
+            <?php endif ?>
+            <?php print render($content['field_badges']); ?><br>
+            <p>—</p>
+            <?php print render($content['field_genre']); ?><br>
+            <?php print render($content['field_team_name']); ?><br>
+            <?php print render($content['field_members']); ?><br>
+            <?php print render($content['field_country']); ?><br>
+            <?php print render($content['field_city']); ?><br>
+            <?php print render($content['field_contact_email']); ?>
+            <p>—</p>
+            <?php print render($content['field_links']); ?>
+            <?php if ($display_submitted): ?>
+              <div class="spacer spacer-sm"></div>
+              <div class="submitted">
+                <small class="text-muted"><?php print $submitted; ?></small>
+              </div>
+            <?php endif; ?>
+          </div>
         </div>
 
       </div>
