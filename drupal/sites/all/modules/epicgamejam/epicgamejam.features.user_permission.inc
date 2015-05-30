@@ -626,6 +626,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'create game content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
       'jammer' => 'jammer',
     ),
     'module' => 'node',
@@ -636,6 +637,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
   );
@@ -679,6 +681,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'delete any game content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
   );
@@ -688,6 +691,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
   );
@@ -704,6 +708,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'delete own game content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
   );
@@ -713,6 +718,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'delete own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
   );
@@ -812,6 +818,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'edit any game content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
   );
@@ -821,6 +828,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
   );
@@ -896,6 +904,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'edit own game content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
       'jammer' => 'jammer',
     ),
     'module' => 'node',
@@ -906,6 +915,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
   );
