@@ -223,7 +223,6 @@ drupal_add_library('chosen', 'drupal.chosen');
         <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/itf.png" alt="ITF"></li>
         <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/logo_ville_neuch.png" alt="Neuchâtel"></li>
         <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/PH_logo_neutr_black.png" alt="Pro Helvetia"></li>
-        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/SGDA.png" alt="SGDA"></li>
         <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/sgj.png" alt="Swiss Game Jam"></li>
       </ul>
       <div cla  ss="spacer spacer-xs"></div>
