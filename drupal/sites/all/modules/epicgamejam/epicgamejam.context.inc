@@ -42,6 +42,37 @@ function epicgamejam_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'basic_page';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'page' => 'page',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
+    'path' => array(
+      'values' => array(
+        '~<front>' => '~<front>',
+        '~games' => '~games',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'theme' => array(
+      'title' => 'narrow',
+      'subtitle' => '',
+    ),
+  );
+  $context->condition_mode = 1;
+  $export['basic_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'game';
   $context->description = '';
   $context->tag = '';

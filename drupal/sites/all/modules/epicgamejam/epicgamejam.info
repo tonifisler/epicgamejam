@@ -91,6 +91,7 @@ dependencies[] = webform
 features[ckeditor_profile][] = Advanced
 features[ckeditor_profile][] = CKEditor Global Profile
 features[context][] = all_games
+features[context][] = basic_page
 features[context][] = game
 features[context][] = homepage
 features[context][] = jammer
