@@ -32,7 +32,7 @@ set :default_environment, {
 }
 
 # The domain and the path to your app directory
-set :domain,    "staging.epicgamejam.net"
+set :domain,    "epicgamejam.com"
 set :deploy_to, "/home/#{user}/webapps/#{application}"
 
 
