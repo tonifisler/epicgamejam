@@ -137,17 +137,18 @@ drupal_add_library('chosen', 'drupal.chosen');
 
 </header>
 
-<?php if (isset($section_title) && $section_title == 'narrow'): ?>
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-<?php endif ?>
 
 
-<div class="main-container <?php if (!isset($section_title)): ?>container<?php endif ?>">
+<div class="main-container container">
 
   <?php print $messages; ?>
 
   <div class="row">
+
+  <?php if (isset($section_title) && $section_title == 'narrow'): ?>
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="row">
+  <?php endif ?>
 
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="col-sm-3" role="complementary">
@@ -202,13 +203,12 @@ drupal_add_library('chosen', 'drupal.chosen');
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
 
+    <?php if (isset($section_title) && $section_title == 'narrow'): ?>
+        </div>
+      </div>
+    <?php endif ?>
   </div>
 </div>
-
-<?php if (isset($section_title) && $section_title == 'narrow'): ?>
-    </div>
-  </div>
-<?php endif ?>
 
 <div class="spacer spacer-md"></div>
 <footer class="main-footer">
