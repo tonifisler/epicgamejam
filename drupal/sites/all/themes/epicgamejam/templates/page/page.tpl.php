@@ -137,7 +137,7 @@ drupal_add_library('chosen', 'drupal.chosen');
 
 </header>
 
-
+<?php print render($page['content_top']); ?>
 
 <div class="main-container container">
 

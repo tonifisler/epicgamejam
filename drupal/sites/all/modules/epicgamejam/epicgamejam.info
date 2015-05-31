@@ -95,6 +95,7 @@ features[context][] = basic_page
 features[context][] = game
 features[context][] = homepage
 features[context][] = jammer
+features[context][] = rules_page
 features[context][] = sitewide
 features[ctools][] = context:context:3
 features[ctools][] = field_group:field_group:1

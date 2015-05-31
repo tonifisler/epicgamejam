@@ -1,9 +1,10 @@
 .well {
   background: transparentize($white, 0.2);
 
-  .well-white {
+  &.well-white {
     background: $white;
     box-shadow: none;
+    border: none;
   }
 }
 
