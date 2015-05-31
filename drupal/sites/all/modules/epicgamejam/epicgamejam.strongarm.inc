@@ -287,7 +287,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1433003059;
+  $strongarm->value = 1433101174;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
