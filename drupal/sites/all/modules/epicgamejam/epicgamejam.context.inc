@@ -182,9 +182,9 @@ function epicgamejam_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-3' => array(
+        'block-4' => array(
           'module' => 'block',
-          'delta' => '3',
+          'delta' => '4',
           'region' => 'content_top',
           'weight' => '-10',
         ),
