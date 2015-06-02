@@ -38,7 +38,7 @@ set :deploy_to, "/home/#{user}/webapps/#{application}"
 set :app_path,        "drupal"
 set :shared_children, ['drupal/sites/default/files']
 set :shared_files,    ['drupal/sites/default/settings.php']
-set :download_drush,  true
+set :download_drush,  false
 
 set  :keep_releases,   3
 
