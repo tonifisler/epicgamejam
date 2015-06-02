@@ -23,13 +23,10 @@ function bootstrap_file_widget($variables) {
   $element['upload_button']['#suffix'] = '</span>';
 
   // The "form-managed-file" class is required for proper Ajax functionality.
-  if (!empty($element['filename'])) {
-    $output .= '<div class="file-widget form-managed-file clearfix">';
+  $output .= '<div class="file-widget form-managed-file clearfix input-group">';
+  if (!empty($element['fid']['#value'])) {
     // Add the file size after the file name.
-    $element['filename']['#markup'] .= ' <span class="file-size badge">' . format_size($element['#file']->filesize) . '</span>';
-  }
-  else {
-    $output .= '<div class="file-widget form-managed-file clearfix input-group">';
+    $element['filename']['#markup'] .= ' <span class="file-size">(' . format_size($element['#file']->filesize) . ')</span> ';
   }
   $output .= drupal_render_children($element);
   $output .= '</div>';

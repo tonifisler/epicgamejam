@@ -1,0 +1,25 @@
+.tabs-left {
+    > .nav-tabs {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .tab-content {
+    fieldset {
+      background: $white;
+      border-top: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
+
+.nav-pills {
+  margin-bottom: 20px;
+  > li > a {
+    color: $brand-primary;
+    background-color: transparentize($white, .3);
+    &:hover {
+      background-color: transparentize($white, .1);
+    }
+  }
+}

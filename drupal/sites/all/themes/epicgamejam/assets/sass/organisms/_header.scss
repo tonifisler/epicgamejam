@@ -1,0 +1,6 @@
+header.header {
+  & > div {
+    position: relative;
+    z-index: 10;
+  }
+}

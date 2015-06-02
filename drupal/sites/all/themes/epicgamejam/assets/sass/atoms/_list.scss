@@ -1,0 +1,16 @@
+.list-inline,
+ul.inline {
+  margin-left: 0;
+  padding-left: 0;
+  .first,
+  li:first-child {
+    padding-left: 0;
+  }
+  li {
+    display: inline-block;
+  }
+}
+
+.list-badges {
+  margin-bottom: 0;
+}

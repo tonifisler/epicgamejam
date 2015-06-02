@@ -1,0 +1,5 @@
+.panel-default {
+  > legend.panel-heading {
+    float: left; // fix because the legend shifts to middle by default
+  }
+}

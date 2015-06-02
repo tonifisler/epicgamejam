@@ -1,0 +1,30 @@
+.well {
+  background: transparentize($white, 0.2);
+
+  &.well-white {
+    background: $white;
+    box-shadow: none;
+    border: none;
+  }
+
+  &.banner-black {
+    background: $nero;
+    border: none;
+    position: relative;
+
+    &:before,
+    &:after{
+      content: '';
+      background: $nero;
+      width: 9999px;
+      position: absolute;
+      right: 100%;
+      top: 0;
+      height: 100%;
+    }
+    &:after {
+      right: auto;
+      left: 100%;
+    }
+  }
+}

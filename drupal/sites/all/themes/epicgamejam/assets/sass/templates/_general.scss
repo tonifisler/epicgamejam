@@ -1,0 +1,91 @@
+html, body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: radial-gradient(at top, lighten($viking, 20%), $viking);
+
+  // fix automatic padding height when admin_menu is visible
+  &.admin-menu {
+    margin-top: 29px !important;
+  }
+}
+
+#admin-menu {
+  z-index: 999999;
+}
+
+// fix login form for chosen dropdown
+#auth_box #middle_part {
+  overflow: visible;
+}
+
+.flip-clock-wrapper {
+  width: 620px;
+  margin: 0 auto;
+}
+
+// drupal
+.cke_editable_themed {
+  padding: 15px;
+  background: $white;
+}
+
+// rate widget
+.rate-widget {
+  .rate-number-up-down-btn-up { color: $brand-success; }
+  .rate-number-up-down-btn-down { color: $brand-danger; }
+  a:not(.rate-voted) {
+    color: $text-muted;
+  }
+  .negative {
+    color: $brand-danger;
+  }
+  .thumbnail & {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+  }
+}
+
+.rate-button {
+  display: block;
+}
+
+// blocks
+.block-title {
+  background: $nero;
+  color: $white;
+}
+
+.social {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    background: $white;
+    height: 100%;
+    width: 99999px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+  &:before {
+    right: 100%;
+    left: auto;
+  }
+  a {
+    margin-right: 25px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  .epicon:before {
+    position: relative;
+    bottom: -12px;
+    margin-right: 7px;
+  }
+}

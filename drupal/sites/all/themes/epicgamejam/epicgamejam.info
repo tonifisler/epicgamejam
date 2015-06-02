@@ -12,6 +12,7 @@ regions[navigation]     = 'Navigation'
 regions[header]         = 'Top Bar'
 regions[highlighted]    = 'Highlighted'
 regions[help]           = 'Help'
+regions[content_top] = 'Content Top'
 regions[content]        = 'Content'
 regions[content_bottom] = 'Content Bottom'
 regions[sidebar_first]  = 'Primary'
@@ -25,17 +26,14 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = build/css/vendors.css
+stylesheets[all][] = build/css/vendors.min.css
 stylesheets[all][] = build/css/main.css
+
 scripts[] = build/js/vendors.min.js
 scripts[] = build/js/main.min.js
 
-exclude[js][] = 'themes/bootstrap/js/user/user.js'
-
-
-
 exclude[css][] = 'sites/all/modules/contrib/views/css/views.css'
-exclude[css][] = 'modules/field/theme/field.css'
+exclude[css][] = 'sites/all/modules/field/theme/field.css'
 exclude[css][] = 'sites/all/modules/contrib/views/css/views.css'
 
 

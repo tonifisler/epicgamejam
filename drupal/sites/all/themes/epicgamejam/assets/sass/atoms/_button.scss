@@ -1,0 +1,15 @@
+// better exposed filters
+.bef-select-as-links {
+  .form-item {
+    display: inline;
+  }
+ a {
+    @extend .btn;
+    @extend .btn-primary;
+  }
+}
+
+.btn-white {
+  background: $white;
+  color: $text-color;
+}

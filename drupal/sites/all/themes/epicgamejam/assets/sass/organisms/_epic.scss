@@ -1,0 +1,55 @@
+.epic-rules {
+  position: relative;
+
+  &:after {
+    content: '';
+    background: url(../svg/unicorn.svg) center right no-repeat;
+    position: absolute;
+    background-size: contain;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+  &:before {
+    content: '';
+    background: url(../svg/robot.svg) center left no-repeat;
+    position: absolute;
+    background-size: contain;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+  .well {
+    display: inline-block;
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    z-index: 1;
+
+    &:after,
+    &:before {
+      content: url(../svg/torpedo.svg);
+      position: absolute;
+      top: -29px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      top: auto;
+      bottom: -29px;
+      transform: translateX(-50%) rotate(180deg);
+    }
+
+    .h1 {
+      @media only screen and (min-width: $screen-sm-min) {
+        margin-left: -15vw;
+        margin-right: -15vw;
+      }
+      font-size: 10vw;
+    }
+  }
+}

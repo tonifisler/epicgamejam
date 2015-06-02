@@ -163,9 +163,7 @@ var Drupal = Drupal || {};
       }
       $scrollableElement.once('bootstrap-anchors', function () {
         $scrollableElement.on('click.bootstrap-anchors', 'a[href*="#"]:not([data-toggle],[data-target],[data-slide])', function(e) {
-          if (this.scrollTo) {
-            this.scrollTo(e);
-          }
+          this.scrollTo(e);
         });
       });
     },
@@ -177,7 +175,7 @@ var Drupal = Drupal || {};
         // Check for anchors that use the name attribute instead.
         if (!$target.length) {
           attr = 'name';
-          $target = $('[name="' + element.hash.replace('#', '') + '"]');
+          $target = $('[name="' + element.hash.replace('#', '') + '"');
         }
         // Immediately stop if no anchors are found.
         if (!this.validAnchor && !$target.length) {
@@ -220,7 +218,7 @@ var Drupal = Drupal || {};
    * Tabledrag theming elements.
    */
   Drupal.theme.tableDragChangedMarker = function () {
-    return '<span class="tabledrag-changed glyphicon glyphicon-warning-sign text-warning"></span>';
+    return '<span class="tabledrag-changed glyphicon glyphicon-asterisk text-warning"></span>';
   };
 
   Drupal.theme.tableDragChangedWarning = function () {

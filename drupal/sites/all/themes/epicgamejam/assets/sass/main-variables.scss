@@ -1,0 +1,33 @@
+//fonts
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,700,300);
+
+@font-face {
+  font-family: 'Dimbo';
+  src: url('../fonts/Dimbo Italic.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Dimbo Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Dimbo Italic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Dimbo Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Dimbo Italic.svg#8e1cfac6bb310954b6d2ed44a745075c') format('svg'); /* Legacy iOS */
+
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Dimbo';
+  src: url('../fonts/Dimbo Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Dimbo Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Dimbo Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Dimbo Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Dimbo Regular.svg#37a19fd4dbb4f9e4c5277bc27422e8f4') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
+
+// colors
+$white: #fff;
+$nero: #231f20; // black
+$viking: #45C2C5; // blue
+$sunglow: #ffcc33; // yellow
+$lightning-yellow: #f79838; // orange

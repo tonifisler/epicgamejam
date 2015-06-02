@@ -1,0 +1,20 @@
+.thumbnail {
+  overflow: hidden;
+}
+.badge-sm {
+  width: 50px;
+  height: auto;
+}
+
+.thumbnail-dark {
+  background: $nero;
+  color: $white;
+
+  .caption {
+    color: $white;
+
+    a:not(.btn) {
+      color: $viking;
+    }
+  }
+}

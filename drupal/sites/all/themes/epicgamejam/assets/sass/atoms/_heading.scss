@@ -1,0 +1,17 @@
+h2, .h2 {
+  margin-top: 0;
+}
+
+.text-epic-bg {
+  background: url(../svg/title_bg.svg) no-repeat center center;
+  background-size: contain;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.page-header {
+  @extend .bg-nero;
+  @extend .text-epic;
+  padding: 0 10px;
+  border: none;
+}
