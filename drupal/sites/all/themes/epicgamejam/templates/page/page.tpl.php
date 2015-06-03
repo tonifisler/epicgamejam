@@ -90,7 +90,7 @@ drupal_add_library('chosen', 'drupal.chosen');
     <?php print render($page['header']); ?>
 
     <?php if ($is_front): ?>
-      <h2 class="text-center"><span class="text-epic">July 3th</span> 20:00 <span class="text-epic">to 5th</span> 17:00 CEST (GMT+2)</h2>
+      <h2 class="text-center"><span class="text-epic">July 3</span> 20:00 <span class="text-epic">to July 5</span> 17:00 CEST (GMT+2)</h2>
       <div class="hidden-xs">
         <div class="spacer spacer-sm"></div>
         <div id="countdown" class="text-center countdown-container">2015-07-03T20:00:00+0200</div>
@@ -217,7 +217,7 @@ drupal_add_library('chosen', 'drupal.chosen');
   <div class="bg-white">
     <div class="container text-center">
       <div class="spacer spacer-sm"></div>
-      <h6>Big up to all the partners and sponsors who help us make this game jam… epic !</h6>
+      <h4>Big up to all the partners and sponsors who help us make this game jam… epic !</h4>
       <ul class="list-inline">
         <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/NIFFF.png" alt="NIFFF"></li>
         <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/itf.png" alt="ITF"></li>
