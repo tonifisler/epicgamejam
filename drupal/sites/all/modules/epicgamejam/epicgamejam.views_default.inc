@@ -65,7 +65,7 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Get a badge by fulfilling some silly achievements! ';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  /* Field: Taxonomy term: Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_badge_image']['id'] = 'field_badge_image';
   $handler->display->display_options['fields']['field_badge_image']['table'] = 'field_data_field_badge_image';
   $handler->display->display_options['fields']['field_badge_image']['field'] = 'field_badge_image';
@@ -74,11 +74,6 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['fields']['field_badge_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_badge_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_badge_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_badge_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_badge_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -153,7 +148,7 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 1;
-  /* Field: Taxonomy term: Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_badge_image']['id'] = 'field_badge_image';
   $handler->display->display_options['fields']['field_badge_image']['table'] = 'field_data_field_badge_image';
   $handler->display->display_options['fields']['field_badge_image']['field'] = 'field_badge_image';
@@ -161,12 +156,6 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['fields']['field_badge_image']['element_type'] = '0';
   $handler->display->display_options['fields']['field_badge_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_badge_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_badge_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_badge_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_badge_image']['field_api_classes'] = TRUE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';

@@ -876,63 +876,48 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-badges-field_badge_image'
-  $field_instances['taxonomy_term-badges-field_badge_image'] = array(
+  // Exported field_instance: 'taxonomy_term-badges-field_svg'
+  $field_instances['taxonomy_term-badges-field_svg'] = array(
     'bundle' => 'badges',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'badge_thumbnail',
-        ),
-        'type' => 'image',
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
         'weight' => 0,
       ),
       'full' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'badge_thumbnail',
-        ),
-        'type' => 'image',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'badge_thumbnail',
-        ),
-        'type' => 'image',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'taxonomy_term',
     'fences_wrapper' => 'div',
-    'field_name' => 'field_badge_image',
-    'label' => 'Image',
+    'field_name' => 'field_svg',
+    'label' => 'SVG',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
+      'description_field' => 0,
       'entity_translation_sync' => FALSE,
-      'file_directory' => 'badge',
-      'file_extensions' => 'png gif jpg jpeg',
+      'file_directory' => 'badges/svg',
+      'file_extensions' => 'svg',
       'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'file',
       'settings' => array(
         'insert' => 0,
         'insert_absolute' => 0,
@@ -945,16 +930,16 @@ function epicgamejam_field_default_field_instances() {
           'image_badge_thumbnail' => 0,
           'image_large' => 0,
           'image_medium' => 0,
+          'image_reddit' => 0,
           'image_teaser' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
         'insert_width' => '',
-        'preview_image_style' => 'badge_thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
-      'weight' => 1,
+      'type' => 'file_generic',
+      'weight' => 2,
     ),
   );
 
@@ -1146,6 +1131,7 @@ sound|Sound Designer
   t('Links');
   t('Members');
   t('Please describe your game and add some instructions if needed (how to play, controls, etc)');
+  t('SVG');
   t('Screenshots');
   t('Team');
   t('This email will be displayed on your game page. ');
