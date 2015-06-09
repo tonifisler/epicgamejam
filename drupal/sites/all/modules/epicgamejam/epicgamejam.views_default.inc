@@ -65,17 +65,28 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Get a badge by fulfilling some silly achievements! ';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  /* Field: Taxonomy term: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: SVG */
   $handler->display->display_options['fields']['field_svg']['id'] = 'field_svg';
   $handler->display->display_options['fields']['field_svg']['table'] = 'field_data_field_svg';
   $handler->display->display_options['fields']['field_svg']['field'] = 'field_svg';
   $handler->display->display_options['fields']['field_svg']['label'] = '';
+  $handler->display->display_options['fields']['field_svg']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_svg']['alter']['text'] = '<img src="[field_svg]">';
+  $handler->display->display_options['fields']['field_svg']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_svg']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_svg']['element_type'] = '0';
   $handler->display->display_options['fields']['field_svg']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_svg']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_svg']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_svg']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_svg']['field_api_classes'] = TRUE;
+  $handler->display->display_options['fields']['field_svg']['type'] = 'file_url_plain';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -226,6 +237,7 @@ function epicgamejam_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Get a badge by fulfilling some silly achievements! '),
+    t('<img src="[field_svg]">'),
     t('TITLEs'),
     t('MEANINGs'),
     t('Page'),

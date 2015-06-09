@@ -903,11 +903,9 @@ function epicgamejam_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'file_entity',
-        'settings' => array(
-          'file_view_mode' => 'default',
-        ),
-        'type' => 'file_rendered',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_url_plain',
         'weight' => 0,
       ),
     ),

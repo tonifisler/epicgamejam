@@ -53,6 +53,21 @@ function epicgamejam_image_default_styles() {
     ),
   );
 
+  // Exported image style: reddit.
+  $styles['reddit'] = array(
+    'label' => 'reddit (1200x150)',
+    'effects' => array(
+      7 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1200,
+          'height' => 150,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: teaser.
   $styles['teaser'] = array(
     'label' => 'Teaser image (350x100)',
