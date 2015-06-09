@@ -287,7 +287,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1433791502;
+  $strongarm->value = 1433828273;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1032,7 +1032,7 @@ View,glyphicon glyphicon-eye-open';
     'favicon_path' => '',
     'favicon_upload' => '',
     'global__active_tab' => 'edit-theme-settings',
-    'bootstrap__active_tab' => 'edit-general',
+    'bootstrap__active_tab' => 'edit-javascript',
     'bootstrap_button_size' => '',
     'bootstrap_button_colorize' => 1,
     'bootstrap_button_iconize' => 1,
@@ -1053,6 +1053,7 @@ View,glyphicon glyphicon-eye-open';
     'bootstrap_region_well-header' => '',
     'bootstrap_region_well-highlighted' => '',
     'bootstrap_region_well-help' => '',
+    'bootstrap_region_well-content_top' => '',
     'bootstrap_region_well-content' => '',
     'bootstrap_region_well-content_bottom' => '',
     'bootstrap_region_well-sidebar_first' => '',
@@ -1064,7 +1065,7 @@ View,glyphicon glyphicon-eye-open';
     'bootstrap_anchors_smooth_scrolling' => 1,
     'bootstrap_forms_has_error_value_toggle' => 1,
     'bootstrap_tooltip_descriptions' => 1,
-    'bootstrap_popover_enabled' => 1,
+    'bootstrap_popover_enabled' => 0,
     'bootstrap_popover_animation' => 1,
     'bootstrap_popover_html' => 1,
     'bootstrap_popover_placement' => 'auto',
@@ -1080,11 +1081,11 @@ View,glyphicon glyphicon-eye-open';
     'bootstrap_popover_content' => '',
     'bootstrap_popover_delay' => '0',
     'bootstrap_popover_container' => 'body',
-    'bootstrap_tooltip_enabled' => 0,
+    'bootstrap_tooltip_enabled' => 1,
     'bootstrap_tooltip_descriptions_length' => '200',
     'bootstrap_tooltip_animation' => 1,
-    'bootstrap_tooltip_html' => 0,
-    'bootstrap_tooltip_placement' => 'auto left',
+    'bootstrap_tooltip_html' => 1,
+    'bootstrap_tooltip_placement' => 'auto top',
     'bootstrap_tooltip_selector' => '',
     'bootstrap_tooltip_trigger' => array(
       'hover' => 'hover',

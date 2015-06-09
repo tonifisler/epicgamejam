@@ -146,13 +146,11 @@ function epicgamejam_field__taxonomy_term_reference(&$variables) {
     $output = '<ul class="list-badges list-inline">';
     $array = $variables['element']['#object']->field_badges['und'];
     foreach ($array as $delta => $item) {
-      $image = $item['taxonomy_term']->field_badge_image;
-      $content = $item['taxonomy_term']->description;
+      $image = $item['taxonomy_term']->field_svg;
       if ($image) {
         $image_uri = $image['und'][0]['uri'];
-        $image_for_sizing = image_style_path('badge_thumbnail', $image_uri);
         $image_vars = array(
-          'path' => $image_for_sizing,
+          'path' => $image_uri,
           'alt' => $item['taxonomy_term']->description,
           'style_name' => 'badge-thumbnail',
           'attributes' => array(
@@ -165,8 +163,8 @@ function epicgamejam_field__taxonomy_term_reference(&$variables) {
           'html' => true,
           'attributes' => array(
             'title' => $item['taxonomy_term']->name,
-            'data-toggle' => 'popover',
-            'data-content' => $content,
+            'data-toggle' => 'tooltip',
+            'data-placement' => 'top'
           ))) . '</li>';
       }
     }
