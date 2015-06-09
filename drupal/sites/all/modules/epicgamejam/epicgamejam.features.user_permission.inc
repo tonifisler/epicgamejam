@@ -544,7 +544,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'assign epic organizer role'.
   $permissions['assign epic organizer role'] = array(
     'name' => 'assign epic organizer role',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'role_delegation',
   );
 
@@ -654,7 +656,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'create webform content'.
   $permissions['create webform content'] = array(
     'name' => 'create webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -699,7 +703,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'delete any webform content'.
   $permissions['delete any webform content'] = array(
     'name' => 'delete any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -726,7 +732,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'delete own webform content'.
   $permissions['delete own webform content'] = array(
     'name' => 'delete own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -836,7 +844,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'edit any webform content'.
   $permissions['edit any webform content'] = array(
     'name' => 'edit any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -862,21 +872,27 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'edit node original values'.
   $permissions['edit node original values'] = array(
     'name' => 'edit node original values',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
   // Exported permission: 'edit node translation shared fields'.
   $permissions['edit node translation shared fields'] = array(
     'name' => 'edit node translation shared fields',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
   // Exported permission: 'edit original values'.
   $permissions['edit original values'] = array(
     'name' => 'edit original values',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -923,7 +939,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'edit own webform content'.
   $permissions['edit own webform content'] = array(
     'name' => 'edit own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -939,14 +957,18 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'edit taxonomy_term original values'.
   $permissions['edit taxonomy_term original values'] = array(
     'name' => 'edit taxonomy_term original values',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
   // Exported permission: 'edit taxonomy_term translation shared fields'.
   $permissions['edit taxonomy_term translation shared fields'] = array(
     'name' => 'edit taxonomy_term translation shared fields',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -981,7 +1003,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'edit translation shared fields'.
   $permissions['edit translation shared fields'] = array(
     'name' => 'edit translation shared fields',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -1015,7 +1039,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'enter webform revision log entry'.
   $permissions['enter webform revision log entry'] = array(
     'name' => 'enter webform revision log entry',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
@@ -1175,42 +1201,54 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'override webform authored by option'.
   $permissions['override webform authored by option'] = array(
     'name' => 'override webform authored by option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform authored on option'.
   $permissions['override webform authored on option'] = array(
     'name' => 'override webform authored on option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform promote to front page option'.
   $permissions['override webform promote to front page option'] = array(
     'name' => 'override webform promote to front page option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform published option'.
   $permissions['override webform published option'] = array(
     'name' => 'override webform published option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform revision option'.
   $permissions['override webform revision option'] = array(
     'name' => 'override webform revision option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform sticky option'.
   $permissions['override webform sticky option'] = array(
     'name' => 'override webform sticky option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
@@ -1363,7 +1401,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'translate taxonomy_term entities'.
   $permissions['translate taxonomy_term entities'] = array(
     'name' => 'translate taxonomy_term entities',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -1469,7 +1509,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'view any unpublished webform content'.
   $permissions['view any unpublished webform content'] = array(
     'name' => 'view any unpublished webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'view_unpublished',
   );
 
