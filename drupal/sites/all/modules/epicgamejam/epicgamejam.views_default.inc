@@ -65,15 +65,17 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Get a badge by fulfilling some silly achievements! ';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_badge_image']['id'] = 'field_badge_image';
-  $handler->display->display_options['fields']['field_badge_image']['table'] = 'field_data_field_badge_image';
-  $handler->display->display_options['fields']['field_badge_image']['field'] = 'field_badge_image';
-  $handler->display->display_options['fields']['field_badge_image']['label'] = '';
-  $handler->display->display_options['fields']['field_badge_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_badge_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_badge_image']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_badge_image']['element_default_classes'] = FALSE;
+  /* Field: Taxonomy term: SVG */
+  $handler->display->display_options['fields']['field_svg']['id'] = 'field_svg';
+  $handler->display->display_options['fields']['field_svg']['table'] = 'field_data_field_svg';
+  $handler->display->display_options['fields']['field_svg']['field'] = 'field_svg';
+  $handler->display->display_options['fields']['field_svg']['label'] = '';
+  $handler->display->display_options['fields']['field_svg']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_svg']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_svg']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_svg']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_svg']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_svg']['field_api_classes'] = TRUE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -123,13 +125,39 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'draggableviews' => 'draggableviews',
+    'field_svg' => 'field_svg',
     'name' => 'name',
+    'description' => 'description',
+    'edit_term' => 'edit_term',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'draggableviews' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_svg' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-center',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'name' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'description' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_term' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -148,14 +176,21 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 1;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_badge_image']['id'] = 'field_badge_image';
-  $handler->display->display_options['fields']['field_badge_image']['table'] = 'field_data_field_badge_image';
-  $handler->display->display_options['fields']['field_badge_image']['field'] = 'field_badge_image';
-  $handler->display->display_options['fields']['field_badge_image']['label'] = 'Epic Image';
-  $handler->display->display_options['fields']['field_badge_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_badge_image']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_badge_image']['element_default_classes'] = FALSE;
+  /* Field: Taxonomy term: SVG */
+  $handler->display->display_options['fields']['field_svg']['id'] = 'field_svg';
+  $handler->display->display_options['fields']['field_svg']['table'] = 'field_data_field_svg';
+  $handler->display->display_options['fields']['field_svg']['field'] = 'field_svg';
+  $handler->display->display_options['fields']['field_svg']['label'] = '';
+  $handler->display->display_options['fields']['field_svg']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_svg']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_svg']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_svg']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_svg']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_svg']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_svg']['settings'] = array(
+    'file_view_mode' => 'default',
+  );
+  $handler->display->display_options['fields']['field_svg']['field_api_classes'] = TRUE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -196,7 +231,6 @@ function epicgamejam_views_default_views() {
     t('Page'),
     t('LiST of the EPIC BADGEs'),
     t('OrderPage'),
-    t('Epic Image'),
     t('Epic Badge Name'),
     t('Epic Description'),
     t('Actions'),
