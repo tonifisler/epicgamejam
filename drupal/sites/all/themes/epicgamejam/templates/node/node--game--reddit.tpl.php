@@ -92,7 +92,7 @@
       <?php print render($content['field_image']); ?>
       <div class="epic-points">
         <a href="<?php print $node_url; ?>">
-          <span class="text-dimbo text-epic text-huge">345</span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
+          <span class="text-dimbo text-epic text-huge"><?php print render($content['field_epic_points']); ?></span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
         </a>
       <?php print render($content['field_badges']); ?>
       <?php print render($content); ?>
