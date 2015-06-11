@@ -154,6 +154,43 @@ function epicgamejam_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'add terms in badges'.
+  $permissions['add terms in badges'] = array(
+    'name' => 'add terms in badges',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in genre'.
+  $permissions['add terms in genre'] = array(
+    'name' => 'add terms in genre',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'add terms in teams'.
+  $permissions['add terms in teams'] = array(
+    'name' => 'add terms in teams',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'taxonomy_access_fix',
+  );
+
+  // Exported permission: 'administer CAPTCHA settings'.
+  $permissions['administer CAPTCHA settings'] = array(
+    'name' => 'administer CAPTCHA settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'captcha',
+  );
+
   // Exported permission: 'administer account settings'.
   $permissions['administer account settings'] = array(
     'name' => 'administer account settings',
@@ -298,6 +335,24 @@ function epicgamejam_user_default_permissions() {
     'module' => 'field_group',
   );
 
+  // Exported permission: 'administer file types'.
+  $permissions['administer file types'] = array(
+    'name' => 'administer file types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'administer files'.
+  $permissions['administer files'] = array(
+    'name' => 'administer files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'administer filters'.
   $permissions['administer filters'] = array(
     'name' => 'administer filters',
@@ -424,6 +479,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer recaptcha'.
+  $permissions['administer recaptcha'] = array(
+    'name' => 'administer recaptcha',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'recaptcha',
+  );
+
   // Exported permission: 'administer search'.
   $permissions['administer search'] = array(
     'name' => 'administer search',
@@ -544,7 +608,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'assign epic organizer role'.
   $permissions['assign epic organizer role'] = array(
     'name' => 'assign epic organizer role',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'role_delegation',
   );
 
@@ -564,6 +630,15 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'bypass file access'.
+  $permissions['bypass file access'] = array(
+    'name' => 'bypass file access',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'bypass node access'.
@@ -621,6 +696,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'create files'.
+  $permissions['create files'] = array(
+    'name' => 'create files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'create game content'.
   $permissions['create game content'] = array(
     'name' => 'create game content',
@@ -654,7 +738,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'create webform content'.
   $permissions['create webform content'] = array(
     'name' => 'create webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -676,6 +762,24 @@ function epicgamejam_user_default_permissions() {
     'module' => 'webform',
   );
 
+  // Exported permission: 'delete any audio files'.
+  $permissions['delete any audio files'] = array(
+    'name' => 'delete any audio files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete any document files'.
+  $permissions['delete any document files'] = array(
+    'name' => 'delete any document files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'delete any game content'.
   $permissions['delete any game content'] = array(
     'name' => 'delete any game content',
@@ -684,6 +788,15 @@ function epicgamejam_user_default_permissions() {
       'epic organizer' => 'epic organizer',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'delete any image files'.
+  $permissions['delete any image files'] = array(
+    'name' => 'delete any image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'delete any page content'.
@@ -696,11 +809,40 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any video files'.
+  $permissions['delete any video files'] = array(
+    'name' => 'delete any video files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'delete any webform content'.
   $permissions['delete any webform content'] = array(
     'name' => 'delete any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'delete own audio files'.
+  $permissions['delete own audio files'] = array(
+    'name' => 'delete own audio files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete own document files'.
+  $permissions['delete own document files'] = array(
+    'name' => 'delete own document files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'delete own game content'.
@@ -713,6 +855,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own image files'.
+  $permissions['delete own image files'] = array(
+    'name' => 'delete own image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'delete own page content'.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
@@ -723,10 +874,21 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own video files'.
+  $permissions['delete own video files'] = array(
+    'name' => 'delete own video files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'delete own webform content'.
   $permissions['delete own webform content'] = array(
     'name' => 'delete own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -803,6 +965,78 @@ function epicgamejam_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
+  // Exported permission: 'download any audio files'.
+  $permissions['download any audio files'] = array(
+    'name' => 'download any audio files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download any document files'.
+  $permissions['download any document files'] = array(
+    'name' => 'download any document files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download any image files'.
+  $permissions['download any image files'] = array(
+    'name' => 'download any image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download any video files'.
+  $permissions['download any video files'] = array(
+    'name' => 'download any video files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download own audio files'.
+  $permissions['download own audio files'] = array(
+    'name' => 'download own audio files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download own document files'.
+  $permissions['download own document files'] = array(
+    'name' => 'download own document files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download own image files'.
+  $permissions['download own image files'] = array(
+    'name' => 'download own image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download own video files'.
+  $permissions['download own video files'] = array(
+    'name' => 'download own video files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'edit all webform submissions'.
   $permissions['edit all webform submissions'] = array(
     'name' => 'edit all webform submissions',
@@ -811,6 +1045,24 @@ function epicgamejam_user_default_permissions() {
       'epic organizer' => 'epic organizer',
     ),
     'module' => 'webform',
+  );
+
+  // Exported permission: 'edit any audio files'.
+  $permissions['edit any audio files'] = array(
+    'name' => 'edit any audio files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit any document files'.
+  $permissions['edit any document files'] = array(
+    'name' => 'edit any document files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'edit any game content'.
@@ -823,6 +1075,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any image files'.
+  $permissions['edit any image files'] = array(
+    'name' => 'edit any image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
@@ -833,10 +1094,21 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any video files'.
+  $permissions['edit any video files'] = array(
+    'name' => 'edit any video files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'edit any webform content'.
   $permissions['edit any webform content'] = array(
     'name' => 'edit any webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -862,22 +1134,46 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'edit node original values'.
   $permissions['edit node original values'] = array(
     'name' => 'edit node original values',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
   // Exported permission: 'edit node translation shared fields'.
   $permissions['edit node translation shared fields'] = array(
     'name' => 'edit node translation shared fields',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
   // Exported permission: 'edit original values'.
   $permissions['edit original values'] = array(
     'name' => 'edit original values',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'edit own audio files'.
+  $permissions['edit own audio files'] = array(
+    'name' => 'edit own audio files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit own document files'.
+  $permissions['edit own document files'] = array(
+    'name' => 'edit own document files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'edit own field_badges'.
@@ -910,6 +1206,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own image files'.
+  $permissions['edit own image files'] = array(
+    'name' => 'edit own image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'edit own page content'.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
@@ -920,10 +1225,21 @@ function epicgamejam_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own video files'.
+  $permissions['edit own video files'] = array(
+    'name' => 'edit own video files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'edit own webform content'.
   $permissions['edit own webform content'] = array(
     'name' => 'edit own webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -939,14 +1255,18 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'edit taxonomy_term original values'.
   $permissions['edit taxonomy_term original values'] = array(
     'name' => 'edit taxonomy_term original values',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
   // Exported permission: 'edit taxonomy_term translation shared fields'.
   $permissions['edit taxonomy_term translation shared fields'] = array(
     'name' => 'edit taxonomy_term translation shared fields',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -981,7 +1301,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'edit translation shared fields'.
   $permissions['edit translation shared fields'] = array(
     'name' => 'edit translation shared fields',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -1015,7 +1337,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'enter webform revision log entry'.
   $permissions['enter webform revision log entry'] = array(
     'name' => 'enter webform revision log entry',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
@@ -1175,42 +1499,54 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'override webform authored by option'.
   $permissions['override webform authored by option'] = array(
     'name' => 'override webform authored by option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform authored on option'.
   $permissions['override webform authored on option'] = array(
     'name' => 'override webform authored on option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform promote to front page option'.
   $permissions['override webform promote to front page option'] = array(
     'name' => 'override webform promote to front page option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform published option'.
   $permissions['override webform published option'] = array(
     'name' => 'override webform published option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform revision option'.
   $permissions['override webform revision option'] = array(
     'name' => 'override webform revision option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
   // Exported permission: 'override webform sticky option'.
   $permissions['override webform sticky option'] = array(
     'name' => 'override webform sticky option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
@@ -1306,6 +1642,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'better_formats',
   );
 
+  // Exported permission: 'skip CAPTCHA'.
+  $permissions['skip CAPTCHA'] = array(
+    'name' => 'skip CAPTCHA',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'captcha',
+  );
+
   // Exported permission: 'switch users'.
   $permissions['switch users'] = array(
     'name' => 'switch users',
@@ -1363,7 +1708,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'translate taxonomy_term entities'.
   $permissions['translate taxonomy_term entities'] = array(
     'name' => 'translate taxonomy_term entities',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'entity_translation',
   );
 
@@ -1469,7 +1816,9 @@ function epicgamejam_user_default_permissions() {
   // Exported permission: 'view any unpublished webform content'.
   $permissions['view any unpublished webform content'] = array(
     'name' => 'view any unpublished webform content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'view_unpublished',
   );
 
@@ -1507,6 +1856,19 @@ function epicgamejam_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view files'.
+  $permissions['view files'] = array(
+    'name' => 'view files',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'epic organizer' => 'epic organizer',
+      'jammer' => 'jammer',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'view own field_badges'.
   $permissions['view own field_badges'] = array(
     'name' => 'view own field_badges',
@@ -1530,6 +1892,24 @@ function epicgamejam_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view own files'.
+  $permissions['view own files'] = array(
+    'name' => 'view own files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'view own private files'.
+  $permissions['view own private files'] = array(
+    'name' => 'view own private files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
@@ -1537,6 +1917,15 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'view private files'.
+  $permissions['view private files'] = array(
+    'name' => 'view private files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'view rate results page'.
@@ -1555,6 +1944,39 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'view terms in 1'.
+  $permissions['view terms in 1'] = array(
+    'name' => 'view terms in 1',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'taxonomy_permissions',
+  );
+
+  // Exported permission: 'view terms in 2'.
+  $permissions['view terms in 2'] = array(
+    'name' => 'view terms in 2',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'taxonomy_permissions',
+  );
+
+  // Exported permission: 'view terms in 3'.
+  $permissions['view terms in 3'] = array(
+    'name' => 'view terms in 3',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'taxonomy_permissions',
   );
 
   // Exported permission: 'view the administration theme'.

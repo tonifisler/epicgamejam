@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function epicgamejam_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "captcha" && $api == "captcha") {
+    return array("version" => "1");
+  }
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -46,6 +49,21 @@ function epicgamejam_image_default_styles() {
           'height' => 150,
         ),
         'weight' => -9,
+      ),
+    ),
+  );
+
+  // Exported image style: reddit.
+  $styles['reddit'] = array(
+    'label' => 'reddit (1200x150)',
+    'effects' => array(
+      7 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1200,
+          'height' => 150,
+        ),
+        'weight' => 1,
       ),
     ),
   );

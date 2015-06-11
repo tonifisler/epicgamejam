@@ -1,12 +1,13 @@
 #auth_box.register {
-  width: auto;
-  max-width: 600px;
+  width: 332px;
 
-  .chosen-container {
-    max-width: 260px;
-  }
   .chosen-search  input{
     width: 100%;
     padding: 1px;
   }
+}
+
+#auth_box input[type="text"],
+#auth_box input[type="password"] {
+  width: 100%;
 }

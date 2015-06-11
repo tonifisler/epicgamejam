@@ -45,7 +45,7 @@
 
   <div class="media">
     <div class="media-left">
-      <?php print render($content['field_badge_image']); ?>
+      <?php print render($content['field_svg']); ?>
     </div>
     <div class="media-body">
       <h2 class="media-heading"><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>

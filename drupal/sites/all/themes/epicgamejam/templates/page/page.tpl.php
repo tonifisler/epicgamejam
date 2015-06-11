@@ -219,13 +219,14 @@ drupal_add_library('chosen', 'drupal.chosen');
       <div class="spacer spacer-sm"></div>
       <h4>Big up to all the partners and sponsors who help us make this game jam… epic !</h4>
       <ul class="list-inline">
-        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/NIFFF.png" alt="NIFFF"></li>
-        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/itf.png" alt="ITF"></li>
-        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/logo_ville_neuch.png" alt="Neuchâtel"></li>
-        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/PH_logo_neutr_black.png" alt="Pro Helvetia"></li>
-        <li><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/sgj.png" alt="Swiss Game Jam"></li>
+        <li><a href="http://www.nifff.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/NIFFF.png" alt="NIFFF"></a></li>
+        <li><a href="http://www.nifff.ch/itf/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/itf.png" alt="ITF"></a></li>
+        <li><a href="http://www.neuchatelville.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/logo_ville_neuch.png" alt="Neuchâtel"></a></li>
+        <li><a href="http://www.prohelvetia.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/PH_logo_neutr_black.png" alt="Pro Helvetia"></a></li>
+        <li><a href="http://www.case-a-chocs.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/caseAChocs.png" width="100" alt="Case à Chocs"></a></li>
+        <li><a href="http://www.swissgamejam.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/sgj.png" alt="Swiss Game Jam"></a></li>
       </ul>
-      <div cla  ss="spacer spacer-xs"></div>
+      <div class="spacer spacer-xs"></div>
       <small class="text-muted">
         The epic game jam is an event created by :  <a href="mailto:caroline.hirt@nifff.ch">Caroline Hirt</a> | <a href="mailto:mail@toni.io">Toni Fisler</a> | <a href="mailto:wuthrer@gmail.com">Jérémy Hervé Wuthrer Cuany</a><br>Contact Epic Game Jam: <a href="mailto:hello@epicgamejam.com">hello@epicgamejam.com</a>
       </small>
