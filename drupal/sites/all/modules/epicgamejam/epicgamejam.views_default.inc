@@ -63,8 +63,11 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Get a badge by fulfilling some silly achievements! ';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Get a badge by fulfilling some silly achievements! 
+
+(Those that don\'t have an icon yet will have one in the future. We come up with names faster that we can draw!)';
+  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   /* Field: Taxonomy term: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'taxonomy_term_data';
@@ -84,7 +87,6 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['fields']['field_svg']['element_type'] = '0';
   $handler->display->display_options['fields']['field_svg']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_svg']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_svg']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_svg']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_svg']['type'] = 'file_url_plain';
   /* Field: Taxonomy term: Name */
@@ -236,7 +238,9 @@ function epicgamejam_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Get a badge by fulfilling some silly achievements! '),
+    t('Get a badge by fulfilling some silly achievements! 
+
+(Those that don\'t have an icon yet will have one in the future. We come up with names faster that we can draw!)'),
     t('<img src="[field_svg]">'),
     t('TITLEs'),
     t('MEANINGs'),
@@ -469,8 +473,14 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<div class="spacer spacer-md"></div>
-<p class="lead">The games from last year will be here in a few days only!</p>';
+<p class="lead">No games with these filers!</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html_custom';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Epic Points (field_epic_points) */
+  $handler->display->display_options['sorts']['field_epic_points_value']['id'] = 'field_epic_points_value';
+  $handler->display->display_options['sorts']['field_epic_points_value']['table'] = 'field_data_field_epic_points';
+  $handler->display->display_options['sorts']['field_epic_points_value']['field'] = 'field_epic_points_value';
+  $handler->display->display_options['sorts']['field_epic_points_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -658,6 +668,12 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = '<div class="spacer spacer-md"></div>
 <p class="lead">No games are matching these filters. =(</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html_custom';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Epic Points (field_epic_points) */
+  $handler->display->display_options['sorts']['field_epic_points_value']['id'] = 'field_epic_points_value';
+  $handler->display->display_options['sorts']['field_epic_points_value']['table'] = 'field_data_field_epic_points';
+  $handler->display->display_options['sorts']['field_epic_points_value']['field'] = 'field_epic_points_value';
+  $handler->display->display_options['sorts']['field_epic_points_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -708,7 +724,7 @@ function epicgamejam_views_default_views() {
     t('%1\'s GAMEs'),
     t('All Games'),
     t('<div class="spacer spacer-md"></div>
-<p class="lead">The games from last year will be here in a few days only!</p>'),
+<p class="lead">No games with these filers!</p>'),
     t('Year'),
     t('Genre'),
     t('Epic Badges'),

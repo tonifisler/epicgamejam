@@ -47,10 +47,10 @@
     <h2><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
   <?php endif; ?>
 
-  <div class="content">
-    <?php print render($content['field_badge_image']); ?>
+  <div class="content clearfix">
+    <div class="pull-left"><?php print render($content['field_svg']); ?></div>
     <?php print render($content); ?>
-    <div class="spacer spacer-sm"></div>
   </div>
+  <div class="spacer spacer-sm"></div>
 
 </div>
