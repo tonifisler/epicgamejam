@@ -36,6 +36,30 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field_2014_members'
+  $field_bases['field_2014_members'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_2014_members',
+    'field_permissions' => array(
+      'type' => 1,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_badges'
   $field_bases['field_badges'] = array(
     'active' => 1,
@@ -361,6 +385,29 @@ function epicgamejam_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_newsletter'
+  $field_bases['field_newsletter'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_newsletter',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'mailchimp_lists',
+    'settings' => array(
+      'double_opt_in' => 0,
+      'entity_translation_sync' => FALSE,
+      'mc_list_id' => '38d2ed58f8',
+      'send_welcome' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'mailchimp_lists_subscription',
   );
 
   // Exported field_base: 'field_screenshots'

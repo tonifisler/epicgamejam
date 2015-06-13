@@ -87,6 +87,25 @@ function epicgamejam_image_default_styles() {
 }
 
 /**
+ * Implements hook_default_mailchimp_activity_entity().
+ */
+function epicgamejam_default_mailchimp_activity_entity() {
+  $items = array();
+  $items['user_emails'] = entity_import('mailchimp_activity_entity', '{
+    "name" : "user_emails",
+    "label" : "User Emails",
+    "entity_type" : "user",
+    "bundle" : "user",
+    "email_property" : "mail",
+    "entity_path" : "user\\/",
+    "enabled" : "1",
+    "locked" : "0",
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
+
+/**
  * Implements hook_node_info().
  */
 function epicgamejam_node_info() {

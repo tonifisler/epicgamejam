@@ -117,6 +117,7 @@ function epicgamejam_field_group_info() {
       2 => 'field_city',
       3 => 'field_contact_email',
       4 => 'field_team_name',
+      5 => 'field_2014_members',
     ),
     'format_type' => 'bootstrap_fieldgroup_nav_item',
     'format_settings' => array(

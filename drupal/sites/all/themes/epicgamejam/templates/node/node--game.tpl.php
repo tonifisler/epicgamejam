@@ -104,6 +104,7 @@ hide($content['rate_epic_points']);
             <?php print render($content['field_genre']); ?><br>
             <?php print render($content['field_team_name']); ?><br>
             <?php print render($content['field_members']); ?><br>
+            <?php if (!empty($content['field_2014_members'])) print t('<b>Members:</b>') . render($content['field_2014_members']) . '<br>'; ?>
             <?php print render($content['field_country']); ?><br>
             <?php print render($content['field_city']); ?><br>
             <?php print render($content['field_contact_email']); ?>
