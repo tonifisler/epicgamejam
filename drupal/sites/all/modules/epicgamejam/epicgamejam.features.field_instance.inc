@@ -1122,6 +1122,59 @@ sound|Sound Designer
     ),
   );
 
+  // Exported field_instance: 'user-user-field_newsletter'
+  $field_instances['user-user-field_newsletter'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'subscribe' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'mailchimp_lists',
+        'settings' => array(
+          'interest_groups' => array(),
+          'show_interest_groups' => FALSE,
+        ),
+        'type' => 'mailchimp_lists_subscribe_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'user',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_newsletter',
+    'label' => 'Newsletter',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'interest_groups_title' => 'Interest Groups',
+      'mergefields' => array(
+        'EMAIL' => 'mail',
+        'FNAME' => 'field_full_name',
+        'LNAME' => '',
+        'MMERGE3' => 'name',
+      ),
+      'options' => array(
+        'interest_groups' => array(),
+        'subscribe' => FALSE,
+      ),
+      'show_interest_groups' => 0,
+      'unsubscribe_on_delete' => 1,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'mailchimp_lists',
+      'settings' => array(),
+      'type' => 'mailchimp_lists_select',
+      'weight' => 9,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Badges');
@@ -1137,6 +1190,7 @@ sound|Sound Designer
   t('Job');
   t('Links');
   t('Members');
+  t('Newsletter');
   t('Please describe your game and add some instructions if needed (how to play, controls, etc)');
   t('SVG');
   t('Screenshots');

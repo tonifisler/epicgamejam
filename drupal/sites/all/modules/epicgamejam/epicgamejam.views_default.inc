@@ -422,6 +422,8 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['title'] = '%1\'s GAMEs';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
   $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
@@ -703,6 +705,7 @@ function epicgamejam_views_default_views() {
     t('Jammer Games'),
     t('Games'),
     t('All'),
+    t('%1\'s GAMEs'),
     t('All Games'),
     t('<div class="spacer spacer-md"></div>
 <p class="lead">The games from last year will be here in a few days only!</p>'),

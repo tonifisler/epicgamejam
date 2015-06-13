@@ -357,7 +357,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1434054245;
+  $strongarm->value = 1434183357;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -485,6 +485,18 @@ View,glyphicon glyphicon-eye-open';
     'field_collection_item' => array(
       0 => 'field_collection_item',
       1 => 'item_id',
+    ),
+    'mailchimp_activity_entity' => array(
+      0 => 'mailchimp_activity_entity',
+      1 => 'mailchimp_activity_entity_id',
+    ),
+    'mailchimp_campaign' => array(
+      0 => 'mailchimp_campaigns',
+      1 => 'mc_campaign_id',
+    ),
+    'mailchimp_signup' => array(
+      0 => 'mailchimp_signup',
+      1 => 'mcs_id',
     ),
     'file' => array(
       0 => 'file_managed',
@@ -829,6 +841,13 @@ View,glyphicon glyphicon-eye-open';
     'language_url' => FALSE,
   );
   $export['language_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mailchimp_api_key';
+  $strongarm->value = '1ce6336dfffb87ab77634f4fe1b2a450-us8';
+  $export['mailchimp_api_key'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

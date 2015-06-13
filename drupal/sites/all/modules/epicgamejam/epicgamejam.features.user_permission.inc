@@ -389,6 +389,15 @@ function epicgamejam_user_default_permissions() {
     'module' => 'locale',
   );
 
+  // Exported permission: 'administer mailchimp'.
+  $permissions['administer mailchimp'] = array(
+    'name' => 'administer mailchimp',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp',
+  );
+
   // Exported permission: 'administer main-menu menu items'.
   $permissions['administer main-menu menu items'] = array(
     'name' => 'administer main-menu menu items',
@@ -414,6 +423,15 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'menu',
+  );
+
+  // Exported permission: 'administer menu attributes'.
+  $permissions['administer menu attributes'] = array(
+    'name' => 'administer menu attributes',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu_attributes',
   );
 
   // Exported permission: 'administer module filter'.
