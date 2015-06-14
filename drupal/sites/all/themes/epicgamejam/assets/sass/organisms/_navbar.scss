@@ -31,6 +31,12 @@
       }
     }
   }
+
+  @media only screen and (max-width: $screen-sm-max) {
+    .navbar-collapse {
+      padding: 0 15px;
+    }
+  }
 }
 
 .navbar-collapse {
