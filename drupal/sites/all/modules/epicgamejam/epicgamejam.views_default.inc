@@ -540,19 +540,19 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['sorts']['field_epic_points_value']['field'] = 'field_epic_points_value';
   $handler->display->display_options['sorts']['field_epic_points_value']['order'] = 'DESC';
   $handler->display->display_options['sorts']['field_epic_points_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_epic_points_value']['expose']['label'] = 'Epic Points';
+  $handler->display->display_options['sorts']['field_epic_points_value']['expose']['label'] = 'Epicness';
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['sorts']['random']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['random']['expose']['label'] = 'Random';
+  $handler->display->display_options['sorts']['random']['expose']['label'] = 'Randomness';
   /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['title_field_value']['expose']['label'] = 'Title';
+  $handler->display->display_options['sorts']['title_field_value']['expose']['label'] = 'Titleness';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -798,9 +798,9 @@ function epicgamejam_views_default_views() {
     t('All Games'),
     t('<div class="spacer spacer-md"></div>
 <p class="lead">No games with these filers!</p>'),
-    t('Epic Points'),
-    t('Random'),
-    t('Title'),
+    t('Epicness'),
+    t('Randomness'),
+    t('Titleness'),
     t('Year'),
     t('Genre'),
     t('Epic Badges'),
