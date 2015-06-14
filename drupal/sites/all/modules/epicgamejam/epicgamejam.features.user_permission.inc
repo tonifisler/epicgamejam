@@ -98,6 +98,24 @@ function epicgamejam_user_default_permissions() {
     'module' => 'draggableviews',
   );
 
+  // Exported permission: 'access mailchimp activity'.
+  $permissions['access mailchimp activity'] = array(
+    'name' => 'access mailchimp activity',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp_activity',
+  );
+
+  // Exported permission: 'access mailchimp signup pages'.
+  $permissions['access mailchimp signup pages'] = array(
+    'name' => 'access mailchimp signup pages',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp_signup',
+  );
+
   // Exported permission: 'access own webform results'.
   $permissions['access own webform results'] = array(
     'name' => 'access own webform results',
@@ -234,6 +252,15 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'ckeditor',
+  );
+
+  // Exported permission: 'administer content theme'.
+  $permissions['administer content theme'] = array(
+    'name' => 'administer content theme',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'content_theme',
   );
 
   // Exported permission: 'administer content types'.
@@ -396,6 +423,33 @@ function epicgamejam_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'mailchimp',
+  );
+
+  // Exported permission: 'administer mailchimp activity'.
+  $permissions['administer mailchimp activity'] = array(
+    'name' => 'administer mailchimp activity',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp_activity',
+  );
+
+  // Exported permission: 'administer mailchimp campaigns'.
+  $permissions['administer mailchimp campaigns'] = array(
+    'name' => 'administer mailchimp campaigns',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp_campaign',
+  );
+
+  // Exported permission: 'administer mailchimp signup entities'.
+  $permissions['administer mailchimp signup entities'] = array(
+    'name' => 'administer mailchimp signup entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp_signup',
   );
 
   // Exported permission: 'administer main-menu menu items'.
@@ -1606,6 +1660,60 @@ function epicgamejam_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'select game content editing theme'.
+  $permissions['select game content editing theme'] = array(
+    'name' => 'select game content editing theme',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'content_theme',
+  );
+
+  // Exported permission: 'select game content viewing theme'.
+  $permissions['select game content viewing theme'] = array(
+    'name' => 'select game content viewing theme',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'content_theme',
+  );
+
+  // Exported permission: 'select page content editing theme'.
+  $permissions['select page content editing theme'] = array(
+    'name' => 'select page content editing theme',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'content_theme',
+  );
+
+  // Exported permission: 'select page content viewing theme'.
+  $permissions['select page content viewing theme'] = array(
+    'name' => 'select page content viewing theme',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'content_theme',
+  );
+
+  // Exported permission: 'select webform content editing theme'.
+  $permissions['select webform content editing theme'] = array(
+    'name' => 'select webform content editing theme',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'content_theme',
+  );
+
+  // Exported permission: 'select webform content viewing theme'.
+  $permissions['select webform content viewing theme'] = array(
+    'name' => 'select webform content viewing theme',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'content_theme',
+  );
+
   // Exported permission: 'show format selection for field_collection_item'.
   $permissions['show format selection for field_collection_item'] = array(
     'name' => 'show format selection for field_collection_item',
@@ -1868,6 +1976,8 @@ function epicgamejam_user_default_permissions() {
     'name' => 'view field_epic_points',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
       'epic organizer' => 'epic organizer',
       'jammer' => 'jammer',
     ),
@@ -1904,6 +2014,8 @@ function epicgamejam_user_default_permissions() {
     'name' => 'view own field_epic_points',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
       'epic organizer' => 'epic organizer',
       'jammer' => 'jammer',
     ),
