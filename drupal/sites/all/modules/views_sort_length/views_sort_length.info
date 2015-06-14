@@ -1,0 +1,8 @@
+name = Views Sort by Length
+package = Views
+description = Will add a sort option to sort views by field length
+core = 7.x
+
+dependencies[] = views
+
+files[] = views_sort_length.inc

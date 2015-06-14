@@ -357,7 +357,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1434199476;
+  $strongarm->value = 1434310783;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -950,7 +950,6 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->name = 'node_options_webform';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_webform'] = $strongarm;
 
@@ -1000,7 +999,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_webform';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_webform'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1059,20 +1058,6 @@ View,glyphicon glyphicon-eye-open';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'recaptcha_ajax_api';
-  $strongarm->value = 0;
-  $export['recaptcha_ajax_api'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'recaptcha_nocookies';
-  $strongarm->value = 0;
-  $export['recaptcha_nocookies'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_noscript';
   $strongarm->value = 1;
   $export['recaptcha_noscript'] = $strongarm;
@@ -1080,30 +1065,9 @@ View,glyphicon glyphicon-eye-open';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'recaptcha_private_key';
-  $strongarm->value = '6LdpHggTAAAAAOVzMd0U7WDjK9YdRz70BA9QCJ0q';
-  $export['recaptcha_private_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'recaptcha_public_key';
-  $strongarm->value = '6LdpHggTAAAAAICZ3jYAYVZCxi8YvLcAnHhFOKjk';
-  $export['recaptcha_public_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_secret_key';
   $strongarm->value = '6LdpHggTAAAAAOVzMd0U7WDjK9YdRz70BA9QCJ0q';
   $export['recaptcha_secret_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'recaptcha_server_status_check_interval';
-  $strongarm->value = '5';
-  $export['recaptcha_server_status_check_interval'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
