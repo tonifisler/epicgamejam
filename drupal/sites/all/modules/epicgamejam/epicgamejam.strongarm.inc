@@ -357,7 +357,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cron_last';
-  $strongarm->value = 1434310783;
+  $strongarm->value = 1434343769;
   $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -509,10 +509,6 @@ View,glyphicon glyphicon-eye-open';
     'user' => array(
       0 => 'users',
       1 => 'uid',
-    ),
-    'rules_config' => array(
-      0 => 'rules_config',
-      1 => 'id',
     ),
   );
   $export['entityreference:base-tables'] = $strongarm;
@@ -853,7 +849,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'maintenance_mode';
-  $strongarm->value = FALSE;
+  $strongarm->value = '0';
   $export['maintenance_mode'] = $strongarm;
 
   $strongarm = new stdClass();
