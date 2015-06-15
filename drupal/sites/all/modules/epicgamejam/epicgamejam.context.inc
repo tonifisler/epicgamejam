@@ -260,7 +260,7 @@ function epicgamejam_context_default_contexts() {
           'module' => 'block',
           'delta' => '3',
           'region' => 'content_bottom',
-          'weight' => '-15',
+          'weight' => '10',
         ),
       ),
     ),
