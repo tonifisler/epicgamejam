@@ -208,18 +208,7 @@ function epicgamejam_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'block-5' => array(
-          'module' => 'block',
-          'delta' => '5',
-          'region' => 'content_top',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
   $export['nifff'] = $context;
 
