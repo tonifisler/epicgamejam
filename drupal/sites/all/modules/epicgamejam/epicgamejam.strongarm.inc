@@ -13,44 +13,9 @@ function epicgamejam_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_epic_theme';
-  $strongarm->value = 'edit-workflow';
-  $export['additional_settings__active_tab_epic_theme'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_game';
-  $strongarm->value = 'edit-workflow';
-  $export['additional_settings__active_tab_game'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_page';
-  $strongarm->value = 'edit-workflow';
-  $export['additional_settings__active_tab_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_team';
-  $strongarm->value = 'edit-submission';
-  $export['additional_settings__active_tab_team'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'adminimal_admin_menu_toolbar-disabled';
   $strongarm->value = TRUE;
   $export['adminimal_admin_menu_toolbar-disabled'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'admin_menu_cache_client';
-  $strongarm->value = 1;
-  $export['admin_menu_cache_client'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -106,13 +71,6 @@ function epicgamejam_strongarm() {
   $strongarm->name = 'admin_theme';
   $strongarm->value = 'adminimal';
   $export['admin_theme'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'advanced__active_tab';
-  $strongarm->value = 'edit-performance';
-  $export['advanced__active_tab'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -190,13 +148,6 @@ function epicgamejam_strongarm() {
   $strongarm->name = 'captcha_enable_stats';
   $strongarm->value = 0;
   $export['captcha_enable_stats'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'captcha_log_wrong_responses';
-  $strongarm->value = 1;
-  $export['captcha_log_wrong_responses'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -345,20 +296,6 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->name = 'context_ui_dialog_enabled';
   $strongarm->value = 0;
   $export['context_ui_dialog_enabled'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'cron_key';
-  $strongarm->value = 'TNbA_zNMuxGNoMUT9AezDiUnwshX6-yoN0ZE9BRSNsc';
-  $export['cron_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'cron_last';
-  $strongarm->value = 1434343769;
-  $export['cron_last'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
