@@ -541,3 +541,4 @@ features[variable][] = user_pictures
 features[views_view][] = badges
 features[views_view][] = games
 features[views_view][] = members
+features[views_view][] = subthemes

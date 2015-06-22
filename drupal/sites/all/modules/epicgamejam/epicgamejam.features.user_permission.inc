@@ -121,6 +121,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'access own webform results',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'webform',
   );
@@ -130,6 +131,7 @@ function epicgamejam_user_default_permissions() {
     'name' => 'access own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
     ),
     'module' => 'webform',
   );
