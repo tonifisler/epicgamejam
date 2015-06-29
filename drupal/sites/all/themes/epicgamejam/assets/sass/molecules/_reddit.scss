@@ -23,10 +23,16 @@
     }
   }
 
+  .epic-points {
+    position: relative;
+    z-index: 1;
+  }
+
   .epic-points > a {
     margin-top: -1.25em;
     display: inline-block;
     line-height: 0.9;
+    transition: .2s;
 
     @media only screen and (min-width: $screen-sm-min) {
       font-size: 2em;
@@ -36,6 +42,23 @@
     }
     &:hover {
       text-decoration: none;
+      margin-left: 5px;
+    }
+  }
+
+  .oblique-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .field-image {
+    img {
+      transition: .2s;
+    }
+    a:hover {
+      img {
+        opacity: .7;
+      }
     }
   }
 }
