@@ -16,7 +16,7 @@
   </h3>
 <?php endif; ?>
 
-<ul class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<ul class="<?php print $classes; ?> list-inline"<?php print $attributes; ?>>
 
   <?php foreach ($items as $delta => $item): ?>
     <li<?php print $item_attributes[$delta]; ?>>

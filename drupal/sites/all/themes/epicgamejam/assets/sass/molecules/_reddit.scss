@@ -9,8 +9,16 @@
       margin: 0 15px;
     }
   }
+  .field-label {
+    position: relative;
+  }
   .field-genre {
     position: relative;
+
+    a {
+      color: $nero;
+      text-shadow: none;
+    }
   }
 
   .epic-points > a {
