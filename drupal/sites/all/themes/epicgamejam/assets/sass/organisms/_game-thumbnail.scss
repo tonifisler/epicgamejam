@@ -1,19 +1,19 @@
 .view-games {
-  .views-row-1 {
+  .views-row:nth-child(3n+1) {
     .oblique-wrapper {
       &:before {
         background: $viking;
       }
     }
   }
-  .views-row-2 {
+  .views-row:nth-child(3n+2) {
     .oblique-wrapper {
       &:before {
         background: $lightning-yellow;
       }
     }
   }
-  .views-row-3 {
+  .views-row:nth-child(3n+3) {
     .oblique-wrapper {
       &:before {
         background: $sunglow;

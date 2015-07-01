@@ -8,6 +8,15 @@
   border: 0;
 }
 
+.table {
+  thead {
+    @extend .text-dimbo;
+    @extend .text-epic;
+    font-size: 1.6em;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
 .table-epic {
   .table {
     border-collapse:separate;

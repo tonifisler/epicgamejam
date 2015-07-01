@@ -13,3 +13,25 @@
   background: $white;
   color: $text-color;
 }
+
+.views-exposed-form {
+  label {
+    @extend .text-dimbo;
+    @extend .text-epic;
+    font-size: 1.5em;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.btn-primary {
+  &.active {
+    background: $white;
+    color: $nero;
+    border-color: $gray;
+
+    &:hover {
+      background: rgba($white, .9);
+      color: $nero;
+    }
+  }
+}

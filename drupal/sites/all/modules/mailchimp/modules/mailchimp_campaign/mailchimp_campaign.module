@@ -209,12 +209,15 @@ function mailchimp_campaign_overview_page() {
 
   $rows = array();
   foreach ($campaigns as $campaign) {
-    $actions = array(
-      l(t('View Archive'), $campaign->mc_data['archive_url'], array(
-        'attributes' => array('target' => '_blank'),
-      )),
-      l(t('View'), 'admin/config/services/mailchimp/campaigns/' . $campaign->mc_campaign_id),
-    );
+    $actions = array();
+    $actions[] = l(t('View Archive'), $campaign->mc_data['archive_url'], array( 'attributes' => array('target' => '_blank'),));
+    $actions[] = l(t('View'), 'admin/config/services/mailchimp/campaigns/' . $campaign->mc_campaign_id);
+    if($campaign->mc_data['status'] == 'save') {
+      $actions[] = l(t('Send'),'admin/config/services/mailchimp/campaigns/' . $campaign->mc_campaign_id . '/send');
+    }
+    else {
+      $actions[] = t('Sent');
+    }
 
     $rows[] = array(
       l($campaign->label(),
@@ -322,7 +325,7 @@ function mailchimp_campaign_save_campaign($template, $options, $segment_options 
     catch (Mailchimp_Error $e) {
       drupal_set_message($e->getMessage(), 'error');
       watchdog('mailchimp_campaign',
-        'An error occurred while creating this campaign: ' . $e->getMessage(), WATCHDOG_ERROR);
+        'An error occurred while creating this campaign: @msg', array('@msg' => $e->getMessage()), WATCHDOG_ERROR);
       return NULL;
     }
     if (isset($result['status']) && ($result['status'] == 'save')) {
@@ -342,7 +345,7 @@ function mailchimp_campaign_save_campaign($template, $options, $segment_options 
     catch (Mailchimp_Error $e) {
       drupal_set_message($e->getMessage(), 'error');
       watchdog('mailchimp_campaign',
-        'An error occurred while updating this campaign: ' . $e->getMessage(), WATCHDOG_ERROR);
+        'An error occurred while updating this campaign: @msg', array('@msg' => $e->getMessage()), WATCHDOG_ERROR);
       return NULL;
     }
   }
@@ -388,7 +391,7 @@ function mailchimp_campaign_send_campaign(MailChimpCampaign $campaign) {
   catch (Mailchimp_Error $e) {
     drupal_set_message($e->getMessage(), 'error');
     watchdog('mailchimp_campaign',
-      'An error occurred while sending to this campaign: ' . $e->getMessage(), WATCHDOG_ERROR);
+      'An error occurred while sending to this campaign: @msg', array('@msg' => $e->getMessage()), WATCHDOG_ERROR);
     return FALSE;
   }
 
@@ -425,7 +428,7 @@ function mailchimp_campaign_delete_campaign($cid) {
   catch (Mailchimp_Error $e) {
     drupal_set_message($e->getMessage(), 'error');
     watchdog('mailchimp_campaign',
-      'An error occurred while deleting this campaign: ' . $e->getMessage(), WATCHDOG_ERROR);
+      'An error occurred while deleting this campaign: @msg', array('@msg' => $e->getMessage()), WATCHDOG_ERROR);
     return FALSE;
   }
 
@@ -687,14 +690,14 @@ function mailchimp_campaign_stats_page(MailChimpCampaign $campaign) {
 
   try {
     if (!$mcapi) {
-      throw new MailchimpException('Cannot get campaign stats without Mailchimp API. Check API key has been entered.');
+      throw new MailchimpException('Cannot get campaign stats without MailChimp API. Check API key has been entered.');
     }
     $response = $mcapi->reports->summary($campaign->mc_campaign_id);
   }
   catch (Mailchimp_Error $e) {
     drupal_set_message($e->getMessage(), 'error');
     watchdog('mailchimp_campaign',
-      'An error occurred getting report data from MailChimp: ' . $e->getMessage(), WATCHDOG_ERROR);
+      'An error occurred getting report data from MailChimp: @msg', array('@msg' => $e->getMessage()), WATCHDOG_ERROR);
   }
 
   if (empty($response)) {
@@ -799,13 +802,13 @@ function mailchimp_campaign_get_campaigns($mc_campaign_ids, $reset = FALSE) {
     $mcapi = mailchimp_get_api_object();
     try {
       if (!$mcapi) {
-        throw new MailchimpException('Cannot get list without Mailchimp API. Check API key has been entered.');
+        throw new MailchimpException('Cannot get list without MailChimp API. Check API key has been entered.');
       }
       $response = $mcapi->campaigns->getList(array('campaign_id' => implode(',', $to_refresh)));
     }
     catch (Mailchimp_Error $e) {
       drupal_set_message($e->getMessage(), 'error');
-      watchdog('mailchimp_campaign', 'An error occurred while getting campaigns: ' . $e->getMessage(), WATCHDOG_ERROR);
+      watchdog('mailchimp_campaign', 'An error occurred while getting campaigns: @msg', array('@msg' => $e->getMessage()), WATCHDOG_ERROR);
       return NULL;
     }
 
@@ -837,14 +840,14 @@ function mailchimp_campaign_get_list_segments($list_id, $type) {
 
   try {
     if (!$mcapi) {
-      throw new MailchimpException('Cannot get list segments without Mailchimp API. Check API key has been entered.');
+      throw new MailchimpException('Cannot get list segments without MailChimp API. Check API key has been entered.');
     }
     $response = $mcapi->lists->segments($list_id, $type);
   }
   catch (Mailchimp_Error $e) {
     drupal_set_message($e->getMessage(), 'error');
     watchdog('mailchimp_campaign',
-      'An error occurred getting list segments for list ID ' . $list_id . ': ' . $e->getMessage(), WATCHDOG_ERROR);
+      'An error occurred getting list segments for list ID %list_id: @msg', array('%list_id' => $list_id, '@msg' => $e->getMessage()), WATCHDOG_ERROR);
     return NULL;
   }
 
@@ -867,14 +870,14 @@ function mailchimp_test_list_segment($list_id, $list_segment_id) {
 
   try {
     if (!$mcapi) {
-      throw new MailchimpException('Cannot get campaign list segment without Mailchimp API. Check API key has been entered.');
+      throw new MailchimpException('Cannot get campaign list segment without MailChimp API. Check API key has been entered.');
     }
     $result = $mcapi->campaigns->segmentTest($list_id,
       array('saved_segment_id' => $list_segment_id));
   }
   catch (Mailchimp_Error $e) {
     drupal_set_message($e->getMessage(), 'error');
-    watchdog('mailchimp_campaign', 'An error occurred testing a list segment: ' . $e->getMessage(), WATCHDOG_ERROR);
+    watchdog('mailchimp_campaign', 'An error occurred testing a list segment: @msg', array('@msg' => $e->getMessage()), WATCHDOG_ERROR);
     return NULL;
   }
 
