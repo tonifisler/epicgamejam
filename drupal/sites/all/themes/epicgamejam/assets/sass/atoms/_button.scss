@@ -22,3 +22,16 @@
     -webkit-font-smoothing: antialiased;
   }
 }
+
+.btn-primary {
+  &.active {
+    background: $white;
+    color: $nero;
+    border-color: $gray;
+
+    &:hover {
+      background: rgba($white, .9);
+      color: $nero;
+    }
+  }
+}
