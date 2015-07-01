@@ -11,8 +11,8 @@
 function mailchimp_lists_field_info() {
   return array(
     'mailchimp_lists_subscription' => array(
-      'label' => t('Mailchimp Subscription'),
-      'description' => t('Allows an entity to be subscribed to a Mailchimp list.'),
+      'label' => t('MailChimp Subscription'),
+      'description' => t('Allows an entity to be subscribed to a MailChimp list.'),
       'mc_list_id' => NULL,
       'double_opt_in' => FALSE,
       'send_welcome' => TRUE,
@@ -49,7 +49,7 @@ function mailchimp_lists_field_settings_form($this_field, $instance, $has_data) 
   }
   // Grab the fields list.
   $fields = field_info_fields();
-  // Remove options for mailchimp lists that already have fields.
+  // Remove options for MailChimp lists that already have fields.
   foreach ($fields as $field) {
     if ($field['type'] == 'mailchimp_lists_subscription') {
       if ($field['id'] != $this_field['id'] && isset($field['settings']['mc_list_id'])) {
@@ -62,7 +62,7 @@ function mailchimp_lists_field_settings_form($this_field, $instance, $has_data) 
   if (count($options)==1) {
     $warning = $lists_exist
              ? 'All available MailChimp lists are already attached to MailChimp Subscription Fields.'
-             : 'No available Mailchimp lists exist.';
+             : 'No available MailChimp lists exist.';
     $warning .= ' Create a new list at !mc, then !cc.';
 
     drupal_set_message(t(
@@ -84,7 +84,7 @@ function mailchimp_lists_field_settings_form($this_field, $instance, $has_data) 
     '#type' => 'select',
     '#title' => t('MailChimp List'),
     '#multiple' => FALSE,
-    '#description' => t('Available MailChimp lists which are not already attached to Mailchimp Subscription Fields. If unavailable, make sure you have created a list at !MailChimp first, then !cacheclear.',
+    '#description' => t('Available MailChimp lists which are not already attached to MailChimp Subscription Fields. If unavailable, make sure you have created a list at !MailChimp first, then !cacheclear.',
                     array(
                       '!MailChimp' => l(t('MailChimp'), 'https://admin.mailchimp.com'),
                       '!cacheclear' => l(t('clear your list cache'),
@@ -130,45 +130,145 @@ function mailchimp_lists_field_instance_settings_form($field, $instance) {
     '#type' => "textfield",
     '#default_value' => isset($instance['settings']['interest_groups_title']) ? $instance['settings']['interest_groups_title'] : "Interest Groups",
   );
+
   $form['mergefields'] = array(
     '#type' => 'fieldset',
     '#title' => t('Merge Fields'),
-    '#description' => t('Multi-value fields will only sync their first value to Mailchimp, as Mailchimp does not support multi-value fields.'),
     '#tree' => TRUE,
+    '#prefix' => '<div id="mergefield-wrapper">',
+    '#suffix' => '</div>',
+    '#field' => $field,
+    '#instance' => $instance,
+    '#mc_list_id' => $mc_list_id,
+    '#process' => array(
+      '_mailchimp_lists_field_instance_settings_form_process',
+    ),
   );
+
   $form['unsubscribe_on_delete'] = array(
     '#title' => "Unsubscribe on deletion",
     '#type' => "checkbox",
     '#description' => t('Unsubscribe entities from this list when they are deleted.'),
     '#default_value' => $instance['settings']['unsubscribe_on_delete'],
   );
+
+  return $form;
+}
+
+/**
+ * Element processor. Expand the mergefields mapping form.
+ *
+ * Doing it this way instead of adding all the mapping fields inside of the
+ * hook_field_instance_settings_form() implementation allows us to use AJAX in
+ * the settings form to toggle between the basic and advanced mapping UI.
+ */
+function _mailchimp_lists_field_instance_settings_form_process($form, &$form_state) {
+  $field = $form['#field'];
+  $instance = $instance = isset($form_state['mailchimp']['instance']) ? $form_state['mailchimp']['instance'] : $form['#instance'];
+  $mc_list_id = $form['#mc_list_id'];
+
   $mv_defaults = $instance['settings']['mergefields'];
+  $use_advanced_mode = isset($mv_defaults['advanced']) ? (bool) $mv_defaults['advanced'] : FALSE;
+
+  // If the AJAX checkbox to toggle between advanced and basic input mode has
+  // been clicked we can use that info here to override what is stored in the
+  // database.
+  // TODO: figure out why 'mergefields' is in 'input' but not 'values'
+  if (isset($form_state['input']) && isset($form_state['input']['instance']['settings']['mergefields']['advanced'])) {
+    $use_advanced_mode = (bool) $form_state['input']['instance']['settings']['mergefields']['advanced'];
+  }
+
+  $form['#description'] = $use_advanced_mode ? t('Use tokens like [user:mail] which will be replaced with the appropriate value before sending them to MailChimp.') : t('Multi-value fields will only sync their first value to MailChimp.');
+
   $mergevars = mailchimp_get_mergevars(array($mc_list_id));
   $fields = mailchimp_lists_fieldmap_options($instance['entity_type'], $instance['bundle']);
   $required_fields = mailchimp_lists_fieldmap_options($instance['entity_type'], $instance['bundle'], TRUE);
   unset($fields[$field['field_name']]);
-  $fields_flat = options_array_flatten($fields);
   foreach ($mergevars[$mc_list_id]['merge_vars'] as $mergevar) {
     $default_value = isset($mv_defaults[$mergevar['tag']]) ? $mv_defaults[$mergevar['tag']] : -1;
-    $form['mergefields'][$mergevar['tag']] = array(
-      '#type' => 'select',
+    // If the advanced UI is enabled we use a textfield here, otherwise use a
+    // select field.
+    $form[$mergevar['tag']] = array(
+      '#type' => $use_advanced_mode ? 'textfield' : 'select',
       '#title' => check_plain($mergevar['name']),
-      '#default_value' => array_key_exists($default_value, $fields_flat) ? $default_value : '',
+      '#default_value' => $default_value ? $default_value : '',
       '#required' => $mergevar['req'],
     );
     if (!$mergevar['req'] || $mergevar['tag'] === 'EMAIL') {
-      $form['mergefields'][$mergevar['tag']]['#options'] = $fields;
+      // Add select field options when using basic UI.
+      if (!$use_advanced_mode) {
+        $form[$mergevar['tag']]['#options'] = $fields;
+      }
+
       if ($mergevar['tag'] === 'EMAIL') {
-        $form['mergefields'][$mergevar['tag']]['#description'] = t('Any entity with an empty or invalid email address field value will simply be ignored by the Mailchimp subscription system. <em>This is why the Email field is the only required merge field which can sync to non-required fields.</em>');
+        $form[$mergevar['tag']]['#description'] = t('Any entity with an empty or invalid email address field value will simply be ignored by the MailChimp subscription system. <em>This is why the Email field is the only required merge field which can sync to non-required fields.</em>');
       }
     }
     else {
-      $form['mergefields'][$mergevar['tag']]['#options'] = $required_fields;
-      $form['mergefields'][$mergevar['tag']]['#description'] = t("Only 'required' and 'calculated' fields are allowed to be synced with Mailchimp 'required' merge fields.");
+      // Add options for select fields when using basic UI.
+      if (!$use_advanced_mode) {
+        $form[$mergevar['tag']]['#options'] = $required_fields;
+      }
+
+      $form[$mergevar['tag']]['#description'] = t("Only 'required' and 'calculated' fields are allowed to be synced with MailChimp 'required' merge fields.");
     }
   }
 
+  // If we're displaying the advanced mode UI, and the token module from contrib
+  // is enabled we can use its ability to add some additional features like a
+  // better token browser, and better validation.
+  if ($use_advanced_mode && module_exists('token')) {
+    // Add element validator for each text field. This allows the token module
+    // to provide feedback on token syntax.
+    foreach ($mergevars[$mc_list_id]['merge_vars'] as $mergevar) {
+      $form[$mergevar['tag']] += array(
+        '#element_validate' => array('token_element_validate'),
+        '#token_types' => array($instance['entity_type']),
+      );
+    }
+
+    // Add the UI for browsing tokens.
+    $form['_tokens'] = array(
+      '#theme' => 'token_tree_link',
+      '#token_types' => array($instance['entity_type']),
+      '#global_types' => TRUE,
+      '#click_insert' => TRUE,
+    );
+  }
+
+  // Toggle advanced mode, allows for directly entering tokens into a textfield
+  // rather than using the <select> based UI.
+  $form['advanced'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable advanced mapping'),
+    '#description' => t('Enable token based input to deal with multi-value fields and gain more control over formatting.'),
+    '#default_value' => $use_advanced_mode,
+    '#ajax' => array(
+      'callback' => 'mailchimp_lists_field_instance_settings_form_ajax_callback',
+      'wrapper' => 'mergefield-wrapper',
+    ),
+  );
+
   return $form;
+}
+
+/**
+ * Validation callback for MailChimp field instance settings form element.
+ */
+function _mailchimp_lists_field_instance_settings_validate($form, &$form_state) {
+  // Store the new values in the form state.
+  $instance = $form['#instance'];
+  if (isset($form_state['values']['instance'])) {
+    $instance = drupal_array_merge_deep($instance, $form_state['values']['instance']);
+  }
+  $form_state['mailchimp']['instance'] = $instance;
+}
+
+/**
+ * Callback for AJAX request triggered by checkbox to toggle advanced UI on/off.
+ */
+function mailchimp_lists_field_instance_settings_form_ajax_callback($form, &$form_state) {
+  return $form['instance']['settings']['mergefields'];
 }
 
 /**
@@ -180,7 +280,7 @@ function mailchimp_lists_field_validate($entity_type, $entity, $field, $instance
       if (!$item['subscribe']) {
         $errors[$field['field_name']][$langcode][$delta][] = array(
           'error' => 'mailchimp_lists_required',
-          'message' => t('Subscription to Mailchimp List %name is required.', array('%name' => $instance['label'])),
+          'message' => t('Subscription to MailChimp List %name is required.', array('%name' => $instance['label'])),
         );
         return FALSE;
       }
@@ -417,7 +517,7 @@ function mailchimp_lists_form_field_ui_field_edit_form_alter(&$form, &$form_stat
 function mailchimp_lists_form_field_ui_field_edit_form_validate(&$form, &$form_state) {
   if ($form['#field']['type'] == 'mailchimp_lists_subscription') {
     if ($form_state['values']['field']['cardinality'] !== 1) {
-      form_set_error('cardinality', t('Cardinality on mailchimp lists fields must be set to one.'));
+      form_set_error('cardinality', t('Cardinality on MailChimp lists fields must be set to one.'));
     }
   }
 }
@@ -437,7 +537,7 @@ function mailchimp_lists_subscription_property_info_callback(&$info, $entity_typ
 }
 
 /**
- * Entity field data callback for mailchimp subscription fields.
+ * Entity field data callback for MailChimp subscription fields.
  */
 function mailchimp_lists_field_get($entity, array $options, $name, $entity_type, &$context) {
   $verbatim = entity_metadata_field_verbatim_get($entity, $options, $name, $entity_type, $context);
