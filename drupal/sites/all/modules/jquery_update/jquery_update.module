@@ -75,8 +75,6 @@ function jquery_update_library() {
  * Implements hook_library_alter().
  */
 function jquery_update_library_alter(&$javascript, $module) {
-  global $theme;
-
   $path = drupal_get_path('module', 'jquery_update');
   $version = variable_get('jquery_update_jquery_version', '1.10');
 
@@ -91,7 +89,7 @@ function jquery_update_library_alter(&$javascript, $module) {
     // Replace jQuery with the alternative version.
     $admin_version = variable_get('jquery_update_jquery_admin_version', '');
 
-    if (user_access('view the administration theme') && !empty($admin_version) && (path_is_admin(current_path()) || $theme == variable_get('admin_theme', 0))) {
+    if (!empty($admin_version) && path_is_admin(current_path())) {
       if (version_compare($version, $admin_version, '!=')) {
         $version = $admin_version;
       }
@@ -269,11 +267,11 @@ function jquery_update_jquery_replace(&$javascript, $cdn, $path, $min, $version)
       break;
 
     case '1.7':
-      $trueversion = '1.7.1';
+      $trueversion = '1.7.2';
       break;
 
     case '1.8':
-      $trueversion = '1.8.2';
+      $trueversion = '1.8.3';
       break;
 
     case '1.9':
