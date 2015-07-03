@@ -109,7 +109,7 @@ drupal_add_library('chosen', 'drupal.chosen');
         </div>
       </div>
       <div class="spacer spacer-sm"></div>
-      <h4>We hav livestream on Twitch during the jam! <a href="http://www.twitch.tv/epicgamejam">twitch.tv/epicgamejam</a></h4>
+      <h4 class="text-center">We hav livestream on Twitch during the jam! <a href="http://www.twitch.tv/epicgamejam">twitch.tv/epicgamejam</a></h4>
     <?php endif ?>
 
   </div> <!-- /#page-header -->
