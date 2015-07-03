@@ -98,8 +98,6 @@ drupal_add_library('chosen', 'drupal.chosen');
       </div>
     <?php endif ?>
 
-    <?php dpm($page['header_zone']); ?>
-
     <?php if (!empty($page['header_zone'])): ?>
       <div class="bg-white">
         <div class="container">
