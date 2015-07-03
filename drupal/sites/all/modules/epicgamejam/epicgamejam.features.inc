@@ -126,6 +126,14 @@ function epicgamejam_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'subtheme' => array(
+      'name' => t('Subtheme'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Theme title'),
+      'help' => '',
+    ),
     'webform' => array(
       'name' => t('Webform'),
       'base' => 'node_content',
