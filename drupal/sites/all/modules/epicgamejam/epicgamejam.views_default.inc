@@ -825,13 +825,13 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_table_plugin_style';
   $handler->display->display_options['style_options']['columns'] = array(
     'value' => 'value',
-    'created' => 'created',
-    'uid' => 'uid',
+    'submitted' => 'submitted',
+    'name' => 'name',
     'remote_addr' => 'remote_addr',
     'edit_submission' => 'edit_submission',
     'view_submission' => 'edit_submission',
   );
-  $handler->display->display_options['style_options']['default'] = 'created';
+  $handler->display->display_options['style_options']['default'] = 'submitted';
   $handler->display->display_options['style_options']['info'] = array(
     'value' => array(
       'sortable' => 1,
@@ -840,14 +840,16 @@ function epicgamejam_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'created' => array(
+    'submitted' => array(
       'sortable' => 1,
       'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'uid' => array(
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -891,12 +893,12 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['fields']['value']['label'] = '';
   $handler->display->display_options['fields']['value']['webform_nid'] = '64';
   $handler->display->display_options['fields']['value']['webform_cid'] = '1';
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['date_format'] = 'short';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Webform submissions: Submitted */
+  $handler->display->display_options['fields']['submitted']['id'] = 'submitted';
+  $handler->display->display_options['fields']['submitted']['table'] = 'webform_submissions';
+  $handler->display->display_options['fields']['submitted']['field'] = 'submitted';
+  $handler->display->display_options['fields']['submitted']['date_format'] = 'short';
+  $handler->display->display_options['fields']['submitted']['second_date_format'] = 'long';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -952,7 +954,7 @@ function epicgamejam_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Webform Submission User'),
-    t('Post date'),
+    t('Submitted'),
     t('Name'),
     t('IP'),
     t('Actions'),
