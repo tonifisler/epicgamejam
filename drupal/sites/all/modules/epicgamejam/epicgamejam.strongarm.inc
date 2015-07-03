@@ -315,7 +315,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'disqus_developer';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['disqus_developer'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -359,8 +359,8 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->name = 'disqus_nodetypes';
   $strongarm->value = array(
     'game' => 'game',
-    'epic_theme' => 0,
     'page' => 0,
+    'webform' => 0,
   );
   $export['disqus_nodetypes'] = $strongarm;
 

@@ -256,6 +256,24 @@ function epicgamejam_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-themes-main' => array(
+          'module' => 'views',
+          'delta' => 'themes-main',
+          'region' => 'header_zone',
+          'weight' => '-10',
+        ),
+        'block-6' => array(
+          'module' => 'block',
+          'delta' => '6',
+          'region' => 'header_zone',
+          'weight' => '-9',
+        ),
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
+          'region' => 'header_zone',
+          'weight' => '-8',
+        ),
         'block-3' => array(
           'module' => 'block',
           'delta' => '3',

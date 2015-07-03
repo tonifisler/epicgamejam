@@ -95,9 +95,21 @@ drupal_add_library('chosen', 'drupal.chosen');
         <div class="spacer spacer-sm"></div>
         <div id="countdown" class="text-center countdown-container">2015-07-03T20:00:00+0200</div>
         <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL BEGINS.</p>
-        <div class="spacer spacer-sm"></div>
       </div>
     <?php endif ?>
+
+    <?php dpm($page['header_zone']); ?>
+
+    <?php if (!empty($page['header_zone'])): ?>
+      <div class="bg-white">
+        <div class="container">
+          <div class="">
+            <?php print render($page['header_zone']); ?>
+          </div>
+        </div>
+      </div>
+    <?php endif ?>
+
   </div> <!-- /#page-header -->
 
   <?php if (!empty($secondary_nav)): ?>

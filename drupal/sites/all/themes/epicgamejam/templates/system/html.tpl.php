@@ -67,6 +67,7 @@
   <meta name="msapplication-TileColor" content="#4fbcc1">
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#4fbcc1">
+  <meta name="twitter:widgets:csp" content="on">
 
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>

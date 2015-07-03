@@ -41,6 +41,32 @@
       padding-bottom: 20px;
     }
   }
+
+  &.table-themes {
+    .table {
+      tr:not(:first-child) {
+        td:first-child {
+          text-align: left;
+        }
+      }
+      tr:first-child {
+        background: $sunglow;
+        td {
+          background: none;
+
+          &:first-child:before {
+            content: 'MAIN THEME IS';
+            @extend .text-epic;
+            @extend .text-dimbo;
+            font-size: 30px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+
   .text-dimbo {
 
     a {
