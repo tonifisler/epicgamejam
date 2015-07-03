@@ -94,7 +94,9 @@ drupal_add_library('chosen', 'drupal.chosen');
       <div class="hidden-xs">
         <div class="spacer spacer-sm"></div>
         <div id="countdown" class="text-center countdown-container">2015-07-03T20:00:00+0200</div>
+        <!-- <div id="countdown" class="text-center countdown-container">2015-07-05T17:00:00+0200</div> -->
         <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL BEGINS.</p>
+        <!-- <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL ENDS.</p> -->
       </div>
     <?php endif ?>
 
