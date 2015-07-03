@@ -37,6 +37,14 @@
       padding: 0 15px;
     }
   }
+
+  @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+    padding-bottom: 38px;
+
+    .navbar-nav > li {
+      padding-top: 38px;
+    }
+  }
 }
 
 .navbar-collapse {

@@ -44,11 +44,6 @@
 
   &.table-themes {
     .table {
-      tr:not(:first-child) {
-        td:first-child {
-          text-align: left;
-        }
-      }
       tr:first-child {
         background: $sunglow;
         td {

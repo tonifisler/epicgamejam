@@ -108,6 +108,7 @@ drupal_add_library('chosen', 'drupal.chosen');
           </div>
         </div>
       </div>
+      <div class="spacer spacer-sm"></div>
     <?php endif ?>
 
   </div> <!-- /#page-header -->
