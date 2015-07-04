@@ -45,7 +45,8 @@ function epicgamejam_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'full_html_custom' => 'full_html_custom',
+          'full_html' => 0,
+          'full_html_custom' => 0,
           'mailchimp_campaign' => 0,
           'plain_text' => 'plain_text',
         ),
@@ -53,6 +54,9 @@ function epicgamejam_field_default_field_instances() {
         'default_order_toggle' => 1,
         'default_order_wrapper' => array(
           'formats' => array(
+            'full_html' => array(
+              'weight' => -8,
+            ),
             'full_html_custom' => array(
               'weight' => -49,
             ),
@@ -230,15 +234,43 @@ function epicgamejam_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_city',
     'label' => 'City',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'full_html_custom' => 'full_html_custom',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => -8,
+            ),
+            'full_html_custom' => array(
+              'weight' => 0,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -326,7 +358,7 @@ function epicgamejam_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_country',
     'label' => 'Country',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'countries' => array(),
       'entity_translation_sync' => FALSE,
@@ -495,7 +527,7 @@ function epicgamejam_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_image',
-    'label' => 'Image',
+    'label' => 'Game main image',
     'required' => 1,
     'settings' => array(
       'alt_field' => 0,
@@ -521,8 +553,11 @@ function epicgamejam_field_default_field_instances() {
           'auto' => 'auto',
           'icon_link' => 0,
           'image' => 0,
+          'image_badge_thumbnail' => 0,
           'image_large' => 0,
           'image_medium' => 0,
+          'image_reddit' => 0,
+          'image_teaser' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -600,6 +635,80 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-game-field_live_event'
+  $field_instances['node-game-field_live_event'] = array(
+    'bundle' => 'game',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'reddit' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_live_event',
+    'label' => 'Live Event Location',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'full_html_custom' => 'full_html_custom',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => -8,
+            ),
+            'full_html_custom' => array(
+              'weight' => 0,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-game-field_members'
   $field_instances['node-game-field_members'] = array(
     'bundle' => 'game',
@@ -632,7 +741,7 @@ function epicgamejam_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'ul',
     'field_name' => 'field_members',
-    'label' => 'Members',
+    'label' => 'Team members',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -653,7 +762,7 @@ function epicgamejam_field_default_field_instances() {
   $field_instances['node-game-field_screenshots'] = array(
     'bundle' => 'game',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Give us a good idea of your game goes!',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -710,6 +819,7 @@ function epicgamejam_field_default_field_instances() {
           'image_badge_thumbnail' => 0,
           'image_large' => 0,
           'image_medium' => 0,
+          'image_reddit' => 0,
           'image_teaser' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
@@ -728,7 +838,7 @@ function epicgamejam_field_default_field_instances() {
     'bundle' => 'game',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'It\'s ok if you\'re alone too! You\'re epic!',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -755,7 +865,7 @@ function epicgamejam_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'span',
     'field_name' => 'field_team_name',
-    'label' => 'Team',
+    'label' => 'Team name',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -800,19 +910,47 @@ function epicgamejam_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'title_field',
-    'label' => 'Title',
-    'required' => TRUE,
+    'label' => 'Game title',
+    'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'full_html_custom' => 'full_html_custom',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => -8,
+            ),
+            'full_html_custom' => array(
+              'weight' => 0,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
+        'entity' => 0,
+        'page' => 0,
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -1621,18 +1759,22 @@ sound|Sound Designer
   t('Display banner');
   t('Epic Points');
   t('Full Name');
+  t('Game main image');
+  t('Game title');
   t('Genre');
-  t('Image');
+  t('Give us a good idea of your game goes!');
   t('Images');
+  t('It\'s ok if you\'re alone too! You\'re epic!');
   t('Job');
   t('Links');
+  t('Live Event Location');
   t('Main theme');
-  t('Members');
   t('Newsletter');
   t('Please describe your game and add some instructions if needed (how to play, controls, etc)');
   t('SVG');
   t('Screenshots');
-  t('Team');
+  t('Team members');
+  t('Team name');
   t('This email will be displayed on your game page. ');
   t('Title');
 

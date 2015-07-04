@@ -486,7 +486,7 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['filters']['created']['group_info']['label'] = 'Year';
   $handler->display->display_options['filters']['created']['group_info']['identifier'] = 'created';
   $handler->display->display_options['filters']['created']['group_info']['optional'] = FALSE;
-  $handler->display->display_options['filters']['created']['group_info']['default_group'] = '1';
+  $handler->display->display_options['filters']['created']['group_info']['default_group'] = '2';
   $handler->display->display_options['filters']['created']['group_info']['group_items'] = array(
     1 => array(
       'title' => '2014',
@@ -1066,6 +1066,8 @@ function epicgamejam_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'ALL 2015 THEMEs';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'table-epic table-themes';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1151,6 +1153,7 @@ function epicgamejam_views_default_views() {
     t('<h3>TBA</h3>'),
     t('Block'),
     t('Page'),
+    t('ALL 2015 THEMEs'),
     t('Reminder'),
     t('<h3>Reminder</h3>
 

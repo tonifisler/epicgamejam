@@ -81,6 +81,7 @@ function epicgamejam_form_alter(&$form, &$form_state, $form_id) {
       break;
     case 'game_node_form':
       $form['body']['format']['#access'] = FALSE;
+      drupal_set_title(t('SUBMIT a GAME'));
       break;
   }
 }
@@ -319,3 +320,13 @@ function epicgamejam_rate_button($variables) {
     return '<a class="' . $classes . '" id="rate-button-' . $id . '" rel="nofollow" href="' . htmlentities($href) . '">' . $text . '</a>';
   }
 }
+
+function epicgamejam_theme() {
+  $items['game_node_form'] = array(
+          'render element' => 'form',
+          'template' => 'add-game',
+          'path' => drupal_get_path('theme', 'epicgamejam') . '/templates/form',
+      );
+  return $items;
+}
+

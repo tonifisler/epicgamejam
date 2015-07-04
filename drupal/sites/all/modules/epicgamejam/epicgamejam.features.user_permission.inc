@@ -1017,6 +1017,8 @@ function epicgamejam_user_default_permissions() {
     'name' => 'disable own gravatar',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+      'jammer' => 'jammer',
     ),
     'module' => 'gravatar',
   );
@@ -1865,6 +1867,8 @@ function epicgamejam_user_default_permissions() {
     'name' => 'use gravatar',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+      'jammer' => 'jammer',
     ),
     'module' => 'gravatar',
   );
@@ -1883,6 +1887,10 @@ function epicgamejam_user_default_permissions() {
     'name' => 'use text format full_html_custom',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'epic organizer' => 'epic organizer',
+      'jammer' => 'jammer',
     ),
     'module' => 'filter',
   );
@@ -2047,6 +2055,8 @@ function epicgamejam_user_default_permissions() {
     'name' => 'view own unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
+      'epic organizer' => 'epic organizer',
+      'jammer' => 'jammer',
     ),
     'module' => 'node',
   );
