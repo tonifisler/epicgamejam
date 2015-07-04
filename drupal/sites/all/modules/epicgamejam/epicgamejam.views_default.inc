@@ -425,7 +425,7 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<div class="spacer spacer-md"></div>
-<p class="lead">No games with these filers!</p>';
+<p class="lead">No games with these filters!</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html_custom';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Epic Points (field_epic_points) */
@@ -695,7 +695,7 @@ function epicgamejam_views_default_views() {
     t('%1\'s GAMEs'),
     t('All Games'),
     t('<div class="spacer spacer-md"></div>
-<p class="lead">No games with these filers!</p>'),
+<p class="lead">No games with these filters!</p>'),
     t('Epicness'),
     t('Randomness'),
     t('Titleness'),
