@@ -86,7 +86,11 @@ drupal_add_library('chosen', 'drupal.chosen');
         <img class="logo img-responsive" src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/svg/epicgamejam_logo.svg" alt="<?php print $site_name; ?>">
       </a>
     </h1>
-
+    <?php if (!empty($messages)): ?>
+      <div class="container">
+        <?php print $messages; ?>
+      </div>
+    <?php endif ?>
     <?php print render($page['header']); ?>
 
     <?php if ($is_front): ?>
@@ -154,8 +158,6 @@ drupal_add_library('chosen', 'drupal.chosen');
 <?php print render($page['content_top']); ?>
 
 <div class="main-container container">
-
-  <?php print $messages; ?>
 
   <?php if ($is_front): ?>
     <div class="row">

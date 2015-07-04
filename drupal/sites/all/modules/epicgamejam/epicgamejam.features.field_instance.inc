@@ -50,8 +50,8 @@ function epicgamejam_field_default_field_instances() {
           'mailchimp_campaign' => 0,
           'plain_text' => 'plain_text',
         ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 1,
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
             'full_html' => array(
@@ -69,7 +69,7 @@ function epicgamejam_field_default_field_instances() {
           ),
         ),
       ),
-      'display_summary' => 1,
+      'display_summary' => 0,
       'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
