@@ -5,6 +5,8 @@
     <?php print render($form['field_epic_points']); ?>
     <?php print render($form['field_badges']); ?>
 
+    <p>Please note that you won't be able to edit your game submission. <br><small class="text-muted">(if you have massive Drupal skills, let us know, there a bug we are really struggling with!)</small></p>
+
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#game" aria-controls="game" role="tab" data-toggle="tab">Game</a></li>
       <li role="presentation"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">Images</a></li>
@@ -15,7 +17,7 @@
       <div role="tabpanel" class="tab-pane active well well-white" id="game">
         <?php print render($form['title_field']); ?>
         <?php print render($form['field_genre']); ?>
-        <p>Please indicate if it's a webplayer, .exe or anything else ;)</p>
+        <p>Please use the links titles to indicate if it's a webplayer, .exe or anything else ;)</p>
         <?php print render($form['field_links']); ?>
         <?php print render($form['body']); ?>
       </div>
