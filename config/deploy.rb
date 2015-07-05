@@ -131,5 +131,5 @@ end
 # before "deploy:site_online", "assets:build"
 
 after "deploy:update", "deploy:cleanup"
-# before "deploy:cleanup", "hotfix:fix_permissions"
+before "deploy:cleanup", "hotfix:fix_permissions"
 logger.level = Logger::DEBUG
