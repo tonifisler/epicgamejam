@@ -15,6 +15,7 @@
       <div role="tabpanel" class="tab-pane active well well-white" id="game">
         <?php print render($form['title_field']); ?>
         <?php print render($form['field_genre']); ?>
+        <p>Please indicate if it's a webplayer, .exe or anything else ;)</p>
         <?php print render($form['field_links']); ?>
         <?php print render($form['body']); ?>
       </div>
