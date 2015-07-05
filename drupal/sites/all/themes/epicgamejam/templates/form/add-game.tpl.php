@@ -7,7 +7,7 @@
 
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#game" aria-controls="game" role="tab" data-toggle="tab">Game</a></li>
-      <li role="presentation"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">Images & Links</a></li>
+      <li role="presentation"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">Images</a></li>
       <li role="presentation"><a href="#team_info" aria-controls="team_info" role="tab" data-toggle="tab">Team info</a></li>
     </ul>
 
@@ -15,11 +15,11 @@
       <div role="tabpanel" class="tab-pane active well well-white" id="game">
         <?php print render($form['title_field']); ?>
         <?php print render($form['field_genre']); ?>
+        <?php print render($form['field_links']); ?>
         <?php print render($form['body']); ?>
       </div>
       <div role="tabpanel" class="tab-pane well well-white" id="images">
         <?php print render($form['field_image']); ?>
-        <?php print render($form['field_links']); ?>
         <?php print render($form['field_screenshots']); ?>
       </div>
       <div role="tabpanel" class="tab-pane well well-white" id="team_info">

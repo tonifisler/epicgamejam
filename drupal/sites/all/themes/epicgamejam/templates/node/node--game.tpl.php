@@ -99,18 +99,25 @@ $epic_points = render($content['field_epic_points']) ? render($content['field_ep
             </a>
           </div>
           <div class="caption">
+            <?php print render($content['rate_epic_points']); ?>
             <?php if (!empty($content['field_badges'])): ?>
               <h5><?php print t('BADGEs PROUDLY EARNEd') ?></h5>
             <?php endif ?>
-            <?php print render($content['field_badges']); ?><br>
+            <?php if (!empty($content['field_badges'])): ?>
+              <?php print render($content['field_badges']); ?><br>
+            <?php endif ?>
             <p>—</p>
             <?php print render($content['field_genre']); ?><br>
             <?php print render($content['field_team_name']); ?><br>
-            <?php print render($content['field_members']); ?><br>
+            <?php if (!empty($content['field_members'])): ?>
+              <?php print render($content['field_members']); ?><br>
+            <?php endif ?>
             <?php if (!empty($content['field_2014_members'])) print t('<b>Members:</b>') . render($content['field_2014_members']) . '<br>'; ?>
             <?php print render($content['field_country']); ?><br>
             <?php print render($content['field_city']); ?><br>
-            <?php print render($content['field_contact_email']); ?>
+            <?php if (!empty($content['field_contact_email'])): ?>
+              <?php print render($content['field_contact_email']); ?><br>
+            <?php endif ?>
             <?php print render($content['field_live_event']); ?>
             <p>—</p>
             <?php print render($content['field_links']); ?>
