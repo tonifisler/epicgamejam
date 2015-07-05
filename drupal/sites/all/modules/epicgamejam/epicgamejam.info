@@ -6,6 +6,7 @@ dependencies[] = admin_views
 dependencies[] = adminimal_admin_menu
 dependencies[] = advanced_help
 dependencies[] = autoassignrole
+dependencies[] = backup_migrate
 dependencies[] = better_exposed_filters
 dependencies[] = better_formats
 dependencies[] = betterlogin
