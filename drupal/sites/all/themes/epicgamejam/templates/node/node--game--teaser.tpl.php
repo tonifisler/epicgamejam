@@ -84,6 +84,8 @@ hide($content['field_badges']);
 hide($content['field_genre']);
 hide($content['links']);
 hide($content['rate_epic_points']);
+
+$epic_points = render($content['field_epic_points']) ? render($content['field_epic_points']) : '<span class="text-white text-epic">TBA</span>';
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail thumbnail-dark game-thumbnail"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
@@ -97,7 +99,7 @@ hide($content['rate_epic_points']);
 
   <div class="thumbnail-points">
     <a href="<?php print $node_url; ?>">
-      <span class="text-dimbo text-epic text-huge"><?php print render($content['field_epic_points']); ?></span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
+      <span class="text-dimbo text-epic text-huge"><?php print $epic_points; ?></span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
     </a>
     <?php print render($content); ?>
     <?php print render($content['field_badges']); ?>
