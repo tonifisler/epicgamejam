@@ -1086,7 +1086,7 @@ View,glyphicon glyphicon-eye-open';
         1 => 0,
         2 => 0,
         5 => 0,
-        4 => 0,
+        6 => 0,
       ),
       'allow_voting_by_author' => 1,
       'noperm_behaviour' => '1',

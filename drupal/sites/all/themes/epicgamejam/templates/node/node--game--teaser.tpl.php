@@ -85,7 +85,7 @@ hide($content['field_genre']);
 hide($content['links']);
 hide($content['rate_epic_points']);
 
-$epic_points = render($content['field_epic_points']) ? render($content['field_epic_points']) : '<span class="text-white text-epic">TBA</span>';
+$epic_points = render($content['field_epic_points']) ? render($content['field_epic_points']) : 'TBA';
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> thumbnail thumbnail-dark game-thumbnail"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>

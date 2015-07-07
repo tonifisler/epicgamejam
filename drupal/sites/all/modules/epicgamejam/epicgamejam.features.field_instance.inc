@@ -121,6 +121,7 @@ function epicgamejam_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'full_html' => 0,
           'full_html_custom' => 0,
           'mailchimp_campaign' => 0,
           'plain_text' => 'plain_text',
@@ -129,6 +130,9 @@ function epicgamejam_field_default_field_instances() {
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'full_html' => array(
+              'weight' => -8,
+            ),
             'full_html_custom' => array(
               'weight' => 0,
             ),
@@ -142,7 +146,7 @@ function epicgamejam_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -392,7 +396,7 @@ function epicgamejam_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'reddit' => array(
         'label' => 'hidden',
@@ -643,11 +647,11 @@ function epicgamejam_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 11,
       ),
       'reddit' => array(
         'label' => 'above',
@@ -894,7 +898,7 @@ function epicgamejam_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'reddit' => array(
         'label' => 'above',

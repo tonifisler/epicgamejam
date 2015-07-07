@@ -79,7 +79,7 @@
  *
  * @ingroup themeable
  */
-$epic_points = render($content['field_epic_points']) ? render($content['field_epic_points']) : '<span class="text-white text-epic">TBA</span>';
+$epic_points = render($content['field_epic_points']) ? render($content['field_epic_points']) : 'TBA';
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> reddit"<?php print $attributes; ?>>
   <div class="row">
