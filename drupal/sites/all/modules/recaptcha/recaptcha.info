@@ -16,9 +16,9 @@ files[] = recaptcha-php/src/ReCaptcha/RequestMethod/Socket.php
 files[] = recaptcha-php/src/ReCaptcha/RequestMethod/SocketPost.php
 files[] = src/ReCaptcha/RequestMethod/Drupal7.php
 
-; Information added by Drupal.org packaging script on 2015-05-28
-version = "7.x-2.0+2-dev"
+; Information added by Drupal.org packaging script on 2015-11-21
+version = "7.x-2.0+8-dev"
 core = "7.x"
 project = "recaptcha"
-datestamp = "1432852083"
+datestamp = "1448065762"
 
