@@ -385,6 +385,7 @@ View,glyphicon glyphicon-eye-open';
   $strongarm->value = array(
     'game' => 'game',
     'page' => 0,
+    'subtheme' => 0,
     'webform' => 0,
   );
   $export['disqus_nodetypes'] = $strongarm;
@@ -1054,6 +1055,76 @@ View,glyphicon glyphicon-eye-open';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_game_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_game_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_game_pattern';
+  $strongarm->value = 'game/[node:title]';
+  $export['pathauto_node_game_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_game_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_game_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_page_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_page_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_page_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_page_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_page_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_page_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_webform_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_webform_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_badges_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_badges_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_genre_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_genre_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_teams_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_teams_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'rate_widgets';
   $strongarm->value = array(
     1 => (object) array(
@@ -1217,12 +1288,15 @@ View,glyphicon glyphicon-eye-open';
     'default_favicon' => 0,
     'favicon_path' => '',
     'favicon_upload' => '',
-    'global__active_tab' => 'edit-theme-settings',
     'bootstrap__active_tab' => 'edit-javascript',
+    'bootstrap_fluid_container' => 0,
     'bootstrap_button_size' => '',
     'bootstrap_button_colorize' => 1,
     'bootstrap_button_iconize' => 1,
     'bootstrap_forms_required_has_error' => 0,
+    'bootstrap_forms_smart_descriptions' => 1,
+    'bootstrap_forms_smart_descriptions_limit' => '1',
+    'bootstrap_forms_smart_descriptions_allowed_tags' => 'b, code, em, i, kbd, span, strong',
     'bootstrap_image_shape' => '',
     'bootstrap_image_responsive' => 1,
     'bootstrap_table_bordered' => 0,
@@ -1235,8 +1309,10 @@ View,glyphicon glyphicon-eye-open';
     'bootstrap_breadcrumb_title' => 1,
     'bootstrap_navbar_position' => '',
     'bootstrap_navbar_inverse' => 0,
+    'bootstrap_pager_first_and_last' => 1,
     'bootstrap_region_well-navigation' => '',
     'bootstrap_region_well-header' => '',
+    'bootstrap_region_well-header_zone' => '',
     'bootstrap_region_well-highlighted' => '',
     'bootstrap_region_well-help' => '',
     'bootstrap_region_well-content_top' => '',
@@ -1250,7 +1326,6 @@ View,glyphicon glyphicon-eye-open';
     'bootstrap_anchors_fix' => 1,
     'bootstrap_anchors_smooth_scrolling' => 1,
     'bootstrap_forms_has_error_value_toggle' => 1,
-    'bootstrap_tooltip_descriptions' => 1,
     'bootstrap_popover_enabled' => 0,
     'bootstrap_popover_animation' => 1,
     'bootstrap_popover_html' => 1,
@@ -1267,8 +1342,7 @@ View,glyphicon glyphicon-eye-open';
     'bootstrap_popover_content' => '',
     'bootstrap_popover_delay' => '0',
     'bootstrap_popover_container' => 'body',
-    'bootstrap_tooltip_enabled' => 1,
-    'bootstrap_tooltip_descriptions_length' => '200',
+    'bootstrap_tooltip_enabled' => 0,
     'bootstrap_tooltip_animation' => 1,
     'bootstrap_tooltip_html' => 1,
     'bootstrap_tooltip_placement' => 'auto top',
@@ -1281,9 +1355,15 @@ View,glyphicon glyphicon-eye-open';
     ),
     'bootstrap_tooltip_delay' => '0',
     'bootstrap_tooltip_container' => 'body',
-    'bootstrap_cdn' => '',
-    'bootstrap_bootswatch' => '',
     'bootstrap_toggle_jquery_error' => 0,
+    'bootstrap_cdn_provider' => '',
+    'bootstrap_cdn_custom_css' => 'https://cdn.jsdelivr.net/bootstrap/3.3.5/css/bootstrap.css',
+    'bootstrap_cdn_custom_css_min' => 'https://cdn.jsdelivr.net/bootstrap/3.3.5/css/bootstrap.min.css',
+    'bootstrap_cdn_custom_js' => 'https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.js',
+    'bootstrap_cdn_custom_js_min' => 'https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js',
+    'bootstrap_cdn_jsdelivr_version' => '3.3.5',
+    'bootstrap_cdn_jsdelivr_theme' => 'bootstrap',
+    'jquery_update_jquery_version' => '2.1',
   );
   $export['theme_epicgamejam_settings'] = $strongarm;
 

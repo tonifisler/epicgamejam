@@ -10,7 +10,7 @@
 function epicgamejam_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-game-body'
+  // Exported field_instance: 'node-game-body'.
   $field_instances['node-game-body'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -86,7 +86,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_2014_members'
+  // Exported field_instance: 'node-game-field_2014_members'.
   $field_instances['node-game-field_2014_members'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -160,7 +160,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_badges'
+  // Exported field_instance: 'node-game-field_badges'.
   $field_instances['node-game-field_badges'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -210,7 +210,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_city'
+  // Exported field_instance: 'node-game-field_city'.
   $field_instances['node-game-field_city'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -284,7 +284,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_contact_email'
+  // Exported field_instance: 'node-game-field_contact_email'.
   $field_instances['node-game-field_contact_email'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -331,7 +331,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_country'
+  // Exported field_instance: 'node-game-field_country'.
   $field_instances['node-game-field_country'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -379,7 +379,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_epic_points'
+  // Exported field_instance: 'node-game-field_epic_points'.
   $field_instances['node-game-field_epic_points'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -440,7 +440,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_genre'
+  // Exported field_instance: 'node-game-field_genre'.
   $field_instances['node-game-field_genre'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -491,7 +491,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_image'
+  // Exported field_instance: 'node-game-field_image'.
   $field_instances['node-game-field_image'] = array(
     'bundle' => 'game',
     'deleted' => 0,
@@ -574,7 +574,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_links'
+  // Exported field_instance: 'node-game-field_links'.
   $field_instances['node-game-field_links'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -639,7 +639,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_live_event'
+  // Exported field_instance: 'node-game-field_live_event'.
   $field_instances['node-game-field_live_event'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -713,7 +713,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_members'
+  // Exported field_instance: 'node-game-field_members'.
   $field_instances['node-game-field_members'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -762,7 +762,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_screenshots'
+  // Exported field_instance: 'node-game-field_screenshots'.
   $field_instances['node-game-field_screenshots'] = array(
     'bundle' => 'game',
     'deleted' => 0,
@@ -837,7 +837,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-field_team_name'
+  // Exported field_instance: 'node-game-field_team_name'.
   $field_instances['node-game-field_team_name'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -887,7 +887,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-game-title_field'
+  // Exported field_instance: 'node-game-title_field'.
   $field_instances['node-game-title_field'] = array(
     'bundle' => 'game',
     'default_value' => NULL,
@@ -964,7 +964,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1009,7 +1009,120 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_images'
+  // Exported field_instance: 'node-page-field_banner'.
+  $field_instances['node-page-field_banner'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_banner',
+    'label' => 'Banner',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'full_html_custom' => 'full_html_custom',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => -8,
+            ),
+            'full_html_custom' => array(
+              'weight' => 0,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_display_banner'.
+  $field_instances['node-page-field_display_banner'] = array(
+    'bundle' => 'page',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_display_banner',
+    'label' => 'Display banner',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_images'.
   $field_instances['node-page-field_images'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -1074,7 +1187,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-title_field'
+  // Exported field_instance: 'node-page-title_field'.
   $field_instances['node-page-title_field'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1117,7 +1230,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subtheme-body'
+  // Exported field_instance: 'node-subtheme-body'.
   $field_instances['node-subtheme-body'] = array(
     'bundle' => 'subtheme',
     'default_value' => NULL,
@@ -1168,7 +1281,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subtheme-field_images'
+  // Exported field_instance: 'node-subtheme-field_images'.
   $field_instances['node-subtheme-field_images'] = array(
     'bundle' => 'subtheme',
     'deleted' => 0,
@@ -1243,7 +1356,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-subtheme-field_main_theme'
+  // Exported field_instance: 'node-subtheme-field_main_theme'.
   $field_instances['node-subtheme-field_main_theme'] = array(
     'bundle' => 'subtheme',
     'default_value' => array(
@@ -1293,7 +1406,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-webform-title_field'
+  // Exported field_instance: 'node-webform-title_field'.
   $field_instances['node-webform-title_field'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,
@@ -1342,7 +1455,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-badges-field_svg'
+  // Exported field_instance: 'taxonomy_term-badges-field_svg'.
   $field_instances['taxonomy_term-badges-field_svg'] = array(
     'bundle' => 'badges',
     'deleted' => 0,
@@ -1413,7 +1526,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_city'
+  // Exported field_instance: 'user-user-field_city'.
   $field_instances['user-user-field_city'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1449,7 +1562,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_country'
+  // Exported field_instance: 'user-user-field_country'.
   $field_instances['user-user-field_country'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1485,7 +1598,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_full_name'
+  // Exported field_instance: 'user-user-field_full_name'.
   $field_instances['user-user-field_full_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1539,7 +1652,7 @@ function epicgamejam_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_job'
+  // Exported field_instance: 'user-user-field_job'.
   $field_instances['user-user-field_job'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -1585,7 +1698,7 @@ sound|Sound Designer
     ),
   );
 
-  // Exported field_instance: 'user-user-field_newsletter'
+  // Exported field_instance: 'user-user-field_newsletter'.
   $field_instances['user-user-field_newsletter'] = array(
     'bundle' => 'user',
     'default_value' => array(
@@ -1642,10 +1755,12 @@ sound|Sound Designer
   // Included for use with string extractors like potx.
   t('2014-members');
   t('Badges');
+  t('Banner');
   t('Body');
   t('City');
   t('Contact Email');
   t('Country');
+  t('Display banner');
   t('Epic Points');
   t('Full Name');
   t('Game main image');

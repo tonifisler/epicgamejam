@@ -329,4 +329,3 @@ function epicgamejam_theme() {
       );
   return $items;
 }
-

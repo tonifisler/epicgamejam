@@ -74,7 +74,6 @@ function epicgamejam_user_default_permissions() {
     'name' => 'access contextual links',
     'roles' => array(
       'administrator' => 'administrator',
-      'jammer' => 'jammer',
     ),
     'module' => 'contextual',
   );
@@ -785,7 +784,6 @@ function epicgamejam_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'epic organizer' => 'epic organizer',
-      'jammer' => 'jammer',
     ),
     'module' => 'node',
   );

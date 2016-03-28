@@ -10,7 +10,7 @@
 function epicgamejam_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -36,7 +36,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_2014_members'
+  // Exported field_base: 'field_2014_members'.
   $field_bases['field_2014_members'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -60,7 +60,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_badges'
+  // Exported field_base: 'field_badges'.
   $field_bases['field_badges'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -90,7 +90,31 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_city'
+  // Exported field_base: 'field_banner'.
+  $field_bases['field_banner'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_banner',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_city'.
   $field_bases['field_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -115,7 +139,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_contact_email'
+  // Exported field_base: 'field_contact_email'.
   $field_bases['field_contact_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -135,7 +159,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_country'
+  // Exported field_base: 'field_country'.
   $field_bases['field_country'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -161,7 +185,36 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'country',
   );
 
-  // Exported field_base: 'field_epic_points'
+  // Exported field_base: 'field_display_banner'.
+  $field_bases['field_display_banner'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_display_banner',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_epic_points'.
   $field_bases['field_epic_points'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -181,7 +234,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_full_name'
+  // Exported field_base: 'field_full_name'.
   $field_bases['field_full_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -206,7 +259,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_genre'
+  // Exported field_base: 'field_genre'.
   $field_bases['field_genre'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -236,7 +289,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -264,7 +317,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_images'
+  // Exported field_base: 'field_images'.
   $field_bases['field_images'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -292,7 +345,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_job'
+  // Exported field_base: 'field_job'.
   $field_bases['field_job'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -317,7 +370,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_links'
+  // Exported field_base: 'field_links'.
   $field_bases['field_links'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -350,7 +403,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_live_event'
+  // Exported field_base: 'field_live_event'.
   $field_bases['field_live_event'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -375,7 +428,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_main_theme'
+  // Exported field_base: 'field_main_theme'.
   $field_bases['field_main_theme'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -404,7 +457,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_members'
+  // Exported field_base: 'field_members'.
   $field_bases['field_members'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -441,7 +494,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_newsletter'
+  // Exported field_base: 'field_newsletter'.
   $field_bases['field_newsletter'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -464,7 +517,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'mailchimp_lists_subscription',
   );
 
-  // Exported field_base: 'field_screenshots'
+  // Exported field_base: 'field_screenshots'.
   $field_bases['field_screenshots'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -492,7 +545,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_svg'
+  // Exported field_base: 'field_svg'.
   $field_bases['field_svg'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -521,7 +574,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_team_name'
+  // Exported field_base: 'field_team_name'.
   $field_bases['field_team_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -551,7 +604,7 @@ function epicgamejam_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'title_field'
+  // Exported field_base: 'title_field'.
   $field_bases['title_field'] = array(
     'active' => 1,
     'cardinality' => 1,

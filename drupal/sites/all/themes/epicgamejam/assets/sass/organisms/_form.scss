@@ -61,4 +61,8 @@
 
 .help-block {
   font-size: 0.8em;
+
+  .views-widget & {
+    display: none;
+  }
 }
