@@ -100,6 +100,7 @@
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);
+    hide($content['field_display_banner']);
     print render($content);
   ?>
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
