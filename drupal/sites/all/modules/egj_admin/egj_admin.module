@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the EGJ_admin feature.
+ */
+
+include_once 'egj_admin.features.inc';
