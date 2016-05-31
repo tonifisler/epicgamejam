@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the EGJ_basic_page feature.
+ */
+
+include_once 'egj_basic_page.features.inc';

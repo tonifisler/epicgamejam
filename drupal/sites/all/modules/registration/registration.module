@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the registration feature.
+ */
+
+include_once 'registration.features.inc';

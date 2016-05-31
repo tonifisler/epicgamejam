@@ -66,3 +66,19 @@
     display: none;
   }
 }
+
+
+// Event registration
+.form-select {
+  @extend .form-control;
+}
+
+.webform-component--epic-locations {
+  > input[type=radio] {display: none;}
+
+  .control-label {
+    > p {
+      display: inline-block;
+    }
+  }
+}
