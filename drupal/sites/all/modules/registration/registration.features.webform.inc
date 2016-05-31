@@ -16,10 +16,12 @@ $webforms = array();
   'comment' => 0,
   'promote' => 0,
   'sticky' => 0,
+  'vuuid' => '0cef0963-96b5-4802-b854-c8655473424a',
   'type' => 'webform',
   'language' => 'en',
   'tnid' => 0,
   'translate' => 0,
+  'uuid' => 'dea5b3a9-eb9c-4ae3-9996-3568d6358427',
   'title_field' => array(
     'en' => array(
       0 => array(
@@ -594,7 +596,7 @@ nifff|Neuchâtel @NIFFF|<div class="well"><div class="media"><div class="media-l
     ),
     'conditionals' => array(),
   ),
-  'content_theme_content_node_edit' => 0,
+  'content_theme_content_node_edit' => '-content_type-',
   'content_theme_content_node_view' => 'epicgamejam',
   'disqus' => array(
     'status' => FALSE,
@@ -603,7 +605,7 @@ nifff|Neuchâtel @NIFFF|<div class="well"><div class="media"><div class="media-l
   'picture' => 0,
   'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
   'webform_features_author' => 'admin',
-  'webform_features_revision_author' => '',
+  'webform_features_revision_author' => 'admin',
 );
 return $webforms;
 }

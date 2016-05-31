@@ -8,6 +8,7 @@ dependencies[] = features
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = webform
+dependencies[] = webform_optionsmarkup
 __drupal_alter_by_ref[][node][webform] = webform
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
