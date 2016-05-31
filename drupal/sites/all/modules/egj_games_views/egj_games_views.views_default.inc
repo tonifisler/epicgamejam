@@ -253,12 +253,6 @@ function egj_games_views_views_default_views() {
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['title']['expose']['label'] = 'Nameness';
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
-  $handler->display->display_options['sorts']['random']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['random']['expose']['label'] = 'Randomness';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -422,7 +416,6 @@ function egj_games_views_views_default_views() {
     t('last »'),
     t('Epicness'),
     t('Nameness'),
-    t('Randomness'),
     t('Post date'),
     t('All Games'),
     t('The page with all the games'),
