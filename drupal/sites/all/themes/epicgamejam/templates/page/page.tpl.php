@@ -86,18 +86,36 @@ drupal_add_library('chosen', 'drupal.chosen');
         <img class="logo img-responsive" src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/svg/epicgamejam_logo.svg" alt="<?php print $site_name; ?>">
       </a>
     </h1>
-
+    <?php if (!empty($messages)): ?>
+      <div class="container">
+        <?php print $messages; ?>
+      </div>
+    <?php endif ?>
     <?php print render($page['header']); ?>
 
     <?php if ($is_front): ?>
-      <h2 class="text-center"><span class="text-epic">July 3</span> 20:00 <span class="text-epic">to July 5</span> 17:00 CEST (GMT+2)</h2>
+      <h2 class="text-center"><span class="text-epic">2016 July 1</span> 20:00 <span class="text-epic">to July 3</span> 17:00 CEST (GMT+2)</h2>
       <div class="hidden-xs">
         <div class="spacer spacer-sm"></div>
-        <div id="countdown" class="text-center countdown-container">2015-07-03T20:00:00+0200</div>
-        <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL BEGINS.</p>
-        <div class="spacer spacer-sm"></div>
+        <div id="countdown" class="text-center countdown-container">2016-07-01T20:00:00+0200</div>
+        <!-- <div id="countdown" class="text-center countdown-container">2015-07-05T17:00:00+0200</div> -->
+        <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL STARTS AGAIN.</p>
+        <!-- <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL ENDS.</p> -->
       </div>
     <?php endif ?>
+
+    <?php if (!empty($page['header_zone'])): ?>
+      <div class="bg-white">
+        <div class="container">
+          <div class="">
+            <?php print render($page['header_zone']); ?>
+          </div>
+        </div>
+      </div>
+      <div class="spacer spacer-sm"></div>
+      <h4 class="text-center">We have some sort of livestream on Twitch during the jam! <a href="http://www.twitch.tv/epicgamejam">twitch.tv/epicgamejam</a></h4>
+    <?php endif ?>
+
   </div> <!-- /#page-header -->
 
   <?php if (!empty($secondary_nav)): ?>
@@ -140,8 +158,6 @@ drupal_add_library('chosen', 'drupal.chosen');
 <?php print render($page['content_top']); ?>
 
 <div class="main-container container">
-
-  <?php print $messages; ?>
 
   <?php if ($is_front): ?>
     <div class="row">

@@ -1,0 +1,8 @@
+name = Epic Title
+description = This is the module that lets you sort by title length
+core = 7.x
+dependencies[] = views
+dependencies[] = ctools
+
+; Views Handlers
+files[] = views/epictitle_handler_handlername.inc

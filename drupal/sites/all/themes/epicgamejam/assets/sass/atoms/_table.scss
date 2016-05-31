@@ -8,7 +8,7 @@
   border: 0;
 }
 
-.table {
+.table:not(.field-multiple-table) {
   thead {
     @extend .text-dimbo;
     @extend .text-epic;
@@ -41,6 +41,27 @@
       padding-bottom: 20px;
     }
   }
+
+  &.table-themes {
+    .table {
+      tr:first-child {
+        background: $sunglow;
+        td {
+          background: none;
+
+          &:first-child:before {
+            content: 'MAIN THEME IS';
+            @extend .text-epic;
+            @extend .text-dimbo;
+            font-size: 30px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+
   .text-dimbo {
 
     a {

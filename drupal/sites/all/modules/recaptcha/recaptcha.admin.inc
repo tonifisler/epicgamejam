@@ -61,7 +61,7 @@ function recaptcha_admin_settings() {
     '#description' => t('The size of CAPTCHA to serve.'),
     '#options' => array(
       '' => t('Normal (default)'),
-      'small' => t('Small'),
+      'compact' => t('Compact'),
     ),
     '#title' => t('Size'),
     '#type' => 'select',

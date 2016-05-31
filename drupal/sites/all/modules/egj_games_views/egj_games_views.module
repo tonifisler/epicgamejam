@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the EGJ Games Views feature.
+ */
+
+include_once 'egj_games_views.features.inc';

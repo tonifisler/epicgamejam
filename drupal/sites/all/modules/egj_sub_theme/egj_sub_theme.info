@@ -1,0 +1,5 @@
+name = EGJ_sub_theme
+core = 7.x
+package = Content types
+version = 7.x-1.0
+features[features_api][] = api:2

@@ -82,6 +82,9 @@
 hide($content['disqus']);
 hide($content['links']);
 hide($content['rate_epic_points']);
+
+$epic_points = render($content['field_epic_points']) ? render($content['field_epic_points']) : 'TBA';
+
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
@@ -92,22 +95,29 @@ hide($content['rate_epic_points']);
           <?php print render($content['field_image']) ?>
           <div class="thumbnail-points bg-">
             <a href="<?php print $node_url; ?>">
-              <span class="text-dimbo text-epic text-huge"><?php print render($content['field_epic_points']); ?></span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
+              <span class="text-dimbo text-epic text-huge"><?php print $epic_points; ?></span> <span class="text-epic text-dimbo text-uppercase text-middle"><span class="text-viking">e</span><span class="text-sunglow">p</span><span class="text-lightning-yellow">i</span><span class="text-viking">c</span> <span class="text-sunglow">p</span><span class="text-lightning-yellow">o</span><span class="text-viking">i</span><span class="text-sunglow">n</span><span class="text-lightning-yellow">t</span><span class="text-viking">s</span></span>
             </a>
           </div>
           <div class="caption">
             <?php if (!empty($content['field_badges'])): ?>
               <h5><?php print t('BADGEs PROUDLY EARNEd') ?></h5>
             <?php endif ?>
-            <?php print render($content['field_badges']); ?><br>
+            <?php if (!empty($content['field_badges'])): ?>
+              <?php print render($content['field_badges']); ?><br>
+            <?php endif ?>
             <p>—</p>
             <?php print render($content['field_genre']); ?><br>
             <?php print render($content['field_team_name']); ?><br>
-            <?php print render($content['field_members']); ?><br>
+            <?php if (!empty($content['field_members'])): ?>
+              <?php print render($content['field_members']); ?><br>
+            <?php endif ?>
             <?php if (!empty($content['field_2014_members'])) print t('<b>Members:</b>') . render($content['field_2014_members']) . '<br>'; ?>
             <?php print render($content['field_country']); ?><br>
             <?php print render($content['field_city']); ?><br>
-            <?php print render($content['field_contact_email']); ?>
+            <?php if (!empty($content['field_contact_email'])): ?>
+              <?php print render($content['field_contact_email']); ?><br>
+            <?php endif ?>
+            <?php print render($content['field_live_event']); ?>
             <p>—</p>
             <?php print render($content['field_links']); ?>
             <?php if ($display_submitted): ?>

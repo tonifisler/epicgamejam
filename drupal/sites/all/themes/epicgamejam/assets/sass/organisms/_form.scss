@@ -61,4 +61,24 @@
 
 .help-block {
   font-size: 0.8em;
+
+  .views-widget & {
+    display: none;
+  }
+}
+
+
+// Event registration
+.form-select {
+  @extend .form-control;
+}
+
+.webform-component--epic-locations {
+  > input[type=radio] {display: none;}
+
+  .control-label {
+    > p {
+      display: inline-block;
+    }
+  }
 }
