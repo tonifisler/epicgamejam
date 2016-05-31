@@ -150,21 +150,13 @@ function epicgamejam_field__taxonomy_term_reference(&$variables) {
       $image = $item['taxonomy_term']->field_svg;
       if ($image) {
         $image_uri = $image['und'][0]['uri'];
-        $image_vars = array(
-          'style_name' => 'badge_thumbnail',
-          'path' => $image_uri,
-          'width' => '100%',
-          'height' => 'auto',
-          'alt' => $item['taxonomy_term']->description,
-          'attributes' => array(
-            'class' => 'badge-sm',
-          )
-        );
-        $image_html = theme_image_style($image_vars);
+        $image_html = '<img class="badge-sm" src="' . file_create_url($image_uri) . '" alt="' . $item['taxonomy_term']->description . '">';
+
         $href = $variables['element'][$delta]['#href'];
         $output .= '<li class="badge-element">' . l($image_html, $href, array(
           'html' => true,
           'attributes' => array(
+            'class' => array('tooltip-toggle'),
             'title' => $item['taxonomy_term']->name,
             'data-toggle' => 'tooltip',
             'data-placement' => 'top'

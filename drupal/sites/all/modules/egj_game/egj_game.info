@@ -51,6 +51,7 @@ features[field_instance][] = node-game-field_screenshots
 features[field_instance][] = node-game-field_team_name
 features[field_instance][] = node-game-title_field
 features[field_instance][] = taxonomy_term-badges-field_svg
+features[image][] = badge_thumbnail
 features[node][] = game
 features[taxonomy][] = badges
 features[taxonomy][] = genre

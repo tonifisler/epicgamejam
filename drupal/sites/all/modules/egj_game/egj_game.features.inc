@@ -14,6 +14,31 @@ function egj_game_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function egj_game_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: badge_thumbnail.
+  $styles['badge_thumbnail'] = array(
+    'label' => 'Badge Thumbnail (150x150)',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 150,
+          'height' => 150,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function egj_game_node_info() {
