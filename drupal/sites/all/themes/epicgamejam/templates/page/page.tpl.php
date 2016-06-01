@@ -159,17 +159,6 @@ drupal_add_library('chosen', 'drupal.chosen');
 
 <div class="main-container container">
 
-  <?php if ($is_front): ?>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Puf9T0xFPlc" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <div class="spacer spacer-sm"></div>
-  <?php endif; ?>
-
   <div class="row">
 
   <?php if (isset($section_title) && $section_title == 'narrow'): ?>
