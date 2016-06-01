@@ -36,6 +36,7 @@ scripts[] = build/js/main.min.js
 exclude[css][] = 'sites/all/modules/contrib/views/css/views.css'
 exclude[css][] = 'sites/all/modules/field/theme/field.css'
 exclude[css][] = 'sites/all/modules/contrib/views/css/views.css'
+exclude[js][] = 'sites/all/themes/bootstrap/js/bootstrap.js'
 
 
 ; Disable BootstrapCDN if using Bootstrap source files in your sub-theme.
