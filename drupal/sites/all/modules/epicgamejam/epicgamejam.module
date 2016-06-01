@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the epicgamejam feature.
+ */
+
+include_once 'epicgamejam.features.inc';
