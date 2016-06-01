@@ -26,9 +26,9 @@ function epicgamejam_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'webform-client-block-64' => array(
+        'webform-client-block-126' => array(
           'module' => 'webform',
-          'delta' => 'client-block-64',
+          'delta' => 'client-block-126',
           'region' => 'content',
           'weight' => '-10',
         ),
@@ -259,8 +259,8 @@ function epicgamejam_context_default_contexts() {
         'block-3' => array(
           'module' => 'block',
           'delta' => '3',
-          'region' => 'content_bottom',
-          'weight' => '10',
+          'region' => 'footer',
+          'weight' => '-10',
         ),
       ),
     ),
