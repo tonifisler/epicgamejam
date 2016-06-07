@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Theme Registrations Forms feature.
+ */
+
+include_once 'theme_registrations_forms.features.inc';
