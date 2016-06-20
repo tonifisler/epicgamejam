@@ -104,6 +104,7 @@ function registrations_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['caption'] = 'All registrations';
   /* Field: Webform submissions: Serial number */
   $handler->display->display_options['fields']['serial']['id'] = 'serial';
   $handler->display->display_options['fields']['serial']['table'] = 'webform_submissions';
@@ -165,6 +166,12 @@ function registrations_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: View area */
+  $handler->display->display_options['header']['view']['id'] = 'view';
+  $handler->display->display_options['header']['view']['table'] = 'views';
+  $handler->display->display_options['header']['view']['field'] = 'view';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'registrations:block_registrations_locations';
   $handler->display->display_options['path'] = 'admin/registrations';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Epic Registrations';
@@ -172,6 +179,58 @@ function registrations_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_registrations_locations');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Chosen locations';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_aggregator';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'value_6' => 'value_6',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'value_6' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+      'has_aggr' => 1,
+      'aggr' => array(
+        'views_aggregator_group_and_compress' => 'views_aggregator_group_and_compress',
+        'views_aggregator_tally' => 'views_aggregator_tally',
+      ),
+      'aggr_par' => '',
+      'has_aggr_column' => 0,
+      'aggr_column' => 'views_aggregator_sum',
+      'aggr_par_column' => '',
+    ),
+  );
+  $handler->display->display_options['style_options']['caption'] = 'Chosen locations';
+  $handler->display->display_options['style_options']['column_aggregation']['totals_per_page'] = '0';
+  $handler->display->display_options['style_options']['column_aggregation']['totals_row_position'] = array(
+    1 => '1',
+    2 => 0,
+  );
+  $handler->display->display_options['style_options']['column_aggregation']['precision'] = '2';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Webform submission data: Value */
+  $handler->display->display_options['fields']['value_6']['id'] = 'value_6';
+  $handler->display->display_options['fields']['value_6']['table'] = 'webform_submissions';
+  $handler->display->display_options['fields']['value_6']['field'] = 'value';
+  $handler->display->display_options['fields']['value_6']['label'] = 'Locations';
+  $handler->display->display_options['fields']['value_6']['format'] = 'text';
+  $handler->display->display_options['fields']['value_6']['custom_label'] = 'none';
+  $handler->display->display_options['fields']['value_6']['webform_nid'] = '125';
+  $handler->display->display_options['fields']['value_6']['webform_cid'] = '8';
+  $handler->display->display_options['block_description'] = 'Registrations locations';
   $translatables['registrations'] = array(
     t('Master'),
     t('Registrations'),
@@ -186,6 +245,9 @@ function registrations_views_default_views() {
     t(','),
     t('Locations'),
     t('Page'),
+    t('Block'),
+    t('Chosen locations'),
+    t('Registrations locations'),
   );
   $export['registrations'] = $view;
 
