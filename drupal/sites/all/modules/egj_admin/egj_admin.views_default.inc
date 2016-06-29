@@ -15,7 +15,7 @@ function egj_admin_views_default_views() {
   $view->description = 'Find and manage content.';
   $view->tag = 'admin';
   $view->base_table = 'node';
-  $view->human_name = 'admin_content';
+  $view->human_name = 'Administration: Nodes';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -215,20 +215,6 @@ function egj_admin_views_default_views() {
       'postpone_processing' => 0,
     ),
   );
-  /* Field: Content: Game main image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = 'Game image';
-  $handler->display->display_options['fields']['field_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -369,7 +355,6 @@ function egj_admin_views_default_views() {
     t('Publish'),
     t('Demote from front page'),
     t('Unpublish'),
-    t('Game image'),
     t('Title'),
     t('Type'),
     t('Author'),

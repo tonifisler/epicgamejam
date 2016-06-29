@@ -28,10 +28,14 @@
       vertical-align: middle;
 
       &:first-child {
-        text-align: right;
         a {
           display: inline-block;
         }
+      }
+
+      iframe {
+        margin-right: auto;
+        margin-left: auto;
       }
     }
     th {
@@ -56,6 +60,12 @@
             font-size: 30px;
             display: block;
           }
+        }
+      }
+      .views-row-first {
+        .views-field-title {
+          font-size: 3em;
+          font-family: $headings-font-family;
         }
       }
     }
