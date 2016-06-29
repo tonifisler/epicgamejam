@@ -79,6 +79,11 @@ function theme_registrations_forms_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = '@total theme suggestions';
   /* Relationship: Webform submissions: User */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'webform_submissions';
@@ -168,6 +173,7 @@ function theme_registrations_forms_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('@total theme suggestions'),
     t('Webform Submission User'),
     t('author'),
     t('Sid'),
