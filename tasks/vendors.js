@@ -5,7 +5,7 @@ module.exports = function(gulp, $, config) {
  /*
   * CSS Vendors
   */
-  gulp.task('css-vendors', function() {
+  gulp.task('css-vendors', ['img-vendors'], function() {
     return gulp.src(config.vendors.css)
       .pipe($.concat('vendors.min.css'))
       .pipe($.minifyCss())
