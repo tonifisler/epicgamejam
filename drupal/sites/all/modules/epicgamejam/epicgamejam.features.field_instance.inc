@@ -50,7 +50,7 @@ function epicgamejam_field_default_field_instances() {
           'mailchimp_campaign' => 0,
           'plain_text' => 'plain_text',
         ),
-        'allowed_formats_toggle' => 0,
+        'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
@@ -766,7 +766,7 @@ function epicgamejam_field_default_field_instances() {
   $field_instances['node-game-field_screenshots'] = array(
     'bundle' => 'game',
     'deleted' => 0,
-    'description' => 'Give us a good idea of your game goes!',
+    'description' => 'Give us a good idea of how your game is beautiful / should be enjoyed!',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1766,7 +1766,7 @@ sound|Sound Designer
   t('Game main image');
   t('Game title');
   t('Genre');
-  t('Give us a good idea of your game goes!');
+  t('Give us a good idea of how your game is beautiful / should be enjoyed!');
   t('Images');
   t('It\'s ok if you\'re alone too! You\'re epic!');
   t('Job');

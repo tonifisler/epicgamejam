@@ -85,6 +85,21 @@ hide($content['rate_epic_points']);
 
 $epic_points = render($content['field_epic_points']) ? render($content['field_epic_points']) : 'TBA';
 
+global $user;
+// Logged in user
+$uid = $user->uid;
+
+if (!empty($node)) {
+  // Node creator ID
+  $nuid = $node->uid;
+}
+
+if ($uid==$nuid) {
+  $creator = TRUE;
+} else {
+  $creator = FALSE;
+}
+
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
@@ -131,6 +146,10 @@ $epic_points = render($content['field_epic_points']) ? render($content['field_ep
 
       </div>
       <div class="col-sm-8">
+        <?php if ($creator): ?>
+          <?php print l('Edit', 'node/' . $node->nid . '/edit', array('query' => drupal_get_destination(), 'attributes' => array('class' => array('btn', 'btn-primary')))); ?>
+          <div class="spacer spacer-sm"></div>
+        <?php endif; ?>
         <?php print render($content); ?>
         <div class="spacer spacer-sm"></div>
         <?php print render($content['disqus']); ?>

@@ -12,6 +12,12 @@
 .btn-white {
   background: $white;
   color: $text-color;
+
+  &:hover,
+  &:focus {
+    background: fade-out($white, 0.2);
+    color: $text-color;
+  }
 }
 
 .views-exposed-form {
