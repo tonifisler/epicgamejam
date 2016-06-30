@@ -855,13 +855,6 @@ View,glyphicon glyphicon-eye-open';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'mailchimp_api_key';
-  $strongarm->value = '1ce6336dfffb87ab77634f4fe1b2a450-us8';
-  $export['mailchimp_api_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'maintenance_mode';
   $strongarm->value = '0';
   $export['maintenance_mode'] = $strongarm;

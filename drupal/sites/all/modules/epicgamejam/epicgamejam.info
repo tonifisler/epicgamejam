@@ -519,7 +519,6 @@ features[variable][] = language_content_type_page
 features[variable][] = language_content_type_subtheme
 features[variable][] = language_content_type_webform
 features[variable][] = language_types
-features[variable][] = mailchimp_api_key
 features[variable][] = maintenance_mode
 features[variable][] = menu_options_epic_theme
 features[variable][] = menu_options_game

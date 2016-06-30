@@ -1148,6 +1148,7 @@ function epicgamejam_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'epic organizer' => 'epic organizer',
+      'jammer' => 'jammer',
     ),
     'module' => 'node',
   );
