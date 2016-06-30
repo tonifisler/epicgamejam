@@ -486,16 +486,16 @@ function epicgamejam_views_default_views() {
   $handler->display->display_options['filters']['created']['group_info']['label'] = 'Year';
   $handler->display->display_options['filters']['created']['group_info']['identifier'] = 'created';
   $handler->display->display_options['filters']['created']['group_info']['optional'] = FALSE;
-  $handler->display->display_options['filters']['created']['group_info']['default_group'] = '2';
+  $handler->display->display_options['filters']['created']['group_info']['default_group'] = '1';
   $handler->display->display_options['filters']['created']['group_info']['group_items'] = array(
     1 => array(
-      'title' => '2014',
+      'title' => '2016',
       'operator' => 'between',
       'value' => array(
         'type' => 'date',
-        'value' => '2014',
-        'min' => '2014-06',
-        'max' => '2014-08',
+        'value' => '',
+        'min' => '2016-06',
+        'max' => '2016-08',
       ),
     ),
     2 => array(
@@ -509,13 +509,13 @@ function epicgamejam_views_default_views() {
       ),
     ),
     3 => array(
-      'title' => '',
-      'operator' => '=',
+      'title' => '2014',
+      'operator' => 'between',
       'value' => array(
         'type' => 'date',
-        'value' => '',
-        'min' => '',
-        'max' => '',
+        'value' => '2014',
+        'min' => '2014-06',
+        'max' => '2014-08',
       ),
     ),
   );

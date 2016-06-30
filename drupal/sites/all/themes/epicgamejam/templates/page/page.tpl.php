@@ -238,7 +238,6 @@ drupal_add_library('chosen', 'drupal.chosen');
         <li><a href="http://www.nifff.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/NIFFF.png" alt="NIFFF"></a></li>
         <li><a href="http://www.nifff.ch/itf/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/itf.png" alt="ITF"></a></li>
         <li><a href="http://www.neuchatelville.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/logo_ville_neuch.png" alt="Neuchâtel"></a></li>
-        <li><a href="http://www.prohelvetia.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/PH_logo_neutr_black.png" alt="Pro Helvetia"></a></li>
         <li><a href="http://www.case-a-chocs.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/caseAChocs.png" width="100" alt="Case à Chocs"></a></li>
         <li><a href="http://www.swissgamejam.ch/"><img src="/<?php print drupal_get_path('theme',$GLOBALS['theme']); ?>/build/img/sgj.png" alt="Swiss Game Jam"></a></li>
       </ul>

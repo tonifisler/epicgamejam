@@ -472,6 +472,10 @@ View,glyphicon glyphicon-eye-open';
       0 => 'users',
       1 => 'uid',
     ),
+    'rules_config' => array(
+      0 => 'rules_config',
+      1 => 'id',
+    ),
   );
   $export['entityreference:base-tables'] = $strongarm;
 
