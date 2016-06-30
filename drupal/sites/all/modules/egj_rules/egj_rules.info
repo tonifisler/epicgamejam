@@ -1,0 +1,10 @@
+name = egj_rules
+core = 7.x
+package = Features
+version = 7.x-1.0
+dependencies[] = entity
+dependencies[] = rules
+dependencies[] = slack
+features[features_api][] = api:2
+features[rules_config][] = rules_slack_new_games
+features[rules_config][] = rules_slack_new_themes
