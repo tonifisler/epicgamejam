@@ -97,10 +97,10 @@ drupal_add_library('chosen', 'drupal.chosen');
       <h2 class="text-center"><span class="text-epic">2016 July 1</span> 20:00 <span class="text-epic">to July 3</span> 17:00 CEST (GMT+2)</h2>
       <div class="hidden-xs">
         <div class="spacer spacer-sm"></div>
-        <div id="countdown" class="text-center countdown-container">2016-07-01T20:00:00+0200</div>
-        <!-- <div id="countdown" class="text-center countdown-container">2015-07-05T17:00:00+0200</div> -->
-        <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL STARTS AGAIN.</p>
-        <!-- <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL ENDS.</p> -->
+        <!-- <div id="countdown" class="text-center countdown-container">2016-07-01T20:00:00+0200</div> -->
+        <div id="countdown" class="text-center countdown-container">2016-07-03T17:00:00+0200</div>
+        <!-- <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL STARTS AGAIN.</p> -->
+        <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL ENDS.</p>
       </div>
     <?php endif ?>
 
