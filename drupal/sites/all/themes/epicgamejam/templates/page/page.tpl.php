@@ -98,7 +98,7 @@ drupal_add_library('chosen', 'drupal.chosen');
       <div class="hidden-xs">
         <div class="spacer spacer-sm"></div>
         <!-- <div id="countdown" class="text-center countdown-container">2016-07-01T20:00:00+0200</div> -->
-        <div id="countdown" class="text-center countdown-container">2016-07-03T17:00:00+0200</div>
+        <div id="countdown" class="text-center countdown-container">2016-07-03T17:15:00+0200</div>
         <!-- <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL STARTS AGAIN.</p> -->
         <p class="h2 text-center bg-nero first-plan">BEFORE IT ALL ENDS.</p>
       </div>
