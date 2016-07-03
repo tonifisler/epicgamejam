@@ -146,10 +146,6 @@ if ($uid==$nuid) {
 
       </div>
       <div class="col-sm-8">
-        <?php if ($creator): ?>
-          <?php print l('Edit', 'node/' . $node->nid . '/edit', array('query' => drupal_get_destination(), 'attributes' => array('class' => array('btn', 'btn-primary')))); ?>
-          <div class="spacer spacer-sm"></div>
-        <?php endif; ?>
         <?php print render($content); ?>
         <div class="spacer spacer-sm"></div>
         <?php print render($content['disqus']); ?>
