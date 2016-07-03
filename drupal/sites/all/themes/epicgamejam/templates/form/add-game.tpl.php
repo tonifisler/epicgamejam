@@ -2,6 +2,10 @@
 
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
+
+    <p>Note that you won't be able to edit your page once you've submitted it. That's sad and we'll add this feature one day.<br><a href="mailto:hello@epicgamejam.com">Email us</a> if you need anything!</p>
+    <div class="spacer spacer-sm"></div>
+
     <?php print render($form['field_epic_points']); ?>
     <?php print render($form['field_badges']); ?>
 
